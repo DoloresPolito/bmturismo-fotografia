@@ -1,0 +1,24 @@
+{
+  "richText": "This is <important><very>very</very> important</important>",
+
+
+  "alert":{
+    "one": "hello",
+    "two": "bye"
+  },
+  "Navbar":{
+    "one": "TURISM IN BUENOS AIRES",
+    "two": "PROFESSIONAL PORTRAIT",
+    "three": "FAMILIAR PORTRAIT",
+    "four":"CLASS OF PHOTOGRAPHY",
+    "five": "PROJECTS",
+    "six":"CONTACT"
+  },
+
+  "About":{
+    "title": "About me",
+    "subtitle": "about me english"
+  }
+
+
+  }
