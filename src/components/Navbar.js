@@ -6,7 +6,7 @@ import Image from "next/image";
 import spanish from "../../public/assets/icons/spanish.png";
 // import english from "../../../public/assets/icons/english.png";
 
-const Navbar = () => {
+const Navbar = ({props}) => {
   const { locale, locales, push } = useRouter();
   const { t: translate } = useTranslation("navbar");
   const handleClick = (l) => () => {
@@ -16,46 +16,50 @@ const Navbar = () => {
   return (
     <>
       <LangSection>
-        {" "}
-        <NavbarTitle>Belén Miguens</NavbarTitle>
-        <NavbarSubtitle>TURISMO & FOTOGRAFÍA</NavbarSubtitle>
+        <LangContainer>
+          {" "}
+          <TitleDiv>
+            <NavbarTitle>Belén Miguens</NavbarTitle>
+            {props ? (<>  <NavbarSubtitle>{props}</NavbarSubtitle></>) : (<>  <NavbarSubtitle>TURISMO & FOTOGRAFÍA</NavbarSubtitle></>)}
+          
+          </TitleDiv>
+          <Flags>
+            {locales.map((l) => (
+              <div key={l} onClick={handleClick(l)}>
+                <Image
+                  src={spanish}
+                  alt="spanish"
+                  key={l}
+                  onClick={handleClick(l)}
+                />
+              </div>
+            ))}
+          </Flags>
+        </LangContainer>
       </LangSection>
 
-      <Flags>
-        {locales.map((l) => (
-          <div key={l} onClick={handleClick(l)}>
-            <Image
-              src={spanish}
-              alt="spanish"
-              key={l}
-              onClick={handleClick(l)}
-            />
-          </div>
-        ))}
-      </Flags>
-
       <NavbarSection>
-        <Link href="/about" style={{ textDecoration: "none" }}>
+        <Link href="/turism" style={{ textDecoration: "none" }}>
           {" "}
           <NavbarText>{translate("one")}</NavbarText>
         </Link>
-        <Link href="/about" style={{ textDecoration: "none" }}>
+        <Link href="/professionalportrait" style={{ textDecoration: "none" }}>
           {" "}
           <NavbarText>{translate("two")}</NavbarText>
         </Link>
-        <Link href="/about" style={{ textDecoration: "none" }}>
+        <Link href="/familyportrait" style={{ textDecoration: "none" }}>
           {" "}
           <NavbarText>{translate("three")}</NavbarText>
         </Link>
-        <Link href="/about" style={{ textDecoration: "none" }}>
+        <Link href="/photography" style={{ textDecoration: "none" }}>
           {" "}
           <NavbarText>{translate("four")}</NavbarText>
         </Link>
-        <Link href="/about" style={{ textDecoration: "none" }}>
+        <Link href="/projects" style={{ textDecoration: "none" }}>
           {" "}
           <NavbarText>{translate("five")}</NavbarText>
         </Link>
-        <Link href="/about" style={{ textDecoration: "none" }}>
+        <Link href="/contact" style={{ textDecoration: "none" }}>
           {" "}
           <NavbarText>{translate("six")}</NavbarText>
         </Link>
@@ -91,29 +95,44 @@ const LangSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+`;
+
+const LangContainer = styled.div`
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const NavbarTitle = styled.h1`
   font-family: "Inter", sans-serif;
   font-weight: 300;
-  margin-left: 40px;
+  /* margin-left: 40px; */
   font-size: 22px;
+  margin-top: 10px;
 `;
 
 const NavbarSubtitle = styled.h2`
   font-family: "Inter", sans-serif;
   font-weight: 300;
-  margin-left: 40px;
-  margin-top: 6px;
+  /* margin-left: 40px; */
+  margin-top: 0px;
   font-size: 32px;
 `;
 
 const Flags = styled.div`
-  position: absolute;
-  height: 40px;
-  width: 40px;
-  left: 1200px;
-  top: 40px;
+ 
   display: flex;
   gap: 10px;
+  justify-self:center;
+  align-self:center;
+`;
+
+const TitleDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-self:center;
+  align-self:center;
+  line-height: 20px;
+
 `;

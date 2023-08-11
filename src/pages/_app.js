@@ -1,5 +1,5 @@
 import Head from "next/head";
-// import GlobalStyles from "../styles/global";
+import GlobalStyles from "../styles/global";
 // import { ParallaxProvider } from "react-scroll-parallax";
 import { appWithTranslation } from "next-i18next";
 
@@ -22,9 +22,11 @@ const MyApp = ({ Component, pageProps }) => {
       </Head>
 
       {/* <div className={` ${bebasneue.variable} ${montserrat.variable} font-sans`}> */}
+      <GlobalStyles/>
       <div>
         <Component {...pageProps} />
       </div>
+
 
     </>
   );
