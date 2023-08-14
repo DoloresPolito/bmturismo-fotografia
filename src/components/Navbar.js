@@ -4,14 +4,15 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import spanish from "../../public/assets/icons/spanish.png";
-// import english from "../../../public/assets/icons/english.png";
+import english from "../../public/assets/icons/english.png";
 
-const Navbar = ({props}) => {
+const Navbar = ({ props }) => {
   const { locale, locales, push } = useRouter();
   const { t: translate } = useTranslation("navbar");
   const handleClick = (l) => () => {
     push("/", undefined, { locale: l });
   };
+
 
   return (
     <>
@@ -20,25 +21,43 @@ const Navbar = ({props}) => {
           {" "}
           <TitleDiv>
             <NavbarTitle>Belén Miguens</NavbarTitle>
-            {props ? (<>  <NavbarSubtitle>{props}</NavbarSubtitle></>) : (<>  <NavbarSubtitle>TURISMO & FOTOGRAFÍA</NavbarSubtitle></>)}
-          
+            {props ? (
+              <>
+                {" "}
+                <NavbarSubtitle>{props}</NavbarSubtitle>
+              </>
+            ) : (
+              <>
+                {" "}
+                <NavbarSubtitle>TURISMO & FOTOGRAFÍA</NavbarSubtitle>
+              </>
+            )}
           </TitleDiv>
           <Flags>
-            {locales.map((l) => (
-              <div key={l} onClick={handleClick(l)}>
-                <Image
-                  src={spanish}
-                  alt="spanish"
-                  key={l}
-                  onClick={handleClick(l)}
-                />
-              </div>
-            ))}
+            <div onClick={handleClick(locales[0])}>
+              <Image
+                src={spanish}
+                alt="spanish"
+                onClick={handleClick(locales[0])}
+              />
+            </div>
+
+            <div onClick={handleClick(locales[1])} style={{marginTop:"4px", marginLeft:"10px"}}>
+              <Image
+                src={english}
+                alt="english"
+                onClick={handleClick(locales[1])}
+              />
+            </div>
           </Flags>
         </LangContainer>
       </LangSection>
 
       <NavbarSection>
+        <Link href="/" style={{ textDecoration: "none" }}>
+          {" "}
+          <NavbarText>{translate("cero")}</NavbarText>
+        </Link>
         <Link href="/turism" style={{ textDecoration: "none" }}>
           {" "}
           <NavbarText>{translate("one")}</NavbarText>
@@ -118,21 +137,23 @@ const NavbarSubtitle = styled.h2`
   /* margin-left: 40px; */
   margin-top: 0px;
   font-size: 32px;
+  text-transform: uppercase;
 `;
 
 const Flags = styled.div`
- 
   display: flex;
   gap: 10px;
-  justify-self:center;
-  align-self:center;
+  justify-self: center;
+  align-self: center;
+  div{
+    cursor: pointer;
+  }
 `;
 
 const TitleDiv = styled.div`
   display: flex;
   flex-direction: column;
-  justify-self:center;
-  align-self:center;
+  justify-self: center;
+  align-self: center;
   line-height: 20px;
-
 `;

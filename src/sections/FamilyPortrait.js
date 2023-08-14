@@ -14,7 +14,7 @@ const FamilyPortrait = () => {
         <Content>
           <TextContent>
             <h6>{translate("text")}</h6>
-            <Button />
+            <Button props="familyportrait"/>
           </TextContent>
 
           <ImageContent>

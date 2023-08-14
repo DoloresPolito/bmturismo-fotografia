@@ -9,15 +9,11 @@ const Turism = () => {
   return (
     <>
       <TurismSection>
-
-      <TitleSection>
-        <TitleContainer>
-          <TitleText>{translate("title")}</TitleText>
-        </TitleContainer>
-      </TitleSection>
-       
-  
-   
+        <TitleSection>
+          <TitleContainer>
+            <TitleText>{translate("title")}</TitleText>
+          </TitleContainer>
+        </TitleSection>
       </TurismSection>
     </>
   );
@@ -26,7 +22,6 @@ const Turism = () => {
 const TurismSection = styled.div`
   width: 100%;
   height: 80vh;
-
 `;
 
 const TitleSection = styled.div`
@@ -34,14 +29,11 @@ const TitleSection = styled.div`
   margin: 0 auto;
   height: auto;
   display: flex;
-
- 
 `;
 const TitleContainer = styled.div`
   width: 550px;
   height: 103px;
   border-bottom: 3px solid #c29a00;
-
 `;
 
 const TitleText = styled.h2`
@@ -52,6 +44,5 @@ const TitleText = styled.h2`
   text-transform: uppercase;
   width: 320px;
 `;
-
 
 export default Turism;

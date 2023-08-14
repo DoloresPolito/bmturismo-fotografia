@@ -17,7 +17,7 @@ const ProfessionalPortrait = () => {
           <TextContent>
             <h4> {translate("text1")}</h4>
             <h6>{translate("text2")}</h6>
-            <Button />
+            <Button props="/professionalportrait"/>
           </TextContent>
         </Content>
       </ProfessionalPortraitSection>

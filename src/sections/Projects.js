@@ -17,7 +17,7 @@ const Projects = () => {
           <TextContent>
             <h6>{translate("text")}</h6>
             {/* <h4> {translate("text1")}</h4> */}
-            <Button />
+            <Button props="/projects"/>
           </TextContent>
 
           <ImageContent>

@@ -1,11 +1,14 @@
 import styled from "styled-components";
-
-const Button = () => {
+import Link from "next/link";
+const Button = ({props}) => {
   return (
     <>
+    <Link href={`${props}`}>
+
       <ButtonSection>
         <p>Ver más</p>
       </ButtonSection>
+      </Link>
     </>
   );
 };
@@ -19,6 +22,7 @@ const ButtonSection = styled.button`
   justify-content: center;
   align-items: center;
   border: none;
+  cursor: pointer;
 
   p {
     font-family: "Inter", sans-serif;

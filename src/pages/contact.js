@@ -9,8 +9,7 @@ const ContactHome = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-    <Navbar/>
-    <h1>ContactHome</h1>
+    <Navbar  props="CONTACT"/>
     </motion.div>
     </>)
 }
