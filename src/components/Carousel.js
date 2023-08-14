@@ -21,6 +21,11 @@ const CarouselComponent = () => {
       <Carousel
         selectedItem={selectedImageIndex}
         showThumbs={false}
+        showStatus={false}
+
+        // infiniteLoop={true}
+        slideNumber={true}
+        autoPlay={true}
         renderArrowPrev={(onClickHandler, hasPrev, label) =>
           hasPrev && (
             <button
@@ -80,21 +85,21 @@ const CarouselComponent = () => {
         <div onClick={() => handleThumbnailClick(0)}>
           <Image
             src={image1}
-            style={{ width: "150px", height: "100px" }}
+            style={{ width: "140px", height: "90px" }}
             alt="Miniatura 1"
           />
         </div>
         <div onClick={() => handleThumbnailClick(1)}>
           <Image
             src={image2}
-            style={{ width: "150px", height: "100px" }}
+            style={{ width: "140px", height: "90px" }}
             alt="Miniatura 2"
           />
         </div>
         <div onClick={() => handleThumbnailClick(2)}>
           <Image
             src={image3}
-            style={{ width: "150px", height: "100px" }}
+            style={{ width: "140px", height: "90px" }}
             alt="Miniatura 3"
           />
         </div>
@@ -108,10 +113,11 @@ const CarouselSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
 `;
 const Div = styled.div`
-  height: 700px;
-  width: 85%;
+  height: 500px;
+  width: 60%;
   margin: 0 auto;
 
   img {

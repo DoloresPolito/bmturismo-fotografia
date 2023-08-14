@@ -8,7 +8,7 @@ import Turism from "../sections/Turism";
 import { motion } from "framer-motion";
 import About from "../sections/About";
 import Projects from "../sections/Projects";
-import Carousel from "../components/Carousel";
+// import Carousel from "../components/Carousel";
 
 const Home = () => {
   return (
@@ -20,7 +20,7 @@ const Home = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <Navbar />
-        <Carousel/>
+        {/* <Carousel/> */}
         <About/>
         <Turism />
         <FamilyPortrait />

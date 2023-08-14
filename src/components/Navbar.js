@@ -7,12 +7,14 @@ import spanish from "../../public/assets/icons/spanish.png";
 import english from "../../public/assets/icons/english.png";
 
 const Navbar = ({ props }) => {
+  const router = useRouter();
   const { locale, locales, push } = useRouter();
   const { t: translate } = useTranslation("navbar");
   const handleClick = (l) => () => {
     push("/", undefined, { locale: l });
   };
 
+  const { pathname } = router;
 
   return (
     <>
@@ -20,6 +22,7 @@ const Navbar = ({ props }) => {
         <LangContainer>
           {" "}
           <TitleDiv>
+
             <NavbarTitle>Belén Miguens</NavbarTitle>
             {props ? (
               <>
@@ -33,7 +36,8 @@ const Navbar = ({ props }) => {
               </>
             )}
           </TitleDiv>
-          <Flags>
+          {pathname === '/' ? (<>
+            <Flags>
             <div onClick={handleClick(locales[0])}>
               <Image
                 src={spanish}
@@ -50,6 +54,9 @@ const Navbar = ({ props }) => {
               />
             </div>
           </Flags>
+          
+          </>) : (<></>) }
+          
         </LangContainer>
       </LangSection>
 

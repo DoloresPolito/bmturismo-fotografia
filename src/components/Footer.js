@@ -9,20 +9,32 @@ const Footer = () => {
       <FooterSection>
         <FooterContainer>
           <FooterContent>
-            <Item>
-              <Image src={instagram} alt="instagram" />
-              <p>@Belenmiguensfoto</p>
-            </Item>
-
-            <Item>
-              <Image src={whatsapp} alt="whatsapp" />
-              <p>+54 911 62762509</p>
-            </Item>
-
-            <Item>
-              <Image src={email} alt="email" />
-              <p>miguensbelen@gmail.com</p>
-            </Item>
+            <a
+              href="https://www.instagram.com/belenmiguensfoto/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Item>
+                <Image src={instagram} alt="instagram" />
+                <p>@Belenmiguensfoto</p>
+              </Item>
+            </a>
+            <a
+              href="https://api.whatsapp.com/send/?phone=543446584076"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Item>
+                <Image src={whatsapp} alt="whatsapp" />
+                <p>+54 911 62762509</p>
+              </Item>
+            </a>
+            <a href="mailto:miguensbelen@gmail.com">
+              <Item>
+                <Image src={email} alt="email" />
+                <p>miguensbelen@gmail.com</p>
+              </Item>
+            </a>
           </FooterContent>
         </FooterContainer>
       </FooterSection>
@@ -56,7 +68,6 @@ const FooterContent = styled.div`
   align-items: center;
   flex-wrap: wrap;
 
-
   /* @media only screen and (max-width: 820px) {
     flex-direction: column;
   } */
@@ -66,7 +77,6 @@ const Item = styled.div`
   width: auto;
   height: 20px;
   display: flex;
-
 
   /* @media only screen and (max-width: 820px) {
     padding-top: 18px;
