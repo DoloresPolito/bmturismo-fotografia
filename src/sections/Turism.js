@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Title from "../components/Title";
 import { useTranslation } from "next-i18next";
 import Button from "../components/Button";
+import {Container} from "../styles/styles"
 
 const Turism = () => {
   const { t: translate } = useTranslation("turism");
@@ -67,7 +68,7 @@ const TitleContainer = styled.div`
 const TitleText = styled.h2`
   font-family: "Inter", sans-serif;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 600;
   color: #2b2b2b;
   text-transform: uppercase;
   width: 250px;
@@ -136,7 +137,7 @@ const TextContent = styled.div`
   h4 {
     font-family: "Inter", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     max-width: 240px;
     margin-top: 0px;
   }
@@ -148,6 +149,7 @@ const TextContent = styled.div`
     text-align: justify;
     margin-top: 0px;
     line-height: 18px;
+    font-weight: 500;
   }
 `;
 
