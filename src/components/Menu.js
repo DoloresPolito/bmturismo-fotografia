@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "next-i18next";
 
 const Menu = ({ open, setOpen }) => {
@@ -10,7 +10,7 @@ const Menu = ({ open, setOpen }) => {
 
   const handleClose = () => {
     setOpen(false);
-    enableBodyScroll(); 
+    enableBodyScroll();
   };
 
   const disableBodyScroll = () => {
@@ -22,15 +22,11 @@ const Menu = ({ open, setOpen }) => {
   };
 
   useEffect(() => {
-
     const currentPagePath = window.location.pathname;
 
     if (currentPagePath.includes("en")) {
       setActiveSection(currentPagePath.slice(4));
     } else setActiveSection(currentPagePath.slice(1));
-
-
-
 
     if (open) {
       disableBodyScroll();
@@ -41,50 +37,86 @@ const Menu = ({ open, setOpen }) => {
 
   return (
     <StyledMenu open={open} aria-label="menu">
+      {activeSection === "" ? (
+        <>
+          <ScrollLink
+            to="turism"
+            spy={true}
+            smooth={true}
+            offset={10}
+            duration={800}
+            onClick={() => handleClose()}
+          >
+            <NavLink className={activeSection === "turism" ? "active" : ""}>
+              {translate("one")}
+            </NavLink>
+          </ScrollLink>
 
-      <Link
-        href="/turism"
-        style={{ textDecoration: "none" }}
-        onClick={() => handleClose()}
-      >
-        {" "}
-        <NavLink     className={activeSection === "turism" ? "active" : ""}>{translate("one")}</NavLink>
-      </Link>
-      <Link
-        href="/professionalportrait"
-        style={{ textDecoration: "none" }}
-        onClick={() => handleClose()}
-      >
-        {" "}
-        <NavLink        className={
-                  activeSection === "professionalportrait" ? "active" : ""
-                }>{translate("two")}</NavLink>
-      </Link>
-      <Link
-        href="/familyportrait"
-        style={{ textDecoration: "none" }}
-        onClick={() => handleClose()}
-      >
-        {" "}
-        <NavLink   className={activeSection === "familyportrait" ? "active" : ""}>{translate("three")}</NavLink>
-      </Link>
-      <Link
-        href="/photography"
-        style={{ textDecoration: "none" }}
-        onClick={() => handleClose()}
-      >
-        {" "}
-        <NavLink   className={activeSection === "photography" ? "active" : ""}>{translate("four")}</NavLink>
-      </Link>
-      <Link
-        href="/projects"
-        style={{ textDecoration: "none" }}
-        onClick={() => handleClose()}
-      >
-        {" "}
-        <NavLink  className={activeSection === "projects" ? "active" : ""}>{translate("five")}</NavLink>
-      </Link>
-     
+          <ScrollLink
+            to="professionalportrait"
+            spy={true}
+            smooth={true}
+            offset={10}
+            duration={800}
+            onClick={() => handleClose()}
+          >
+            <NavLink
+              className={
+                activeSection === "professionalportrait" ? "active" : ""
+              }
+            >
+              {translate("two")}
+            </NavLink>
+          </ScrollLink>
+
+          <ScrollLink
+            to="familyportrait"
+            spy={true}
+            smooth={true}
+            offset={10}
+            duration={800}
+            onClick={() => handleClose()}
+          >
+            {" "}
+            <NavLink
+              className={activeSection === "familyportrait" ? "active" : ""}
+            >
+              {translate("three")}
+            </NavLink>
+          </ScrollLink>
+
+          <ScrollLink
+            to="photography"
+            spy={true}
+            smooth={true}
+            offset={10}
+            duration={800}
+            onClick={() => handleClose()}
+          >
+            <NavLink
+              className={activeSection === "photography" ? "active" : ""}
+            >
+              {translate("four")}
+            </NavLink>
+          </ScrollLink>
+          <ScrollLink
+            to="projects"
+            spy={true}
+            smooth={true}
+            offset={10}
+            duration={800}
+            onClick={() => handleClose()}
+          >
+            <NavLink className={activeSection === "projects" ? "active" : ""}>
+              {translate("five")}
+            </NavLink>
+          </ScrollLink>
+        </>
+      ) : (
+        <>
+          <p>en preceso</p>
+        </>
+      )}
     </StyledMenu>
   );
 };
@@ -119,7 +151,6 @@ const NavLink = styled.p`
   color: #2b2b2b;
 
   &.active {
-
     font-weight: 600;
   }
 `;

@@ -20,8 +20,6 @@ const Navbar = () => {
   const [width, setWidth] = useState(null);
   const [isOpen, setOpen] = useState(false);
 
-  // const [view, setView] = useState(null);
-
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
