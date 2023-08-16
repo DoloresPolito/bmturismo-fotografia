@@ -20,53 +20,13 @@ const Navbar = () => {
 
   const [activeSection, setActiveSection] = useState("");
 
-  const sectionRefs = {
-    turism: useRef(null),
-    professionalportrait: useRef(null),
-    familyportrait: useRef(null),
-    photography: useRef(null),
-    projects: useRef(null),
-  };
-
-  const handleIntersection = (entries) => {
-    console.log("entries", entries);
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setActiveSection(entry.target.id);
-      }
-    });
-  };
-
   useEffect(() => {
-    console.log("use effect observer");
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
-    };
+    const currentPagePath = window.location.pathname;
 
-    const observer = new IntersectionObserver(
-      handleIntersection,
-      observerOptions
-    );
+    if (currentPagePath.includes("en")) {
+      setActiveSection(currentPagePath.slice(4));
+    } else setActiveSection(currentPagePath.slice(1));
 
-    console.log("observer", observer);
-    console.log("sectionRefs", sectionRefs);
-
-    // Observe the sections
-    for (const key in sectionRefs) {
-      if (sectionRefs.hasOwnProperty(key) && sectionRefs[key].current) {
-        observer.observe(sectionRefs[key].current);
-      }
-    }
-
-    return () => {
-      console.log("use effect observer", observer.disconnect());
-      observer.disconnect();
-    };
-  }, []);
-
-  useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
@@ -209,8 +169,7 @@ const NavbarText = styled.p`
   color: #2b2b2b;
 
   &.active {
-    font-weight: bold;
-    color: red;
+    font-weight: 800;
   }
 `;
 
@@ -223,6 +182,10 @@ const LangSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 600px) {
+    height: 190px;
+  }
 `;
 
 const LangContainer = styled.div`
@@ -250,6 +213,11 @@ const NavbarSubtitle = styled.h2`
   font-weight: 300;
   font-size: 32px;
   text-transform: uppercase;
+
+  @media screen and (max-width: 600px) {
+    max-width: 200px;
+    line-height: 40px;
+  }
 `;
 
 const Flags = styled.div`

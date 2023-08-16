@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 const Menu = ({ open, setOpen }) => {
   const { t: translate } = useTranslation("navbar");
+
+  const [activeSection, setActiveSection] = useState("");
 
   const handleClose = () => {
     setOpen(false);
@@ -20,6 +22,16 @@ const Menu = ({ open, setOpen }) => {
   };
 
   useEffect(() => {
+
+    const currentPagePath = window.location.pathname;
+
+    if (currentPagePath.includes("en")) {
+      setActiveSection(currentPagePath.slice(4));
+    } else setActiveSection(currentPagePath.slice(1));
+
+
+
+
     if (open) {
       disableBodyScroll();
     } else {
@@ -36,7 +48,7 @@ const Menu = ({ open, setOpen }) => {
         onClick={() => handleClose()}
       >
         {" "}
-        <NavLink>{translate("one")}</NavLink>
+        <NavLink     className={activeSection === "turism" ? "active" : ""}>{translate("one")}</NavLink>
       </Link>
       <Link
         href="/professionalportrait"
@@ -44,7 +56,9 @@ const Menu = ({ open, setOpen }) => {
         onClick={() => handleClose()}
       >
         {" "}
-        <NavLink>{translate("two")}</NavLink>
+        <NavLink        className={
+                  activeSection === "professionalportrait" ? "active" : ""
+                }>{translate("two")}</NavLink>
       </Link>
       <Link
         href="/familyportrait"
@@ -52,7 +66,7 @@ const Menu = ({ open, setOpen }) => {
         onClick={() => handleClose()}
       >
         {" "}
-        <NavLink>{translate("three")}</NavLink>
+        <NavLink   className={activeSection === "familyportrait" ? "active" : ""}>{translate("three")}</NavLink>
       </Link>
       <Link
         href="/photography"
@@ -60,7 +74,7 @@ const Menu = ({ open, setOpen }) => {
         onClick={() => handleClose()}
       >
         {" "}
-        <NavLink>{translate("four")}</NavLink>
+        <NavLink   className={activeSection === "photography" ? "active" : ""}>{translate("four")}</NavLink>
       </Link>
       <Link
         href="/projects"
@@ -68,7 +82,7 @@ const Menu = ({ open, setOpen }) => {
         onClick={() => handleClose()}
       >
         {" "}
-        <NavLink>{translate("five")}</NavLink>
+        <NavLink  className={activeSection === "projects" ? "active" : ""}>{translate("five")}</NavLink>
       </Link>
      
     </StyledMenu>
@@ -89,6 +103,9 @@ export const StyledMenu = styled.nav`
   right: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+  @media screen and (max-width: 600px) {
+    top: 240px;
+  }
 `;
 
 const NavLink = styled.p`
@@ -100,6 +117,11 @@ const NavLink = styled.p`
   font-size: 14px;
   font-weight: 400;
   color: #2b2b2b;
+
+  &.active {
+
+    font-weight: 600;
+  }
 `;
 
 export default Menu;
