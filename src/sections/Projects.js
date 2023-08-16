@@ -11,13 +11,15 @@ const Projects = () => {
       <ProjectsSection>
         <Title props={translate("title")} />
 
-
         <Content>
-         
           <TextContent>
-            <h6>{translate("text")}</h6>
-            {/* <h4> {translate("text1")}</h4> */}
-            <Button props="/projects"/>
+            <h6>{translate("text1")}</h6>
+            <h6>{translate("text2")}</h6>
+            <h6>{translate("text3")}</h6>
+
+            <h4>{translate("subtitle")}</h4>
+
+            <Button props="/projects" />
           </TextContent>
 
           <ImageContent>
@@ -31,11 +33,7 @@ const Projects = () => {
               </p>
             </Column2>
           </ImageContent>
-
-
         </Content>
-
-
       </ProjectsSection>
     </>
   );
@@ -48,6 +46,13 @@ const ProjectsSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 980px) {
+    height: 100%;
+  }
+  @media screen and (max-width: 800px) {
+    width: 85%;
+    margin: 0 auto;
+  }
 `;
 
 const Content = styled.div`
@@ -55,6 +60,10 @@ const Content = styled.div`
   height: 360px;
   display: flex;
   margin-top: 40px;
+  @media screen and (max-width: 980px) {
+    height: auto;
+    flex-direction: column-reverse;
+  }
 `;
 
 const ImageContent = styled.div`
@@ -62,6 +71,9 @@ const ImageContent = styled.div`
   background-color: white;
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: 980px) {
+    flex: 0%;
+  }
 `;
 
 const Column1 = styled.div`
@@ -83,7 +95,7 @@ const Column2 = styled.div`
     background-color: lightgray;
   }
 
-  p{
+  p {
     font-family: "Inter", sans-serif;
     font-size: 12px;
     font-weight: 100;
@@ -99,14 +111,19 @@ const TextContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-right: 40px;
-/* 
+  @media screen and (max-width: 980px) {
+    flex: 0%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
   h4 {
     font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 500;
     max-width: 240px;
     margin-top: 0px;
-  } */
+  }
 
   h6 {
     font-family: "Inter", sans-serif;
@@ -116,6 +133,9 @@ const TextContent = styled.div`
     margin-top: 0px;
     line-height: 18px;
     max-width: 600px;
+    @media screen and (max-width: 980px) {
+      max-width: 100%;
+    }
   }
 `;
 

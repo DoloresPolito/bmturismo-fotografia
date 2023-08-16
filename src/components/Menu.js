@@ -8,7 +8,7 @@ const Menu = ({ open, setOpen }) => {
 
   const handleClose = () => {
     setOpen(false);
-    enableBodyScroll(); // Habilitar el desplazamiento nuevamente cuando se cierra el menú
+    enableBodyScroll(); 
   };
 
   const disableBodyScroll = () => {
@@ -29,14 +29,7 @@ const Menu = ({ open, setOpen }) => {
 
   return (
     <StyledMenu open={open} aria-label="menu">
-      <Link
-        href="/"
-        style={{ textDecoration: "none" }}
-        onClick={() => handleClose()}
-      >
-        {" "}
-        <NavLink>{translate("cero")}</NavLink>
-      </Link>
+
       <Link
         href="/turism"
         style={{ textDecoration: "none" }}
@@ -77,14 +70,7 @@ const Menu = ({ open, setOpen }) => {
         {" "}
         <NavLink>{translate("five")}</NavLink>
       </Link>
-      <Link
-        href="/contact"
-        style={{ textDecoration: "none" }}
-        onClick={() => handleClose()}
-      >
-        {" "}
-        <NavLink>{translate("six")}</NavLink>
-      </Link>
+     
     </StyledMenu>
   );
 };
@@ -99,7 +85,7 @@ export const StyledMenu = styled.nav`
   padding: 100px 0px 40px 30px;
   position: fixed;
   z-index: 5000;
-  top: 160px;
+  top: 180px;
   right: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
@@ -112,7 +98,7 @@ const NavLink = styled.p`
   cursor: pointer;
   font-family: "Inter", sans-serif;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   color: #2b2b2b;
 `;
 

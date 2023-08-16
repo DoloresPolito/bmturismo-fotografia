@@ -21,11 +21,13 @@ const Home = () => {
       >
         <Navbar />
         {/* <Carousel/> */}
-        <About/>
+        {/* <About/> */}
         <Turism />
-        <FamilyPortrait />
-        <ProfessionalPortrait />
         <Photography />
+        <ProfessionalPortrait />
+        <FamilyPortrait />
+
+  
         <Projects/>
         <Footer />
       </motion.div>

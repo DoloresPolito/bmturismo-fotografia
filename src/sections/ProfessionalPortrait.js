@@ -11,13 +11,11 @@ const ProfessionalPortrait = () => {
       <ProfessionalPortraitSection>
         <Title props={translate("title")} />
         <Content>
-          <ImageContent>
-
-          </ImageContent>
+          <ImageContent></ImageContent>
           <TextContent>
-            <h4> {translate("text1")}</h4>
-            <h6>{translate("text2")}</h6>
-            <Button props="/professionalportrait"/>
+            <h6>{translate("text1")}</h6>
+            <h4> {translate("subtitle")}</h4>
+            <Button props="/professionalportrait" />
           </TextContent>
         </Content>
       </ProfessionalPortraitSection>
@@ -32,6 +30,10 @@ const ProfessionalPortraitSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 800px) {
+    width: 85%;
+    margin: 0 auto;
+  }
 `;
 
 const Content = styled.div`
@@ -39,7 +41,6 @@ const Content = styled.div`
   height: 375px;
   display: flex;
   margin-top: 40px;
-
 `;
 
 const ImageContent = styled.div`
@@ -61,14 +62,13 @@ const TextContent = styled.div`
     margin-top: 0px;
   }
 
-   h6{
+  h6 {
     font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 100;
     text-align: justify;
     margin-top: -10px;
-    line-height: 18px
-  
+    line-height: 18px;
   }
 `;
 

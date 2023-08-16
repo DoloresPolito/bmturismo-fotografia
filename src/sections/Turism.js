@@ -16,10 +16,10 @@ const Turism = () => {
         </TitleSection>
 
         <Content>
-         
           <TextContent>
+            <h6>{translate("text1")}</h6>
             <h6>{translate("text2")}</h6>
-            <h4> {translate("text1")}</h4>
+            <h4> {translate("subtitle")}</h4>
             <Button props="photography" />
           </TextContent>
           <ImageContent>
@@ -27,7 +27,6 @@ const Turism = () => {
 
             <Column2>
               <div></div>
-       
             </Column2>
           </ImageContent>
         </Content>
@@ -43,6 +42,14 @@ const TurismSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 1000px) {
+    height: auto;
+  }
+  @media screen and (max-width: 800px) {
+    width: 85%;
+    margin: 0 auto;
+  }
 `;
 
 const TitleSection = styled.div`
@@ -63,7 +70,7 @@ const TitleText = styled.h2`
   font-weight: 500;
   color: #2b2b2b;
   text-transform: uppercase;
-  width: 320px;
+  width: 250px;
 `;
 
 const Content = styled.div`
@@ -71,6 +78,10 @@ const Content = styled.div`
   height: 380px;
   display: flex;
   margin-top: 40px;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column-reverse;
+    height: auto;
+  }
 `;
 
 const ImageContent = styled.div`
@@ -78,7 +89,7 @@ const ImageContent = styled.div`
   background-color: white;
   display: flex;
   flex-direction: row;
-  margin-top: -40px;
+  margin-top: 0px;
 `;
 
 const Column1 = styled.div`
@@ -116,7 +127,11 @@ const TextContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-right: 40px;
-  
+  @media screen and (max-width: 1000px) {
+    margin-top: 40px;
+    max-width: 100%;
+    margin-right: 0px;
+  }
 
   h4 {
     font-family: "Inter", sans-serif;

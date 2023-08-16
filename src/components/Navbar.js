@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import Image from "next/image";
-import spanish from "../../public/assets/icons/spanish.png";
-import english from "../../public/assets/icons/english.png";
 import Hamburger from "hamburger-react";
 import Menu from "./Menu";
 
-const Navbar = ({ props }) => {
+const Navbar = () => {
   const router = useRouter();
   const { locale, locales, push } = useRouter();
   const { t: translate } = useTranslation("navbar");
@@ -20,6 +17,54 @@ const Navbar = ({ props }) => {
 
   const [width, setWidth] = useState(null);
   const [isOpen, setOpen] = useState(false);
+
+  const [activeSection, setActiveSection] = useState("");
+
+  const sectionRefs = {
+    turism: useRef(null),
+    professionalportrait: useRef(null),
+    familyportrait: useRef(null),
+    photography: useRef(null),
+    projects: useRef(null),
+  };
+
+  const handleIntersection = (entries) => {
+    console.log("entries", entries);
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setActiveSection(entry.target.id);
+      }
+    });
+  };
+
+  useEffect(() => {
+    console.log("use effect observer");
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver(
+      handleIntersection,
+      observerOptions
+    );
+
+    console.log("observer", observer);
+    console.log("sectionRefs", sectionRefs);
+
+    // Observe the sections
+    for (const key in sectionRefs) {
+      if (sectionRefs.hasOwnProperty(key) && sectionRefs[key].current) {
+        observer.observe(sectionRefs[key].current);
+      }
+    }
+
+    return () => {
+      console.log("use effect observer", observer.disconnect());
+      observer.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,40 +87,22 @@ const Navbar = ({ props }) => {
       <LangSection>
         <LangContainer>
           {" "}
-          <TitleDiv>
-            <NavbarTitle>Belén Miguens</NavbarTitle>
-            {props ? (
-              <>
-                {" "}
-                <NavbarSubtitle>{props}</NavbarSubtitle>
-              </>
-            ) : (
-              <>
-                {" "}
-                <NavbarSubtitle>TURISMO & FOTOGRAFÍA</NavbarSubtitle>
-              </>
-            )}
-          </TitleDiv>
+          <Link href="/">
+            <TitleDiv>
+              <NavbarTitle>Belén Miguens</NavbarTitle>
+
+              <NavbarSubtitle>TURISMO & FOTOGRAFÍA</NavbarSubtitle>
+            </TitleDiv>
+          </Link>
           {pathname === "/" ? (
             <>
               <Flags>
                 <div onClick={handleClick(locales[0])}>
-                  <Image
-                    src={spanish}
-                    alt="spanish"
-                    onClick={handleClick(locales[0])}
-                  />
+                  <LanguageText>SPA</LanguageText>
                 </div>
-
-                <div
-                  onClick={handleClick(locales[1])}
-                  style={{ marginTop: "4px", marginLeft: "10px" }}
-                >
-                  <Image
-                    src={english}
-                    alt="english"
-                    onClick={handleClick(locales[1])}
-                  />
+                <p>-</p>
+                <div onClick={handleClick(locales[1])}>
+                  <LanguageText>ENG</LanguageText>
                 </div>
               </Flags>
             </>
@@ -88,42 +115,56 @@ const Navbar = ({ props }) => {
       <NavbarSection>
         {width >= medium ? (
           <>
-            <Link href="/" style={{ textDecoration: "none" }}>
-              {" "}
-              <NavbarText>{translate("cero")}</NavbarText>
-            </Link>
             <Link href="/turism" style={{ textDecoration: "none" }}>
               {" "}
-              <NavbarText>{translate("one")}</NavbarText>
+              <NavbarText
+                className={activeSection === "turism" ? "active" : ""}
+              >
+                {translate("one")}
+              </NavbarText>
             </Link>
             <Link
               href="/professionalportrait"
               style={{ textDecoration: "none" }}
             >
               {" "}
-              <NavbarText>{translate("two")}</NavbarText>
+              <NavbarText
+                className={
+                  activeSection === "professionalportrait" ? "active" : ""
+                }
+              >
+                {translate("two")}
+              </NavbarText>
             </Link>
             <Link href="/familyportrait" style={{ textDecoration: "none" }}>
               {" "}
-              <NavbarText>{translate("three")}</NavbarText>
+              <NavbarText
+                className={activeSection === "familyportrait" ? "active" : ""}
+              >
+                {translate("three")}
+              </NavbarText>
             </Link>
             <Link href="/photography" style={{ textDecoration: "none" }}>
               {" "}
-              <NavbarText>{translate("four")}</NavbarText>
+              <NavbarText
+                className={activeSection === "photography" ? "active" : ""}
+              >
+                {translate("four")}
+              </NavbarText>
             </Link>
             <Link href="/projects" style={{ textDecoration: "none" }}>
               {" "}
-              <NavbarText>{translate("five")}</NavbarText>
-            </Link>
-            <Link href="/contact" style={{ textDecoration: "none" }}>
-              {" "}
-              <NavbarText>{translate("six")}</NavbarText>
+              <NavbarText
+                className={activeSection === "projects" ? "active" : ""}
+              >
+                {translate("five")}
+              </NavbarText>
             </Link>
           </>
         ) : (
           <>
             <Hamburger toggled={isOpen} toggle={setOpen} />
-            <Menu open={isOpen} setOpen={setOpen}/>
+            <Menu open={isOpen} setOpen={setOpen} />
           </>
         )}
       </NavbarSection>
@@ -135,7 +176,7 @@ export default Navbar;
 
 const NavbarSection = styled.div`
   width: 100%;
-  height: 30px;
+  height: 50px;
   background-color: #c29a00;
   color: #2b2b2b;
   display: flex;
@@ -164,8 +205,13 @@ const NavbarSection = styled.div`
 const NavbarText = styled.p`
   font-family: "Inter", sans-serif;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   color: #2b2b2b;
+
+  &.active {
+    font-weight: bold;
+    color: red;
+  }
 `;
 
 const LangSection = styled.div`
@@ -214,4 +260,11 @@ const Flags = styled.div`
   div {
     cursor: pointer;
   }
+`;
+
+const LanguageText = styled.h3`
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  text-transform: uppercase;
 `;

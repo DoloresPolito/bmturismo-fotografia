@@ -68,15 +68,15 @@ const CarouselComponent = () => {
         }
       >
         <Div>
-          <Image src={image1} />
+          <Image src={image1} alt="1"/>
           {/* <p className="legend">Legend 1</p> */}
         </Div>
         <Div>
-          <Image src={image2} />
+          <Image src={image2} alt="2"/>
           {/* <p className="legend">Legend 2</p> */}
         </Div>
         <Div>
-          <Image src={image3} />
+          <Image src={image3} alt="3"/>
           {/* <p className="legend">Legend 3</p> */}
         </Div>
       </Carousel>

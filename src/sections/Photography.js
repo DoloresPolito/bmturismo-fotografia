@@ -24,9 +24,10 @@ const Photography = () => {
             </Column2>
           </ImageContent>
           <TextContent>
+            <h6>{translate("text1")}</h6>
             <h6>{translate("text2")}</h6>
-            <h4> {translate("text1")}</h4>
-            <Button props="photography"/>
+            <h4> {translate("subtitle")}</h4>
+            <Button props="photography" />
           </TextContent>
         </Content>
       </PhotographySection>
@@ -41,6 +42,13 @@ const PhotographySection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 1000px) {
+    height: 100%;
+  }
+  @media screen and (max-width: 800px) {
+    width: 85%;
+    margin: 0 auto;
+  }
 `;
 
 const Content = styled.div`
@@ -48,6 +56,10 @@ const Content = styled.div`
   height: 393px;
   display: flex;
   margin-top: 40px;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
 `;
 
 const ImageContent = styled.div`
@@ -76,7 +88,7 @@ const Column2 = styled.div`
     background-color: lightgray;
   }
 
-  p{
+  p {
     font-family: "Inter", sans-serif;
     font-size: 12px;
     font-weight: 100;
@@ -92,6 +104,10 @@ const TextContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-left: 40px;
+  @media screen and (max-width: 1000px) {
+    margin-left: 0px;
+    margin-bottom: 40px;
+  }
 
   h4 {
     font-family: "Inter", sans-serif;
@@ -108,6 +124,11 @@ const TextContent = styled.div`
     text-align: justify;
     margin-top: 0px;
     line-height: 18px;
+    @media screen and (max-width: 1000px) {
+      max-width: 100%;
+    }
+
+
   }
 `;
 

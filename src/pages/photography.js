@@ -16,12 +16,14 @@ const Photography = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <Section>
-          <Navbar props={translate("title")} />
+        <section id="photography">
+          <Section>
+            <Navbar />
 
-          <Carousel />
-          <Footer />
-        </Section>
+            <Carousel />
+            <Footer />
+          </Section>
+        </section>
       </motion.div>
     </>
   );
