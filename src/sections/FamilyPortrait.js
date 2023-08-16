@@ -26,7 +26,7 @@ const FamilyPortrait = () => {
 
   return (
     <>
-      <FamilyPortraitSection>
+      <FamilyPortraitSection id="familyportrait">
         <Title props={translate("title")} />
 
         <Content>

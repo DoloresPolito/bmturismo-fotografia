@@ -8,7 +8,7 @@ const Projects = () => {
 
   return (
     <>
-      <ProjectsSection>
+      <ProjectsSection id="projects">
         <Title props={translate("title")} />
 
         <Content>

@@ -9,7 +9,7 @@ const Turism = () => {
 
   return (
     <>
-      <TurismSection>
+      <TurismSection id="turism">
         <TitleSection>
           <TitleContainer>
             <TitleText>{translate("title")}</TitleText>

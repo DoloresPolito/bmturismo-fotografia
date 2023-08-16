@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+// import Link from "next/link";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Hamburger from "hamburger-react";
 import Menu from "./Menu";
+import { Link as ScrollLink} from "react-scroll";
+import Link from "next/link";
 
 const Navbar = () => {
   const router = useRouter();
@@ -17,6 +19,8 @@ const Navbar = () => {
 
   const [width, setWidth] = useState(null);
   const [isOpen, setOpen] = useState(false);
+
+  // const [view, setView] = useState(null);
 
   const [activeSection, setActiveSection] = useState("");
 
@@ -75,51 +79,83 @@ const Navbar = () => {
       <NavbarSection>
         {width >= medium ? (
           <>
-            <Link href="/turism" style={{ textDecoration: "none" }}>
-              {" "}
-              <NavbarText
-                className={activeSection === "turism" ? "active" : ""}
-              >
-                {translate("one")}
-              </NavbarText>
-            </Link>
-            <Link
-              href="/professionalportrait"
-              style={{ textDecoration: "none" }}
-            >
-              {" "}
-              <NavbarText
-                className={
-                  activeSection === "professionalportrait" ? "active" : ""
-                }
-              >
-                {translate("two")}
-              </NavbarText>
-            </Link>
-            <Link href="/familyportrait" style={{ textDecoration: "none" }}>
-              {" "}
-              <NavbarText
-                className={activeSection === "familyportrait" ? "active" : ""}
-              >
-                {translate("three")}
-              </NavbarText>
-            </Link>
-            <Link href="/photography" style={{ textDecoration: "none" }}>
-              {" "}
-              <NavbarText
-                className={activeSection === "photography" ? "active" : ""}
-              >
-                {translate("four")}
-              </NavbarText>
-            </Link>
-            <Link href="/projects" style={{ textDecoration: "none" }}>
-              {" "}
-              <NavbarText
-                className={activeSection === "projects" ? "active" : ""}
-              >
-                {translate("five")}
-              </NavbarText>
-            </Link>
+            {activeSection === "" ? (
+              <>
+                <ScrollLink
+                  to="turism"
+                  spy={true}
+                  smooth={true}
+                  offset={10}
+                  duration={800}
+                >
+                  <NavbarText
+                    className={activeSection === "turism" ? "active" : ""}
+                  >
+                    {translate("one")}
+                  </NavbarText>
+                </ScrollLink>
+                <ScrollLink
+                  to="professionalportrait"
+                  spy={true}
+                  smooth={true}
+                  offset={10}
+                  duration={800}
+                >
+                  <NavbarText
+                    className={
+                      activeSection === "professionalportrait" ? "active" : ""
+                    }
+                  >
+                    {translate("two")}
+                  </NavbarText>
+                </ScrollLink>
+                <ScrollLink
+                  to="familyportrait"
+                  spy={true}
+                  smooth={true}
+                  offset={10}
+                  duration={800}
+                >
+                  <NavbarText
+                    className={
+                      activeSection === "familyportrait" ? "active" : ""
+                    }
+                  >
+                    {translate("three")}
+                  </NavbarText>
+                </ScrollLink>
+                <ScrollLink
+                  to="photography"
+                  spy={true}
+                  smooth={true}
+                  offset={10}
+                  duration={800}
+                >
+                  <NavbarText
+                    className={activeSection === "photography" ? "active" : ""}
+                  >
+                    {translate("four")}
+                  </NavbarText>
+                </ScrollLink>
+                <ScrollLink
+                  to="projects"
+                  spy={true}
+                  smooth={true}
+                  offset={10}
+                  duration={800}
+                >
+                  <NavbarText
+                    className={activeSection === "projects" ? "active" : ""}
+                  >
+                    {translate("five")}
+                  </NavbarText>
+                </ScrollLink>
+              </>
+            ) : (
+              <>
+                <p>en proceso</p>
+              </>
+            )}
           </>
         ) : (
           <>
@@ -167,6 +203,7 @@ const NavbarText = styled.p`
   font-size: 14px;
   font-weight: 400;
   color: #2b2b2b;
+  cursor: pointer;
 
   &.active {
     font-weight: 800;

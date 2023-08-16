@@ -8,7 +8,7 @@ const ProfessionalPortrait = () => {
 
   return (
     <>
-      <ProfessionalPortraitSection>
+      <ProfessionalPortraitSection id="professionalportrait">
         <Title props={translate("title")} />
         <Content>
           <ImageContent></ImageContent>
