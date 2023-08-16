@@ -58,11 +58,11 @@ const Navbar = () => {
             <>
               <Flags>
                 <div onClick={handleClick(locales[0])}>
-                  <LanguageText>SPA</LanguageText>
+                  <LanguageText>ESPAÑOL</LanguageText>
                 </div>
                 <p>-</p>
                 <div onClick={handleClick(locales[1])}>
-                  <LanguageText>ENG</LanguageText>
+                  <LanguageText>ENGLISH</LanguageText>
                 </div>
               </Flags>
             </>

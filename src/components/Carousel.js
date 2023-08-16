@@ -6,20 +6,15 @@ import image2 from "../../public/assets/pictures/2.JPG";
 import image3 from "../../public/assets/pictures/3.JPG";
 import Image from "next/image";
 import styled from "styled-components";
-
 import leftArrowImage from "../../public/assets/icons/back.png";
 import rightArrowImage from "../../public/assets/icons/foward.png";
 
 const CarouselComponent = () => {
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const handleThumbnailClick = (index) => {
-    setSelectedImageIndex(index);
-  };
   return (
     <CarouselSection>
       <Carousel
-        selectedItem={selectedImageIndex}
+      
         showThumbs={false}
         showStatus={false}
 
@@ -119,6 +114,9 @@ const Div = styled.div`
   height: 500px;
   width: 60%;
   margin: 0 auto;
+
+  height: auto;
+  width: auto;
 
   img {
     height: 100%;
