@@ -11,7 +11,7 @@ import img1big from "../../public/assets/pictures/indexcarousel/10x4/1.jpg"
 import img2big from "../../public/assets/pictures/indexcarousel/10x4/2.jpg"
 import img3big from "../../public/assets/pictures/indexcarousel/10x4/3.jpg"
 import img4big from "../../public/assets/pictures/indexcarousel/10x4/4.jpg"
-import img5big from "../../public/assets/pictures/indexcarousel/10x4/5.jpg"
+
 
 import Image from "next/image";
 import styled from "styled-components";
@@ -104,9 +104,7 @@ const BigCarousel = () => {
           <Div>
           <Image src={width > 1000 ? img4big : width > 600 ? image1 : image3} alt="1" />
           </Div>
-          <Div>
-          <Image src={width > 1000 ? img5big : width > 600 ? image1 : image3} alt="1" />
-          </Div>
+    
         </Carousel>
       </CarouselSection>
     </>
