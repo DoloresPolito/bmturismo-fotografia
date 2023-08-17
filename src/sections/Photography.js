@@ -88,17 +88,14 @@ const PhotographySection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @media screen and (max-width: 1000px) {
 
     width: 90%;
-    margin: 0 auto;
+    margin: 50px auto;
     height: 100%;
   }
-  /* @media screen and (max-width: 800px) {
-    width: 85%;
-    margin: 0 auto;
-    height: auto;
-  } */
+
 `;
 
 const Content = styled.div`

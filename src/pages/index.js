@@ -6,9 +6,7 @@ import ProfessionalPortrait from "../sections/ProfessionalPortrait";
 import Photography from "../sections/Photography";
 import Turism from "../sections/Turism";
 import { motion } from "framer-motion";
-import About from "../sections/About";
 import Projects from "../sections/Projects";
-// import Carousel from "../components/Carousel";
 import BigCarousel from "../components/BigCarousel";
 
 const Home = () => {
@@ -22,7 +20,6 @@ const Home = () => {
       >
         <Navbar />
         <BigCarousel/>
-        {/* <About/> */}
         <Turism />
         <Photography />
         {/* <ProfessionalPortrait /> */}

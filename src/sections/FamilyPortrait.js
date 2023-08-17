@@ -71,11 +71,12 @@ const FamilyPortraitSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 
   @media screen and (max-width: 1000px) {
     height: auto;
     width: 90%;
-    margin: 0 auto;
+    margin: 50px auto;
   }
 `;
 

@@ -68,16 +68,13 @@ const TurismSection = styled.div`
   justify-content: center;
   align-items: center;
 
+
   @media screen and (max-width: 1000px) {
     height: auto;
     width: 90%;
-    margin: 0 auto;
+    margin: 40px auto;
   }
-  /* @media screen and (max-width: 740px) {
-    width: 85%;
-    margin: 0 auto;
-    height: auto;
-  } */
+
 `;
 
 const TitleSection = styled.div`

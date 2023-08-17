@@ -57,7 +57,9 @@ const Navbar = () => {
             </TitleDiv>
           </Link>
           {pathname === "/" ? (
+            
             <>
+            {width > 630 ? (<>
               <Flags>
                 <div onClick={handleClick(locales[0])}>
                   <LanguageText>ESPAÑOL</LanguageText>
@@ -67,6 +69,8 @@ const Navbar = () => {
                   <LanguageText>ENGLISH</LanguageText>
                 </div>
               </Flags>
+            </>) : (<></>)}
+              
             </>
           ) : (
             <></>
@@ -271,4 +275,10 @@ const LanguageText = styled.h3`
   font-weight: 500;
   font-size: 17px;
   text-transform: uppercase;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 13px;
+  }
+
+
 `;

@@ -30,6 +30,7 @@ const ProfessionalPortraitSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
   @media screen and (max-width: 1000px) {
     height: 100%;
   }

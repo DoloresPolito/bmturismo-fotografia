@@ -20,8 +20,9 @@ const TitleSection = styled.div`
 `;
 const TitleContainer = styled.div`
   width: 95%;
-  height: 65px;
+  height: auto;
   border-bottom: 3px solid #c29a00;
+
 `;
 
 const TitleText = styled.h2`
@@ -30,6 +31,7 @@ const TitleText = styled.h2`
   font-weight: 100;
   color: #2b2b2b;
   text-transform: uppercase;
+margin-bottom: 3px;
 `;
 
 export default Title;
