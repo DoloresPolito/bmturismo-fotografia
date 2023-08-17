@@ -51,7 +51,20 @@ const Menu = ({ open, setOpen }) => {
               {translate("one")}
             </NavLink>
           </ScrollLink>
-
+          <ScrollLink
+            to="photography"
+            spy={true}
+            smooth={true}
+            offset={10}
+            duration={800}
+            onClick={() => handleClose()}
+          >
+            <NavLink
+              className={activeSection === "photography" ? "active" : ""}
+            >
+              {translate("four")}
+            </NavLink>
+          </ScrollLink>
           <ScrollLink
             to="professionalportrait"
             spy={true}
@@ -85,20 +98,7 @@ const Menu = ({ open, setOpen }) => {
             </NavLink>
           </ScrollLink>
 
-          <ScrollLink
-            to="photography"
-            spy={true}
-            smooth={true}
-            offset={10}
-            duration={800}
-            onClick={() => handleClose()}
-          >
-            <NavLink
-              className={activeSection === "photography" ? "active" : ""}
-            >
-              {translate("four")}
-            </NavLink>
-          </ScrollLink>
+         
           <ScrollLink
             to="projects"
             spy={true}

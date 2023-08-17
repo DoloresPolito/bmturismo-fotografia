@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 // import Link from "next/link";
 import styled from "styled-components";
 import { useRouter } from "next/router";
@@ -53,7 +53,7 @@ const Navbar = () => {
             <TitleDiv>
               <NavbarTitle>Belén Miguens</NavbarTitle>
 
-              <NavbarSubtitle>TURISMO & FOTOGRAFÍA</NavbarSubtitle>
+              <NavbarSubtitle>   {translate("cero")}</NavbarSubtitle>
             </TitleDiv>
           </Link>
           {pathname === "/" ? (
@@ -93,6 +93,19 @@ const Navbar = () => {
                   </NavbarText>
                 </ScrollLink>
                 <ScrollLink
+                  to="photography"
+                  spy={true}
+                  smooth={true}
+                  offset={10}
+                  duration={800}
+                >
+                  <NavbarText
+                    className={activeSection === "photography" ? "active" : ""}
+                  >
+                    {translate("four")}
+                  </NavbarText>
+                </ScrollLink>
+                <ScrollLink
                   to="professionalportrait"
                   spy={true}
                   smooth={true}
@@ -122,19 +135,7 @@ const Navbar = () => {
                     {translate("three")}
                   </NavbarText>
                 </ScrollLink>
-                <ScrollLink
-                  to="photography"
-                  spy={true}
-                  smooth={true}
-                  offset={10}
-                  duration={800}
-                >
-                  <NavbarText
-                    className={activeSection === "photography" ? "active" : ""}
-                  >
-                    {translate("four")}
-                  </NavbarText>
-                </ScrollLink>
+               
                 <ScrollLink
                   to="projects"
                   spy={true}

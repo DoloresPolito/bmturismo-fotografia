@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Title from "../components/Title";
 import { useTranslation } from "next-i18next";
@@ -5,6 +6,20 @@ import Button from "../components/Button";
 
 const Projects = () => {
   const { t: translate } = useTranslation("projects");
+  const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -13,17 +28,25 @@ const Projects = () => {
 
         <Content>
           <TextContent>
-            <h6>{translate("text1")}</h6>
-            <h6>{translate("text2")}</h6>
-            <h6>{translate("text3")}</h6>
-
+            <div>
+              <h6>{translate("text1")}</h6>
+              <h6>{translate("text2")}</h6>
+              <h6>{translate("text3")}</h6>
+            </div>
             <h4>{translate("subtitle")}</h4>
 
             <Button props="/projects" />
           </TextContent>
 
           <ImageContent>
-            <Column1></Column1>
+            {width > 740 ? (
+              <>
+                {" "}
+                <Column1></Column1>
+              </>
+            ) : (
+              <></>
+            )}
 
             <Column2>
               <div></div>
@@ -71,8 +94,16 @@ const ImageContent = styled.div`
   background-color: white;
   display: flex;
   flex-direction: row;
+
   @media screen and (max-width: 980px) {
     flex: 0%;
+    /* background-color:blue;
+    justify-content: space-between;
+    padding: 0px 50px; */
+  }
+  @media screen and (max-width: 740px) {
+
+
   }
 `;
 
@@ -88,6 +119,9 @@ const Column2 = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   padding-left: 30px;
+  @media screen and (max-width: 740px) {
+    padding-left: 0px;
+  }
 
   div {
     height: 284px;
@@ -116,11 +150,18 @@ const TextContent = styled.div`
     margin-top: 40px;
     margin-bottom: 40px;
   }
+  /* div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    background-color: red;
+    margin: 0 !important;
+  } */
 
   h4 {
     font-family: "Inter", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     max-width: 240px;
     margin-top: 0px;
   }
@@ -128,11 +169,12 @@ const TextContent = styled.div`
   h6 {
     font-family: "Inter", sans-serif;
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 400;
     text-align: justify;
     margin-top: 0px;
     line-height: 18px;
     max-width: 600px;
+    margin: 0 0 18px 0;
     @media screen and (max-width: 980px) {
       max-width: 100%;
     }

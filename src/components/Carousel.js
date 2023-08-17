@@ -22,7 +22,7 @@ const CarouselComponent = () => {
         slideNumber={true}
         autoPlay={true}
         renderArrowPrev={(onClickHandler, hasPrev, label) =>
-          hasPrev && (
+          // hasPrev && (
             <button
               type="button"
               onClick={onClickHandler}
@@ -39,10 +39,10 @@ const CarouselComponent = () => {
             >
               <Image src={leftArrowImage} alt="Flecha Izquierda" />
             </button>
-          )
+          // )
         }
         renderArrowNext={(onClickHandler, hasNext, label) =>
-          hasNext && (
+          // hasNext && (
             <button
               type="button"
               onClick={onClickHandler}
@@ -59,7 +59,7 @@ const CarouselComponent = () => {
             >
               <Image src={rightArrowImage} alt="Flecha Derecha" />
             </button>
-          )
+          // )
         }
       >
         <Div>

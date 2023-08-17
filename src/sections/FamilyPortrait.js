@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Title from "../components/Title";
 import { useTranslation } from "next-i18next";
@@ -37,13 +37,26 @@ const FamilyPortrait = () => {
           </TextContent>
 
           <ImageContent>
-            {width > medium ? (<>
-              <Image1></Image1>
-            <Image2></Image2>
-            <Image3></Image3></>) : (<>
-              <Image1></Image1>
-            <Image2></Image2></>)}
-        
+            {width > medium ? (
+              <>
+                <Image1></Image1>
+                <Image2></Image2>
+                <Image3></Image3>
+              </>
+            ) : width > 740 ? (
+              <>
+                <>
+                  <Image1></Image1>
+                  <Image2></Image2>
+                </>
+              </>
+            ) : (
+              <>
+                <>
+                  <Image1></Image1>
+                </>
+              </>
+            )}
           </ImageContent>
         </Content>
       </FamilyPortraitSection>
@@ -111,7 +124,7 @@ const TextContent = styled.div`
   h4 {
     font-family: "Inter", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     max-width: 240px;
     margin-top: 0px;
   }
@@ -119,7 +132,7 @@ const TextContent = styled.div`
   h6 {
     font-family: "Inter", sans-serif;
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 400;
     line-height: 18px;
     margin-top: 0px;
 

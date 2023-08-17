@@ -1,11 +1,26 @@
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Title from "../components/Title";
 import { useTranslation } from "next-i18next";
 import Button from "../components/Button";
-import {Container} from "../styles/styles"
+import { Container } from "../styles/styles";
 
 const Turism = () => {
   const { t: translate } = useTranslation("turism");
+  const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -18,17 +33,33 @@ const Turism = () => {
 
         <Content>
           <TextContent>
+            <div>
             <h6>{translate("text1")}</h6>
             <h6>{translate("text2")}</h6>
+            </div>
+         
             <h4> {translate("subtitle")}</h4>
             <Button props="photography" />
           </TextContent>
           <ImageContent>
-            <Column1></Column1>
 
+          {width > 900 ? (
+              <>
+            <Column1></Column1>
             <Column2>
               <div></div>
             </Column2>
+              </>
+            ) : (
+              <>
+            <Column2>
+              <div></div>
+            </Column2>
+              </>
+            )}
+           
+
+     
           </ImageContent>
         </Content>
       </TurismSection>
@@ -44,7 +75,7 @@ const TurismSection = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 900px) {
     height: auto;
   }
   @media screen and (max-width: 800px) {
@@ -79,7 +110,7 @@ const Content = styled.div`
   height: 380px;
   display: flex;
   margin-top: 40px;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 740px) {
     flex-direction: column-reverse;
     height: auto;
   }
@@ -105,6 +136,11 @@ const Column2 = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   padding-left: 30px;
+  @media screen and (max-width: 740px) {
+    padding-left: 0px;
+  }
+
+
 
   div {
     height: 380px;
@@ -128,8 +164,8 @@ const TextContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-right: 40px;
-  @media screen and (max-width: 1000px) {
-    margin-top: 40px;
+  @media screen and (max-width: 900px) {
+    /* margin-top: 40px; */
     max-width: 100%;
     margin-right: 0px;
   }
@@ -145,11 +181,12 @@ const TextContent = styled.div`
   h6 {
     font-family: "Inter", sans-serif;
     font-size: 14px;
-    font-weight: 100;
+    /* font-weight: 100; */
     text-align: justify;
     margin-top: 0px;
     line-height: 18px;
-    font-weight: 500;
+    font-weight: 400;
+    margin: 0 0 18px 0;
   }
 `;
 

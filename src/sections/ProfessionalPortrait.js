@@ -30,6 +30,10 @@ const ProfessionalPortraitSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 1000px) {
+    height: 100%;
+  }
+
   @media screen and (max-width: 800px) {
     width: 85%;
     margin: 0 auto;
@@ -41,11 +45,23 @@ const Content = styled.div`
   height: 375px;
   display: flex;
   margin-top: 40px;
+  @media screen and (max-width: 1000px) {
+    height: auto;
+    flex-direction: column-reverse;
+  }
 `;
 
 const ImageContent = styled.div`
   flex: 50%;
   background-color: lightgray;
+  @media screen and (max-width: 1000px) {
+    flex: 0%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: red;
+  }
+
+
 `;
 const TextContent = styled.div`
   flex: 50%;
@@ -53,11 +69,16 @@ const TextContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-left: 40px;
+  @media screen and (max-width: 1000px) {
+    flex: 0%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 
   h4 {
     font-family: "Inter", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     max-width: 240px;
     margin-top: 0px;
   }
@@ -65,10 +86,13 @@ const TextContent = styled.div`
   h6 {
     font-family: "Inter", sans-serif;
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 400;
     text-align: justify;
     margin-top: -10px;
     line-height: 18px;
+    @media screen and (max-width: 1000px) {
+      max-width: 100%;
+    }
   }
 `;
 
