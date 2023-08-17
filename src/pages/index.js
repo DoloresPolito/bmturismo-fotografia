@@ -25,7 +25,7 @@ const Home = () => {
         {/* <About/> */}
         <Turism />
         <Photography />
-        <ProfessionalPortrait />
+        {/* <ProfessionalPortrait /> */}
         <FamilyPortrait />
 
   

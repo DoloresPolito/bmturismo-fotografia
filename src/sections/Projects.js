@@ -39,7 +39,7 @@ const Projects = () => {
           </TextContent>
 
           <ImageContent>
-            {width > 740 ? (
+            {width > 1000 ? (
               <>
                 {" "}
                 <Column1></Column1>
@@ -69,13 +69,16 @@ const ProjectsSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 980px) {
-    height: 100%;
-  }
-  @media screen and (max-width: 800px) {
-    width: 85%;
+
+  @media screen and (max-width: 1000px) {
+    height: auto;
+    width: 90%;
     margin: 0 auto;
   }
+  /* @media screen and (max-width: 800px) {
+    width: 85%;
+    margin: 0 auto;
+  } */
 `;
 
 const Content = styled.div`
@@ -83,9 +86,14 @@ const Content = styled.div`
   height: 360px;
   display: flex;
   margin-top: 40px;
-  @media screen and (max-width: 980px) {
+  /* @media screen and (max-width: 980px) {
     height: auto;
     flex-direction: column-reverse;
+  } */
+  @media screen and (max-width: 740px) {
+    flex-direction: column-reverse;
+    height: auto;
+    margin-bottom: 40px;
   }
 `;
 
@@ -96,7 +104,7 @@ const ImageContent = styled.div`
   flex-direction: row;
 
   @media screen and (max-width: 980px) {
-    flex: 0%;
+    /* flex: 0%; */
     /* background-color:blue;
     justify-content: space-between;
     padding: 0px 50px; */
@@ -145,11 +153,11 @@ const TextContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-right: 40px;
-  @media screen and (max-width: 980px) {
+  /* @media screen and (max-width: 980px) {
     flex: 0%;
     margin-top: 40px;
     margin-bottom: 40px;
-  }
+  } */
   /* div {
     display: flex;
     flex-direction: column;
@@ -175,9 +183,9 @@ const TextContent = styled.div`
     line-height: 18px;
     max-width: 600px;
     margin: 0 0 18px 0;
-    @media screen and (max-width: 980px) {
+    /* @media screen and (max-width: 980px) {
       max-width: 100%;
-    }
+    } */
   }
 `;
 

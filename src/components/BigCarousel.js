@@ -4,6 +4,15 @@ import { Carousel } from "react-responsive-carousel";
 import image1 from "../../public/assets/pictures/indexcarousel/10x7.jpg";
 import image2 from "../../public/assets/pictures/indexcarousel/proporcion 10x4.jpg";
 import image3 from "../../public/assets/pictures/indexcarousel/10x11.jpg";
+
+
+
+import img1big from "../../public/assets/pictures/indexcarousel/10x4/1.jpg"
+import img2big from "../../public/assets/pictures/indexcarousel/10x4/2.jpg"
+import img3big from "../../public/assets/pictures/indexcarousel/10x4/3.jpg"
+import img4big from "../../public/assets/pictures/indexcarousel/10x4/4.jpg"
+import img5big from "../../public/assets/pictures/indexcarousel/10x4/5.jpg"
+
 import Image from "next/image";
 import styled from "styled-components";
 import leftArrowImage from "../../public/assets/icons/back.png";
@@ -84,13 +93,19 @@ const BigCarousel = () => {
           }
         >
           <Div>
-            <Image src={width > 1000 ? image2 : width > 600 ? image1 : image3} alt="1" />
+            <Image src={width > 1000 ? img1big : width > 600 ? image1 : image3} alt="1" />
           </Div>
           <Div>
-          <Image src={width > 1000 ? image2 : width > 600 ? image1 : image3} alt="1" />
+          <Image src={width > 1000 ? img2big : width > 600 ? image1 : image3} alt="1" />
           </Div>
           <Div>
-          <Image src={width > 1000 ? image2 : width > 600 ? image1 : image3} alt="1" />
+          <Image src={width > 1000 ? img3big : width > 600 ? image1 : image3} alt="1" />
+          </Div>
+          <Div>
+          <Image src={width > 1000 ? img4big : width > 600 ? image1 : image3} alt="1" />
+          </Div>
+          <Div>
+          <Image src={width > 1000 ? img5big : width > 600 ? image1 : image3} alt="1" />
           </Div>
         </Carousel>
       </CarouselSection>
@@ -103,6 +118,7 @@ const CarouselSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 70px;
 `;
 const Div = styled.div`
   height: auto;

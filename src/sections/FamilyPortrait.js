@@ -22,7 +22,7 @@ const FamilyPortrait = () => {
     };
   }, []);
 
-  const medium = 900;
+  const medium = 1200;
 
   return (
     <>
@@ -43,7 +43,7 @@ const FamilyPortrait = () => {
                 <Image2></Image2>
                 <Image3></Image3>
               </>
-            ) : width > 740 ? (
+            ) : width > 1000 ? (
               <>
                 <>
                   <Image1></Image1>
@@ -67,18 +67,14 @@ const FamilyPortrait = () => {
 const FamilyPortraitSection = styled.div`
   width: 100%;
   height: 80vh;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 1200px) {
-    height: 100%;
-  }
-
-  @media screen and (max-width: 800px) {
-    width: 85%;
+  @media screen and (max-width: 1000px) {
+    height: auto;
+    width: 90%;
     margin: 0 auto;
   }
 `;
@@ -90,7 +86,7 @@ const Content = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 40px;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 740px) {
     flex-direction: column-reverse;
     height: auto;
   }
@@ -101,11 +97,9 @@ const ImageContent = styled.div`
   display: flex;
   flex-direction: row;
   background-color: white;
-  @media screen and (max-width: 1200px) {
-    width: 100%;
-    justify-content: flex-start;
-    margin-left: -20px;
-  }
+
+
+
 `;
 const TextContent = styled.div`
   max-width: 300px;
@@ -113,12 +107,13 @@ const TextContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-right: 40px;
-
-  @media screen and (max-width: 1200px) {
+  
+  @media screen and (max-width: 740px) {
     margin-top: 40px;
     margin-right: 0px !important;
     margin-bottom: 40px;
     max-width: 800px !important;
+
   }
 
   h4 {
@@ -136,9 +131,7 @@ const TextContent = styled.div`
     line-height: 18px;
     margin-top: 0px;
 
-    @media screen and (max-width: 1200px) {
-      /* max-width: 800px !important; */
-    }
+
   }
 `;
 
@@ -147,6 +140,9 @@ const Image1 = styled.div`
   height: 375px;
   width: 272px;
   margin: 0 20px;
+  @media screen and (max-width: 740px) {
+    margin-left: 0px;
+  }
 `;
 
 const Image2 = styled.div`

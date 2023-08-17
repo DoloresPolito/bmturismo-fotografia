@@ -34,32 +34,25 @@ const Turism = () => {
         <Content>
           <TextContent>
             <div>
-            <h6>{translate("text1")}</h6>
-            <h6>{translate("text2")}</h6>
+              <h6>{translate("text1")}</h6>
+              <h6>{translate("text2")}</h6>
             </div>
-         
+
             <h4> {translate("subtitle")}</h4>
             <Button props="photography" />
           </TextContent>
           <ImageContent>
-
-          {width > 900 ? (
+            {width > 1000 ? (
               <>
-            <Column1></Column1>
-            <Column2>
-              <div></div>
-            </Column2>
+                <Column1></Column1>
               </>
             ) : (
-              <>
+              <></>
+            )}
+
             <Column2>
               <div></div>
             </Column2>
-              </>
-            )}
-           
-
-     
           </ImageContent>
         </Content>
       </TurismSection>
@@ -75,13 +68,16 @@ const TurismSection = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1000px) {
     height: auto;
-  }
-  @media screen and (max-width: 800px) {
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
   }
+  /* @media screen and (max-width: 740px) {
+    width: 85%;
+    margin: 0 auto;
+    height: auto;
+  } */
 `;
 
 const TitleSection = styled.div`
@@ -110,6 +106,10 @@ const Content = styled.div`
   height: 380px;
   display: flex;
   margin-top: 40px;
+
+  @media screen and (max-width: 1000px) {
+    height: auto;
+  }
   @media screen and (max-width: 740px) {
     flex-direction: column-reverse;
     height: auto;
@@ -117,7 +117,7 @@ const Content = styled.div`
 `;
 
 const ImageContent = styled.div`
-  flex: 50%;
+  /* flex: 50%; */
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -133,14 +133,12 @@ const Column1 = styled.div`
 const Column2 = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between !important;
   align-items: flex-end;
-  padding-left: 30px;
+  padding-left: 40px;
   @media screen and (max-width: 740px) {
     padding-left: 0px;
   }
-
-
 
   div {
     height: 380px;
@@ -164,10 +162,9 @@ const TextContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-right: 40px;
-  @media screen and (max-width: 900px) {
-    /* margin-top: 40px; */
+  @media screen and (max-width: 740px) {
+    margin-top: 40px;
     max-width: 100%;
-    margin-right: 0px;
   }
 
   h4 {

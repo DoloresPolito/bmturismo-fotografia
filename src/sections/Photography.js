@@ -47,7 +47,7 @@ const Photography = () => {
             </Column2> */}
 
 
-            {width > 900 ? (
+            {width > 1000 ? (
               <>
             <Column1></Column1>
             <Column2>
@@ -60,13 +60,8 @@ const Photography = () => {
               </>
             ) : (
               <>
-            <Column2>
-            <div></div>
-              <p>
-                “tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-                ut laoreet”
-              </p>
-            </Column2>
+                <Column1></Column1>
+            
               </>
             )}
            
@@ -94,12 +89,16 @@ const PhotographySection = styled.div`
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 1000px) {
+
+    width: 90%;
+    margin: 0 auto;
     height: 100%;
   }
-  @media screen and (max-width: 800px) {
+  /* @media screen and (max-width: 800px) {
     width: 85%;
     margin: 0 auto;
-  }
+    height: auto;
+  } */
 `;
 
 const Content = styled.div`
@@ -107,9 +106,9 @@ const Content = styled.div`
   height: 393px;
   display: flex;
   margin-top: 40px;
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 740px) {
     flex-direction: column-reverse;
-    height: 100%;
+    height: auto;
   }
 `;
 
@@ -153,14 +152,20 @@ const Column2 = styled.div`
   }
 `;
 const TextContent = styled.div`
-  flex: 50%;
+  /* flex: 50%; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 40px;
+  margin-left: 40px ;
   @media screen and (max-width: 1000px) {
-    margin-left: 0px;
+    /* margin-left: 0px; */
     margin-bottom: 40px;
+    height: auto;
+  }
+
+  @media screen and (max-width: 740px) {
+    margin-left: 0px ;
+    height: auto;
   }
 
   h4 {
