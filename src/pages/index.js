@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -10,6 +11,33 @@ import Projects from "../sections/Projects";
 import BigCarousel from "../components/BigCarousel";
 
 const Home = () => {
+  // useEffect(() => {
+  //   // Escuchar los clics en los enlaces con anclas
+  //   const handleAnchorClick = (event) => {
+  //     const hash = event.target.hash;
+  //     if (hash) {
+  //       event.preventDefault();
+  //       const targetElement = document.querySelector(hash);
+  //       if (targetElement) {
+  //         targetElement.scrollIntoView({ behavior: "smooth" });
+  //       }
+  //     }
+  //   };
+
+  //   // Agregar el evento de clic a todos los enlaces con anclas
+  //   const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  //   anchorLinks.forEach((link) => {
+  //     link.addEventListener("click", handleAnchorClick);
+  //   });
+
+  //   return () => {
+  //     // Limpiar el evento al desmontar el componente
+  //     anchorLinks.forEach((link) => {
+  //       link.removeEventListener("click", handleAnchorClick);
+  //     });
+  //   };
+  // }, []);
+
   return (
     <>
       <motion.div
@@ -19,14 +47,12 @@ const Home = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <Navbar />
-        <BigCarousel/>
+        <BigCarousel />
         <Turism />
         <Photography />
         {/* <ProfessionalPortrait /> */}
         <FamilyPortrait />
-
-  
-        <Projects/>
+        <Projects />
         <Footer />
       </motion.div>
     </>
@@ -43,7 +69,7 @@ export async function getStaticProps({ locale }) {
         "photography",
         "navbar",
         "about",
-        "projects"
+        "projects",
       ])),
     },
   };

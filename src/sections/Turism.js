@@ -39,7 +39,7 @@ const Turism = () => {
             </div>
 
             <h4> {translate("subtitle")}</h4>
-            <Button props="photography" />
+            <Button props="turism" />
           </TextContent>
           <ImageContent>
             {width > 1000 ? (
@@ -68,13 +68,11 @@ const TurismSection = styled.div`
   justify-content: center;
   align-items: center;
 
-
   @media screen and (max-width: 1000px) {
     height: auto;
     width: 90%;
     margin: 40px auto;
   }
-
 `;
 
 const TitleSection = styled.div`

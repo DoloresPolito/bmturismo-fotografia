@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Hamburger from "hamburger-react";
 import Menu from "./Menu";
-import { Link as ScrollLink} from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -53,24 +53,26 @@ const Navbar = () => {
             <TitleDiv>
               <NavbarTitle>Belén Miguens</NavbarTitle>
 
-              <NavbarSubtitle>   {translate("cero")}</NavbarSubtitle>
+              <NavbarSubtitle> {translate("cero")}</NavbarSubtitle>
             </TitleDiv>
           </Link>
           {pathname === "/" ? (
-            
             <>
-            {width > 630 ? (<>
-              <Flags>
-                <div onClick={handleClick(locales[0])}>
-                  <LanguageText>ESPAÑOL</LanguageText>
-                </div>
-                <p>-</p>
-                <div onClick={handleClick(locales[1])}>
-                  <LanguageText>ENGLISH</LanguageText>
-                </div>
-              </Flags>
-            </>) : (<></>)}
-              
+              {width > 630 ? (
+                <>
+                  <Flags>
+                    <div onClick={handleClick(locales[0])}>
+                      <LanguageText>ESPAÑOL</LanguageText>
+                    </div>
+                    <p>-</p>
+                    <div onClick={handleClick(locales[1])}>
+                      <LanguageText>ENGLISH</LanguageText>
+                    </div>
+                  </Flags>
+                </>
+              ) : (
+                <></>
+              )}
             </>
           ) : (
             <></>
@@ -139,7 +141,7 @@ const Navbar = () => {
                     {translate("three")}
                   </NavbarText>
                 </ScrollLink>
-               
+
                 <ScrollLink
                   to="projects"
                   spy={true}
@@ -156,7 +158,50 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <p>en proceso</p>
+                <Link href="/#turism">
+                  {" "}
+                  <NavbarText
+                    className={activeSection === "turism" ? "active" : ""}
+                  >
+                    {translate("one")}
+                  </NavbarText>
+                </Link>
+                <Link href="/#photography">
+                  {" "}
+                  <NavbarText
+                    className={activeSection === "photography" ? "active" : ""}
+                  >
+                    {translate("four")}
+                  </NavbarText>
+                </Link>
+                <Link href="/#proffesionalportrait">
+                  {" "}
+                  <NavbarText
+                    className={
+                      activeSection === "professionalportrait" ? "active" : ""
+                    }
+                  >
+                    {translate("two")}
+                  </NavbarText>
+                </Link>
+                <Link href="/#familyportrait">
+                  {" "}
+                  <NavbarText
+                    className={
+                      activeSection === "familyportrait" ? "active" : ""
+                    }
+                  >
+                    {translate("three")}
+                  </NavbarText>
+                </Link>
+                <Link href="/#projects">
+                  {" "}
+                  <NavbarText
+                    className={activeSection === "projects" ? "active" : ""}
+                  >
+                    {translate("five")}
+                  </NavbarText>
+                </Link>
               </>
             )}
           </>
@@ -279,6 +324,4 @@ const LanguageText = styled.h3`
   @media screen and (max-width: 1000px) {
     font-size: 13px;
   }
-
-
 `;
