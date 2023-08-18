@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import Link from "next/link";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -46,6 +45,7 @@ const Navbar = () => {
 
   return (
     <>
+    <TopSection>
       <LangSection>
         <LangContainer>
           {" "}
@@ -89,7 +89,7 @@ const Navbar = () => {
                   to="turism"
                   spy={true}
                   smooth={true}
-                  offset={10}
+                  offset={70}
                   duration={800}
                 >
                   <NavbarText
@@ -102,7 +102,7 @@ const Navbar = () => {
                   to="photography"
                   spy={true}
                   smooth={true}
-                  offset={10}
+                  // offset={10}
                   duration={800}
                 >
                   <NavbarText
@@ -115,7 +115,7 @@ const Navbar = () => {
                   to="professionalportrait"
                   spy={true}
                   smooth={true}
-                  offset={10}
+                  // offset={10}
                   duration={800}
                 >
                   <NavbarText
@@ -130,7 +130,7 @@ const Navbar = () => {
                   to="familyportrait"
                   spy={true}
                   smooth={true}
-                  offset={10}
+                  // offset={10}
                   duration={800}
                 >
                   <NavbarText
@@ -146,7 +146,7 @@ const Navbar = () => {
                   to="projects"
                   spy={true}
                   smooth={true}
-                  offset={10}
+                  // offset={10}
                   duration={800}
                 >
                   <NavbarText
@@ -212,12 +212,22 @@ const Navbar = () => {
           </>
         )}
       </NavbarSection>
+      </TopSection>
     </>
   );
 };
 
 export default Navbar;
 
+
+const TopSection = styled.div`
+display: flex;
+flex-direction: column;
+height: auto;
+width: 100%;
+
+
+`
 const NavbarSection = styled.div`
   width: 100%;
   height: 50px;
@@ -226,6 +236,7 @@ const NavbarSection = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
 
   @media screen and (max-width: 1200px) {
     justify-content: flex-end;
@@ -267,6 +278,7 @@ const LangSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* position:fixed; */
 
   @media screen and (max-width: 600px) {
     height: 190px;

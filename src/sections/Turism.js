@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Title from "../components/Title";
 import { useTranslation } from "next-i18next";
 import Button from "../components/Button";
-import { Container } from "../styles/styles";
+import Image from "next/image";
+
+import image1 from "../../public/assets/pictures/indexpage/turism/Turismo Inicial I.jpg";
+import image2 from "../../public/assets/pictures/indexpage/turism/Turismo Inicial II.jpg";
+
 
 const Turism = () => {
   const { t: translate } = useTranslation("turism");
@@ -44,14 +47,18 @@ const Turism = () => {
           <ImageContent>
             {width > 1000 ? (
               <>
-                <Column1></Column1>
+                <Column1>
+                  <Image src={image2} alt="2" />
+                </Column1>
               </>
             ) : (
               <></>
             )}
 
             <Column2>
-              <div></div>
+              <div>
+                <Image src={image1} alt="1" />
+              </div>
             </Column2>
           </ImageContent>
         </Content>
@@ -123,6 +130,10 @@ const Column1 = styled.div`
   background-color: lightgray;
   height: 253px;
   width: 233px;
+  img {
+    height: 253px;
+    width: 233px;
+  }
 `;
 
 const Column2 = styled.div`
@@ -139,6 +150,10 @@ const Column2 = styled.div`
     height: 380px;
     width: 340px;
     background-color: lightgray;
+    img {
+      height: 380px;
+      width: 340px;
+    }
   }
 
   p {

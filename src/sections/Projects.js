@@ -4,6 +4,12 @@ import Title from "../components/Title";
 import { useTranslation } from "next-i18next";
 import Button from "../components/Button";
 
+import Image from "next/image";
+
+import image1 from "../../public/assets/pictures/indexpage/projects/Sustentabilidad - Inicial I.jpg";
+import image2 from "../../public/assets/pictures/indexpage/projects/Sustentabilidad - Inicial II.jpg";
+
+
 const Projects = () => {
   const { t: translate } = useTranslation("projects");
   const [width, setWidth] = useState(null);
@@ -42,14 +48,18 @@ const Projects = () => {
             {width > 1000 ? (
               <>
                 {" "}
-                <Column1></Column1>
+                <Column1>
+                <Image src={image1} alt="1"/>
+                </Column1>
               </>
             ) : (
               <></>
             )}
 
             <Column2>
-              <div></div>
+              <div>   
+                 <Image src={image2} alt="2"/>
+              </div>
               <p>
                 “tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
                 ut laoreet”
@@ -106,6 +116,10 @@ const Column1 = styled.div`
   background-color: lightgray;
   height: 360px;
   width: 284px;
+  img{
+    height: 360px;
+  width: 284px;
+  }
 `;
 
 const Column2 = styled.div`
@@ -122,6 +136,10 @@ const Column2 = styled.div`
     height: 284px;
     width: 284px;
     background-color: lightgray;
+    img{
+      height: 284px;
+    width: 284px;
+  }
   }
 
   p {

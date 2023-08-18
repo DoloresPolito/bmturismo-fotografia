@@ -4,6 +4,12 @@ import Title from "../components/Title";
 import { useTranslation } from "next-i18next";
 import Button from "../components/Button";
 
+import Image from "next/image";
+
+import image1 from "../../public/assets/pictures/indexpage/portrait/Retrato familiar - Inicial I.jpg";
+import image2 from "../../public/assets/pictures/indexpage/portrait/Retrato familiar - Inicial II.jpg";
+import image3 from "../../public/assets/pictures/indexpage/portrait/Retrato Familiar.jpg";
+
 const FamilyPortrait = () => {
   const { t: translate } = useTranslation("familyportrait");
   const [width, setWidth] = useState(null);
@@ -39,21 +45,33 @@ const FamilyPortrait = () => {
           <ImageContent>
             {width > medium ? (
               <>
-                <Image1></Image1>
-                <Image2></Image2>
-                <Image3></Image3>
+                <Image1>
+                  <Image src={image1} alt="1" />
+                </Image1>
+                <Image2>
+                  <Image src={image2} alt="2" />
+                </Image2>
+                <Image3>
+                  <Image src={image3} alt="3" />
+                </Image3>
               </>
             ) : width > 1000 ? (
               <>
                 <>
-                  <Image1></Image1>
-                  <Image2></Image2>
+                  <Image1>
+                  <Image src={image1} alt="1" />
+                  </Image1>
+                  <Image2>
+                  <Image src={image2} alt="2" />
+                  </Image2>
                 </>
               </>
             ) : (
               <>
                 <>
-                  <Image1></Image1>
+                  <Image1>
+                  <Image src={image2} alt="2" />
+                  </Image1>
                 </>
               </>
             )}
@@ -98,9 +116,6 @@ const ImageContent = styled.div`
   display: flex;
   flex-direction: row;
   background-color: white;
-
-
-
 `;
 const TextContent = styled.div`
   max-width: 300px;
@@ -108,13 +123,12 @@ const TextContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-right: 40px;
-  
+
   @media screen and (max-width: 740px) {
     margin-top: 40px;
     margin-right: 0px !important;
     margin-bottom: 40px;
     max-width: 800px !important;
-
   }
 
   h4 {
@@ -131,8 +145,6 @@ const TextContent = styled.div`
     font-weight: 400;
     line-height: 18px;
     margin-top: 0px;
-
-
   }
 `;
 
@@ -144,6 +156,11 @@ const Image1 = styled.div`
   @media screen and (max-width: 740px) {
     margin-left: 0px;
   }
+
+  img {
+    height: 375px;
+    width: 272px;
+  }
 `;
 
 const Image2 = styled.div`
@@ -151,6 +168,10 @@ const Image2 = styled.div`
   height: 375px;
   width: 272px;
   margin: 0 20px;
+  img {
+    height: 375px;
+    width: 272px;
+  }
 `;
 
 const Image3 = styled.div`
@@ -158,6 +179,10 @@ const Image3 = styled.div`
   height: 375px;
   width: 272px;
   margin: 0 20px;
+  img {
+    height: 375px;
+    width: 272px;
+  }
 `;
 
 export default FamilyPortrait;

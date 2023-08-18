@@ -9,6 +9,7 @@ import Turism from "../sections/Turism";
 import { motion } from "framer-motion";
 import Projects from "../sections/Projects";
 import BigCarousel from "../components/BigCarousel";
+import NavbarFixed from "../components/NavbarFixed";
 
 const Home = () => {
   // useEffect(() => {
@@ -46,7 +47,8 @@ const Home = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <Navbar />
+        {/* <Navbar /> */}
+        <NavbarFixed/>
         <BigCarousel />
         <Turism />
         <Photography />

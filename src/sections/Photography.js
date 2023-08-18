@@ -3,6 +3,10 @@ import styled from "styled-components";
 import Title from "../components/Title";
 import { useTranslation } from "next-i18next";
 import Button from "../components/Button";
+import Image from "next/image";
+
+import image1 from "../../public/assets/pictures/indexpage/photography/Clases - Inicial I.jpg";
+import image2 from "../../public/assets/pictures/indexpage/photography/Clases - Inicial II.jpg";
 
 const Photography = () => {
   const { t: translate } = useTranslation("photography");
@@ -46,25 +50,26 @@ const Photography = () => {
               </p>
             </Column2> */}
 
-
             {width > 1000 ? (
               <>
-            <Column1></Column1>
-            <Column2>
-            <div></div>
-              <p>
-                “tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-                ut laoreet”
-              </p>
-            </Column2>
+                <Column1>
+                  <Image src={image1} alt="1" />
+                </Column1>
+                <Column2>
+                  <div>
+                  <Image src={image2} alt="2" />
+                  </div>
+                  <p>
+                    “tuer adipiscing elit, sed diam nonummy nibh euismod
+                    tincidunt ut laoreet”
+                  </p>
+                </Column2>
               </>
             ) : (
               <>
-                <Column1></Column1>
-            
+                <Column1>      <Image src={image1} alt="1" /></Column1>
               </>
             )}
-           
           </ImageContent>
           <TextContent>
             <div>
@@ -90,12 +95,10 @@ const PhotographySection = styled.div`
   align-items: center;
 
   @media screen and (max-width: 1000px) {
-
     width: 90%;
     margin: 50px auto;
     height: 100%;
   }
-
 `;
 
 const Content = styled.div`
@@ -120,6 +123,10 @@ const Column1 = styled.div`
   background-color: lightgray;
   height: 393px;
   width: 238px;
+  img {
+    height: 393px;
+    width: 238px;
+  }
 `;
 
 const Column2 = styled.div`
@@ -136,6 +143,10 @@ const Column2 = styled.div`
     height: 256px;
     width: 341px;
     background-color: lightgray;
+    img{
+      height: 256px;
+    width: 341px;
+    }
   }
 
   p {
@@ -153,7 +164,7 @@ const TextContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 40px ;
+  margin-left: 40px;
   @media screen and (max-width: 1000px) {
     /* margin-left: 0px; */
     margin-bottom: 40px;
@@ -161,7 +172,7 @@ const TextContent = styled.div`
   }
 
   @media screen and (max-width: 740px) {
-    margin-left: 0px ;
+    margin-left: 0px;
     height: auto;
   }
 

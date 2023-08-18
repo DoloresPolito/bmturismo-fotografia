@@ -8,9 +8,9 @@ import img1big from "../../public/assets/pictures/indexcarousel/10x4/1.jpg"
 import img2big from "../../public/assets/pictures/indexcarousel/10x4/2.jpg"
 import img3big from "../../public/assets/pictures/indexcarousel/10x4/3.jpg"
 import img4big from "../../public/assets/pictures/indexcarousel/10x4/4.jpg"
-// import img5big from "../../public/assets/pictures/indexcarousel/10x4/5.jpg"
+import img5big from "../../public/assets/pictures/indexcarousel/10x4/5.jpg"
 import img6big from "../../public/assets/pictures/indexcarousel/10x4/6.jpg"
-
+import img7big from "../../public/assets/pictures/indexcarousel/10x4/7.jpg"
 
 import img1medium from "../../public/assets/pictures/indexcarousel/10x7/1.jpg"
 import img2medium from "../../public/assets/pictures/indexcarousel/10x7/2.jpg"
@@ -18,6 +18,7 @@ import img3medium from "../../public/assets/pictures/indexcarousel/10x7/3.jpg"
 import img4medium from "../../public/assets/pictures/indexcarousel/10x7/4.jpg"
 import img5medium from "../../public/assets/pictures/indexcarousel/10x7/5.jpg"
 import img6medium from "../../public/assets/pictures/indexcarousel/10x7/6.jpg"
+import img7medium from "../../public/assets/pictures/indexcarousel/10x7/7.jpg"
 
 import Image from "next/image";
 import styled from "styled-components";
@@ -110,11 +111,14 @@ const BigCarousel = () => {
           <Div>
           <Image src={width > 1000 ? img4big : width > 600 ? img4medium : image3} alt="1" />
           </Div>
-          {/* <Div>
+          <Div>
           <Image src={width > 1000 ? img5big : width > 600 ? img5medium : image3} alt="1" />
-          </Div> */}
+          </Div>
           <Div>
           <Image src={width > 1000 ? img6big : width > 600 ? img6medium : image3} alt="1" />
+          </Div>
+          <Div>
+          <Image src={width > 1000 ? img7big : width > 600 ? img7medium : image3} alt="1" />
           </Div>
         </Carousel>
       </CarouselSection>
@@ -128,6 +132,7 @@ const CarouselSection = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 70px;
+  margin-top:182px;
 `;
 const Div = styled.div`
   height: auto;

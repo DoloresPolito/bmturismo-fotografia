@@ -44,7 +44,7 @@ const Menu = ({ open, setOpen }) => {
             to="turism"
             spy={true}
             smooth={true}
-            offset={10}
+            offset={-170}
             duration={800}
             onClick={() => handleClose()}
           >
@@ -56,7 +56,7 @@ const Menu = ({ open, setOpen }) => {
             to="photography"
             spy={true}
             smooth={true}
-            offset={10}
+            offset={-170}
             duration={800}
             onClick={() => handleClose()}
           >
@@ -70,7 +70,7 @@ const Menu = ({ open, setOpen }) => {
             to="professionalportrait"
             spy={true}
             smooth={true}
-            offset={10}
+            offset={-170}
             duration={800}
             onClick={() => handleClose()}
           >
@@ -87,7 +87,7 @@ const Menu = ({ open, setOpen }) => {
             to="familyportrait"
             spy={true}
             smooth={true}
-            offset={10}
+            offset={-170}
             duration={800}
             onClick={() => handleClose()}
           >
@@ -104,7 +104,7 @@ const Menu = ({ open, setOpen }) => {
             to="projects"
             spy={true}
             smooth={true}
-            offset={10}
+            offset={-170}
             duration={800}
             onClick={() => handleClose()}
           >
