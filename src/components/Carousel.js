@@ -1,28 +1,35 @@
 import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import image1 from "../../public/assets/pictures/1.jpg";
-import image2 from "../../public/assets/pictures/2.JPG";
-import image3 from "../../public/assets/pictures/3.JPG";
 import Image from "next/image";
 import styled from "styled-components";
 import leftArrowImage from "../../public/assets/icons/back.png";
 import rightArrowImage from "../../public/assets/icons/foward.png";
 
+import img1big from "../../public/assets/pictures/indexcarousel/10x4/1.jpg";
+import img2big from "../../public/assets/pictures/indexcarousel/10x4/2.jpg";
+import img3big from "../../public/assets/pictures/indexcarousel/10x4/3.jpg";
+
 const CarouselComponent = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0); // Initialize with the default index
+
+  const handleThumbnailClick = (index) => {
+    setSelectedImageIndex(index);
+  };
 
   return (
     <CarouselSection>
       <Carousel
-      
+        selectedItem={selectedImageIndex}
+        onChange={(index) => setSelectedImageIndex(index)}
         showThumbs={false}
         showStatus={false}
-
-        // infiniteLoop={true}
+        infiniteLoop={true}
         slideNumber={true}
         autoPlay={true}
-        renderArrowPrev={(onClickHandler, hasPrev, label) =>
-          // hasPrev && (
+        renderArrowPrev={
+          (onClickHandler, hasPrev, label) => (
+            // hasPrev && (
             <button
               type="button"
               onClick={onClickHandler}
@@ -39,10 +46,12 @@ const CarouselComponent = () => {
             >
               <Image src={leftArrowImage} alt="Flecha Izquierda" />
             </button>
+          )
           // )
         }
-        renderArrowNext={(onClickHandler, hasNext, label) =>
-          // hasNext && (
+        renderArrowNext={
+          (onClickHandler, hasNext, label) => (
+            // hasNext && (
             <button
               type="button"
               onClick={onClickHandler}
@@ -59,19 +68,20 @@ const CarouselComponent = () => {
             >
               <Image src={rightArrowImage} alt="Flecha Derecha" />
             </button>
+          )
           // )
         }
       >
         <Div>
-          <Image src={image1} alt="1"/>
+          <Image src={img1big} alt="1" />
           {/* <p className="legend">Legend 1</p> */}
         </Div>
         <Div>
-          <Image src={image2} alt="2"/>
+          <Image src={img2big} alt="2" />
           {/* <p className="legend">Legend 2</p> */}
         </Div>
         <Div>
-          <Image src={image3} alt="3"/>
+          <Image src={img3big} alt="3" />
           {/* <p className="legend">Legend 3</p> */}
         </Div>
       </Carousel>
@@ -79,22 +89,22 @@ const CarouselComponent = () => {
       <SmallImagesContainer>
         <div onClick={() => handleThumbnailClick(0)}>
           <Image
-            src={image1}
-            style={{ width: "140px", height: "90px" }}
+            src={img1big}
+            style={{ width: "160px", height: "80px" }}
             alt="Miniatura 1"
           />
         </div>
         <div onClick={() => handleThumbnailClick(1)}>
           <Image
-            src={image2}
-            style={{ width: "140px", height: "90px" }}
+            src={img2big}
+            style={{ width: "160px", height: "80px" }}
             alt="Miniatura 2"
           />
         </div>
         <div onClick={() => handleThumbnailClick(2)}>
           <Image
-            src={image3}
-            style={{ width: "140px", height: "90px" }}
+            src={img3big}
+            style={{ width: "160px", height: "80px" }}
             alt="Miniatura 3"
           />
         </div>
@@ -111,12 +121,12 @@ const CarouselSection = styled.div`
   margin-top: 40px;
 `;
 const Div = styled.div`
-  height: 500px;
-  width: 60%;
+  /* height: 500px;
+  width: 60%; */
   margin: 0 auto;
 
   height: auto;
-  width: auto;
+  width: 80%;
 
   img {
     height: 100%;

@@ -155,6 +155,21 @@ const Navbar = () => {
                     {translate("five")}
                   </NavbarText>
                 </ScrollLink>
+
+
+                <ScrollLink
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  // offset={10}
+                  duration={800}
+                >
+                  <NavbarText
+                    className={activeSection === "contact" ? "active" : ""}
+                  >
+                    {translate("six")}
+                  </NavbarText>
+                </ScrollLink>
               </>
             ) : (
               <>

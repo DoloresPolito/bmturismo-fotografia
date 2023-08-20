@@ -1,12 +1,18 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+
+
 const Button = ({props}) => {
+
+  const { t: translate } = useTranslation("navbar");
+  
   return (
     <>
     <Link href={`${props}`}>
 
       <ButtonSection>
-        <p>Ver más</p>
+        <p>{translate("button")}</p>
       </ButtonSection>
       </Link>
     </>
