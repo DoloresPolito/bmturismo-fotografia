@@ -9,6 +9,7 @@ import Image from "next/image";
 import image1 from "../../public/assets/pictures/indexpage/portrait/Retrato familiar - Inicial I.jpg";
 import image2 from "../../public/assets/pictures/indexpage/portrait/Retrato familiar - Inicial II.jpg";
 import image3 from "../../public/assets/pictures/indexpage/portrait/Retrato Familiar.jpg";
+import imagemobile from "../../public/assets/pictures/mobileindex/Retrato familiar - Inicial II- CEL.jpg";
 
 const FamilyPortrait = () => {
   const { t: translate } = useTranslation("familyportrait");
@@ -32,7 +33,7 @@ const FamilyPortrait = () => {
 
   return (
     <>
-      <FamilyPortraitSection >
+      <FamilyPortraitSection>
         <Title props={translate("title")} />
 
         <Content>
@@ -59,19 +60,19 @@ const FamilyPortrait = () => {
               <>
                 <>
                   <Image1>
-                  <Image src={image1} alt="1" />
+                    <Image src={image1} alt="1" />
                   </Image1>
                   <Image2>
-                  <Image src={image2} alt="2" />
+                    <Image src={image2} alt="2" />
                   </Image2>
                 </>
               </>
             ) : (
               <>
                 <>
-                  <Image1>
-                  <Image src={image2} alt="2" />
-                  </Image1>
+                  <Image0>
+                    <Image src={imagemobile} alt="2" />
+                  </Image0>
                 </>
               </>
             )}
@@ -149,6 +150,21 @@ const TextContent = styled.div`
     margin-top: 0px;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
+  }
+`;
+
+const Image0 = styled.div`
+  background-color: lightgray;
+  height: 275px;
+  width: 272px;
+  margin: 0 20px;
+  @media screen and (max-width: 740px) {
+    margin-left: 0px;
+  }
+
+  img {
+    height: 275px;
+    width: 272px;
   }
 `;
 

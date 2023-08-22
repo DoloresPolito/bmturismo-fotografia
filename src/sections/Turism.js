@@ -7,6 +7,7 @@ import Image from "next/image";
 import image1 from "../../public/assets/pictures/indexpage/turism/Turismo Inicial I.jpg";
 import image2 from "../../public/assets/pictures/indexpage/turism/Turismo Inicial II.jpg";
 
+import imagemobile from "../../public/assets/pictures/mobileindex/Turismo Inicial I- CEL.jpg";
 
 const Turism = () => {
   const { t: translate } = useTranslation("turism");
@@ -50,16 +51,21 @@ const Turism = () => {
                 <Column1>
                   <Image src={image2} alt="2" />
                 </Column1>
+                <Column2>
+                  <div>
+                    <Image src={image1} alt="1" />
+                  </div>
+                </Column2>
               </>
             ) : (
-              <></>
+              <>
+                <Column2>
+                  <div>
+                    <Image src={imagemobile} alt="1" />
+                  </div>
+                </Column2>
+              </>
             )}
-
-            <Column2>
-              <div>
-                <Image src={image1} alt="1" />
-              </div>
-            </Column2>
           </ImageContent>
         </Content>
       </TurismSection>
@@ -101,8 +107,8 @@ const TitleText = styled.h2`
   color: #2b2b2b;
   text-transform: uppercase;
   width: 250px;
-  font-family: 'Montserrat', sans-serif;
-font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 `;
 
 const Content = styled.div`
@@ -152,9 +158,18 @@ const Column2 = styled.div`
     height: 380px;
     width: 340px;
     background-color: lightgray;
+
+    @media screen and (max-width: 740px) {
+      height: 350px;
+    width: 300px;
+  }
     img {
       height: 380px;
       width: 340px;
+      @media screen and (max-width: 740px) {
+      height: 350px;
+    width: 300px;
+  }
     }
   }
 
@@ -164,7 +179,6 @@ const Column2 = styled.div`
     font-weight: 100;
     text-align: justify;
     max-width: 330px;
-
 
     /* line-height: 18px; */
   }
@@ -186,8 +200,8 @@ const TextContent = styled.div`
     font-weight: 600;
     max-width: 240px;
     margin-top: 0px;
-    font-family: 'Montserrat', sans-serif;
-font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
   }
 
   h6 {
@@ -199,9 +213,8 @@ font-weight: 600;
     line-height: 18px;
     font-weight: 400;
     margin: 0 0 18px 0;
-    font-family: 'Montserrat', sans-serif;
-font-weight: 400;
-
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
   }
 `;
 

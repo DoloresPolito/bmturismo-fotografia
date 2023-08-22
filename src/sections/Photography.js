@@ -29,13 +29,11 @@ const Photography = () => {
 
   return (
     <>
-      <PhotographySection >
+      <PhotographySection>
         <Title props={translate("title")} />
 
         <Content>
           <ImageContent>
-
-
             {width > 1000 ? (
               <>
                 <Column1>
@@ -50,10 +48,12 @@ const Photography = () => {
               </>
             ) : (
               <>
-                <Column1>
-                  {" "}
-                  <Image src={image1} alt="1" />
-                </Column1>
+                <Column2>
+                  <div>
+                    <Image src={image2} alt="2" />
+                  </div>
+                  <p>{translate("text3")}</p>
+                </Column2>
               </>
             )}
           </ImageContent>
@@ -121,17 +121,35 @@ const Column2 = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   padding-left: 30px;
-  @media screen and (max-width: 740px) {
-    padding-left: 0px;
+  @media screen and (max-width: 1000px) {
+    padding-left: 0px !important;
   }
+
+  @media screen and (max-width: 740px) {
+    padding-left: 0px !important;
+  }
+
+
 
   div {
     height: 256px;
     width: 341px;
     background-color: lightgray;
+    @media screen and (max-width: 740px) {
+    padding-left: 0px !important;
+  }
+
+    @media screen and (max-width: 740px) {
+      height: 256px;
+    width: 300px;
+}
     img {
       height: 256px;
       width: 341px;
+      @media screen and (max-width: 740px) {
+      height: 256px;
+    width: 300px;
+}
     }
   }
 

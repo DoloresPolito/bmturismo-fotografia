@@ -67,46 +67,46 @@ const BigCarousel = () => {
           infiniteLoop={true}
           slideNumber={true}
           autoPlay={true}
-          renderArrowPrev={(onClickHandler, hasPrev, label) =>
-            // hasPrev && (
-              <button
-                type="button"
-                onClick={onClickHandler}
-                title={label}
-                style={{
-                  position: "absolute",
-                  zIndex: 2,
-                  left: 15,
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  background: "transparent",
-                  border: "none",
-                }}
-              >
-                <Image src={leftArrowImage} alt="Flecha Izquierda" />
-              </button>
-            // )
-          }
-          renderArrowNext={(onClickHandler, hasNext, label) =>
-            // hasNext && (
-              <button
-                type="button"
-                onClick={onClickHandler}
-                title={label}
-                style={{
-                  position: "absolute",
-                  zIndex: 2,
-                  right: 15,
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  background: "transparent",
-                  border: "none",
-                }}
-              >
-                <Image src={rightArrowImage} alt="Flecha Derecha" />
-              </button>
-            // )
-          }
+          // renderArrowPrev={(onClickHandler, hasPrev, label) =>
+          //   // hasPrev && (
+          //     <button
+          //       type="button"
+          //       onClick={onClickHandler}
+          //       title={label}
+          //       style={{
+          //         position: "absolute",
+          //         zIndex: 2,
+          //         left: 15,
+          //         top: "50%",
+          //         transform: "translateY(-50%)",
+          //         background: "transparent",
+          //         border: "none",
+          //       }}
+          //     >
+          //       <Image src={leftArrowImage} alt="Flecha Izquierda" />
+          //     </button>
+          //   // )
+          // }
+          // renderArrowNext={(onClickHandler, hasNext, label) =>
+          //   // hasNext && (
+          //     <button
+          //       type="button"
+          //       onClick={onClickHandler}
+          //       title={label}
+          //       style={{
+          //         position: "absolute",
+          //         zIndex: 2,
+          //         right: 15,
+          //         top: "50%",
+          //         transform: "translateY(-50%)",
+          //         background: "transparent",
+          //         border: "none",
+          //       }}
+          //     >
+          //       <Image src={rightArrowImage} alt="Flecha Derecha" />
+          //     </button>
+          //   // )
+          // }
         >
           <Div>
             <Image src={width > 1000 ? img1big : width > 600 ? img1medium : img1small} alt="1" />

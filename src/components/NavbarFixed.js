@@ -20,7 +20,7 @@ const Navbar = ({ props }) => {
   const [isOpen, setOpen] = useState(false);
 
   const [activeSection, setActiveSection] = useState("");
-  const [activeIndexSection, setActiveIndexSection] = useState("");
+  const [activeLanguage, setActiveLanguage] = useState("");
 
   useEffect(() => {
     const currentPagePath = window.location.pathname;
@@ -42,7 +42,6 @@ const Navbar = ({ props }) => {
     };
   }, []);
 
-
   const medium = 1200;
 
   return (
@@ -58,27 +57,26 @@ const Navbar = ({ props }) => {
                 <NavbarSubtitle> {translate("cero")}</NavbarSubtitle>
               </TitleDiv>
             </Link>
-            {/* {pathname === "/" ? ( */}
-            {/* <>
-              {width > 630 ? ( */}
             <>
               <Flags>
                 <div onClick={handleClick(locales[0])}>
                   <LanguageText>ESPAÑOL </LanguageText>
                 </div>
-                <p>-</p>
+                <p
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 5px",
+                  }}
+                >
+                  /
+                </p>
                 <div onClick={handleClick(locales[1])}>
                   <LanguageText>ENGLISH</LanguageText>
                 </div>
               </Flags>
             </>
-            {/* ) : (
-                <></>
-              )}
-            </> */}
-            {/* ) : (
-            <></>
-          )} */}
           </LangContainer>
         </LangSection>
 
@@ -230,7 +228,7 @@ const Navbar = ({ props }) => {
           ) : (
             <>
               <Hamburger toggled={isOpen} toggle={setOpen} />
-              <Menu open={isOpen} setOpen={setOpen} active={props}/>
+              <Menu open={isOpen} setOpen={setOpen} active={props} />
             </>
           )}
         </NavbarSection>

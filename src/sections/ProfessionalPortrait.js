@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Title from "../components/Title";
 import { useTranslation } from "next-i18next";
@@ -6,8 +7,28 @@ import Button from "../components/Button";
 import Image from "next/image";
 import image1 from "../../public/assets/pictures/indexpage/portrait/Retrato profesional - Inicial.jpg";
 
+import imagemobile from "../../public/assets/pictures/mobileindex/Retrato profesional - Inicial - CEL.jpg";
+
+
+
 const ProfessionalPortrait = () => {
   const { t: translate } = useTranslation("professionalportrait");
+
+  const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -15,7 +36,12 @@ const ProfessionalPortrait = () => {
         <Title props={translate("title")} />
         <Content>
           <ImageContent>
+          {width > 740 ? (<>
             <Image src={image1} alt="1" />
+          </>) : (<>
+            <Image src={imagemobile} alt="1" />
+          </>)}
+         
           </ImageContent>
           <TextContent>
             <h6>{translate("text1")}</h6>
@@ -68,9 +94,22 @@ const ImageContent = styled.div`
     margin-bottom: 40px;
   }
 
+  @media screen and (max-width: 740px) {
+    height: 350px;
+  width: 300px;
+  }
+
+  
+
   img {
     height: 375px;
     width: 620px;
+
+    @media screen and (max-width: 740px) {
+      height: 350px;
+  width: 300px;
+    
+    }
   }
 `;
 const TextContent = styled.div`

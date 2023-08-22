@@ -30,6 +30,12 @@ const AboutSection = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+    margin: 50px auto;
+    height: 100%;
+  }
+
   img {
     height: 550px;
     width: 100%;
