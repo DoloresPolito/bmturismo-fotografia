@@ -289,6 +289,8 @@ const NavbarText = styled.p`
   font-weight: 400;
   color: #2b2b2b;
   cursor: pointer;
+  font-family: 'PT Sans', sans-serif;
+
 
   &.active {
     font-weight: 800;
@@ -329,13 +331,15 @@ const NavbarTitle = styled.h1`
   font-weight: 300;
   /* margin-left: 40px; */
   font-size: 22px;
+  font-family: 'PT Sans', sans-serif;
 `;
 
 const NavbarSubtitle = styled.h2`
   font-family: "Inter", sans-serif;
-  font-weight: 300;
+  font-weight: 700;
   font-size: 32px;
   text-transform: uppercase;
+  font-family: 'PT Sans', sans-serif;
 
   @media screen and (max-width: 600px) {
     max-width: 200px;
@@ -358,6 +362,7 @@ const LanguageText = styled.h3`
   font-weight: 500;
   font-size: 17px;
   text-transform: uppercase;
+  font-family: 'PT Sans', sans-serif;
 
   @media screen and (max-width: 1000px) {
     font-size: 13px;

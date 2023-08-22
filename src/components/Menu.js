@@ -205,6 +205,7 @@ const NavLink = styled.p`
   font-size: 14px;
   font-weight: 400;
   color: #2b2b2b;
+  font-family: 'PT Sans', sans-serif;
 
   &.active {
     font-weight: 600;
