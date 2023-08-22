@@ -21,6 +21,14 @@ import img5medium from "../../public/assets/pictures/indexcarousel/10x7/5.jpg"
 import img6medium from "../../public/assets/pictures/indexcarousel/10x7/6.jpg"
 import img7medium from "../../public/assets/pictures/indexcarousel/10x7/7.jpg"
 
+import img1small from "../../public/assets/pictures/indexcarousel/10x11/1.jpg"
+import img2small from "../../public/assets/pictures/indexcarousel/10x11/2.jpg"
+import img3small from "../../public/assets/pictures/indexcarousel/10x11/3.jpg"
+import img4small from "../../public/assets/pictures/indexcarousel/10x11/4.jpg"
+import img5small from "../../public/assets/pictures/indexcarousel/10x11/5.jpg"
+import img6small from "../../public/assets/pictures/indexcarousel/10x11/6.jpg"
+import img7small from "../../public/assets/pictures/indexcarousel/10x11/7.jpg"
+
 import Image from "next/image";
 import styled from "styled-components";
 import leftArrowImage from "../../public/assets/icons/back.png";
@@ -101,25 +109,25 @@ const BigCarousel = () => {
           }
         >
           <Div>
-            <Image src={width > 1000 ? img1big : width > 600 ? img1medium : image3} alt="1" />
+            <Image src={width > 1000 ? img1big : width > 600 ? img1medium : img1small} alt="1" />
           </Div>
           <Div>
-          <Image src={width > 1000 ? img2big : width > 600 ? img2medium : image3} alt="1" />
+          <Image src={width > 1000 ? img2big : width > 600 ? img2medium : img2small} alt="1" />
           </Div>
           <Div>
-          <Image src={width > 1000 ? img3big : width > 600 ? img3medium : image3} alt="1" />
+          <Image src={width > 1000 ? img3big : width > 600 ? img3medium : img3small} alt="1" />
           </Div>
           <Div>
-          <Image src={width > 1000 ? img4big : width > 600 ? img4medium : image3} alt="1" />
+          <Image src={width > 1000 ? img4big : width > 600 ? img4medium : img4small} alt="1" />
           </Div>
           <Div>
-          <Image src={width > 1000 ? img8big : width > 600 ? img5medium : image3} alt="1" />
+          <Image src={width > 1000 ? img8big : width > 600 ? img5medium : img5small} alt="1" />
           </Div>
           <Div>
-          <Image src={width > 1000 ? img6big : width > 600 ? img6medium : image3} alt="1" />
+          <Image src={width > 1000 ? img6big : width > 600 ? img6medium : img6small} alt="1" />
           </Div>
           <Div>
-          <Image src={width > 1000 ? img7big : width > 600 ? img7medium : image3} alt="1" />
+          <Image src={width > 1000 ? img7big : width > 600 ? img7medium : img7small} alt="1" />
           </Div>
         </Carousel>
       </CarouselSection>
@@ -134,6 +142,7 @@ const CarouselSection = styled.div`
   align-items: center;
   margin-bottom: 70px;
   margin-top:182px;
+  //182  240
 `;
 const Div = styled.div`
   height: auto;

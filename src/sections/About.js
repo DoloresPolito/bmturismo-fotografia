@@ -34,6 +34,7 @@ const AboutSection = styled.div`
     height: 550px;
     width: 100%;
     margin-bottom: 40px;
+    object-fit: cover;
   }
 `;
 

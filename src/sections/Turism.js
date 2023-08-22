@@ -97,7 +97,7 @@ const TitleContainer = styled.div`
 const TitleText = styled.h2`
   font-family: "Inter", sans-serif;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 100;
   color: #2b2b2b;
   text-transform: uppercase;
   width: 250px;
