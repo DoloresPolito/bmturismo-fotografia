@@ -6,17 +6,17 @@ import styled from "styled-components";
 import leftArrowImage from "../../public/assets/icons/back.png";
 import rightArrowImage from "../../public/assets/icons/foward.png";
 
-import turismo0big from "../../public/assets/pictures/sectionscarousel/turismo 10x6/0.jpg";
-import turismo1big from "../../public/assets/pictures/sectionscarousel/turismo 10x6/1.jpg";
-import turismo2big from "../../public/assets/pictures/sectionscarousel/turismo 10x6/2.jpg";
-import turismo3big from "../../public/assets/pictures/sectionscarousel/turismo 10x6/3.jpg";
-import turismo4big from "../../public/assets/pictures/sectionscarousel/turismo 10x6/4.jpg";
+import turismo0big from "../../public/assets/pictures/sectionscarousel/compress/turismo 10x6/0.jpg";
+import turismo1big from "../../public/assets/pictures/sectionscarousel/compress/turismo 10x6/1.jpg";
+import turismo2big from "../../public/assets/pictures/sectionscarousel/compress/turismo 10x6/2.jpg";
+import turismo3big from "../../public/assets/pictures/sectionscarousel/compress/turismo 10x6/3.jpg";
+// import turismo4big from "../../public/assets/pictures/sectionscarousel/compress/turismo 10x6/4.jpg";
 
-import turismo0small from "../../public/assets/pictures/sectionscarousel/turismo 10x11/0.jpg";
-import turismo1small from "../../public/assets/pictures/sectionscarousel/turismo 10x11/1.jpg";
-import turismo2small from "../../public/assets/pictures/sectionscarousel/turismo 10x11/2.jpg";
-import turismo3small from "../../public/assets/pictures/sectionscarousel/turismo 10x11/3.jpg";
-import turismo4small from "../../public/assets/pictures/sectionscarousel/turismo 10x11/4.jpg";
+import turismo0small from "../../public/assets/pictures/sectionscarousel/compress/turismo 10x11/0.jpg";
+import turismo1small from "../../public/assets/pictures/sectionscarousel/compress/turismo 10x11/1.jpg";
+import turismo2small from "../../public/assets/pictures/sectionscarousel/compress/turismo 10x11/2.jpg";
+import turismo3small from "../../public/assets/pictures/sectionscarousel/compress/turismo 10x11/3.jpg";
+// import turismo4small from "../../public/assets/pictures/sectionscarousel/compress/turismo 10x11/4.jpg";
 
 const CarouselTourism = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0); // Initialize with the default index
@@ -107,9 +107,9 @@ const CarouselTourism = () => {
         <Div>
           <Image src={width > 1000 ? turismo3big : turismo3small} alt="1" />
         </Div>
-        <Div>
+        {/* <Div>
           <Image src={width > 1000 ? turismo4big : turismo4small} alt="1" />
-        </Div>
+        </Div> */}
       </Carousel>
 
       <SmallImagesContainer>
@@ -125,9 +125,9 @@ const CarouselTourism = () => {
         <div onClick={() => handleThumbnailClick(3)}>
           <Image src={turismo3big} alt="Miniatura 4" />
         </div>
-        <div onClick={() => handleThumbnailClick(4)}>
+        {/* <div onClick={() => handleThumbnailClick(4)}>
           <Image src={turismo4big} alt="Miniatura 5" />
-        </div>
+        </div> */}
       </SmallImagesContainer>
     </CarouselSection>
   );

@@ -1,7 +1,7 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
-import CarouselPhotography from "../components/CarouselPhotography";
+// import CarouselPhotography from "../components/CarouselPhotography";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import NavbarFixed from "../components/NavbarFixed"
@@ -20,7 +20,7 @@ const Photography = () => {
           <Section>
             <NavbarFixed />
 
-            <CarouselPhotography />
+            {/* <CarouselPhotography /> */}
             <Footer />
           </Section>
         </section>

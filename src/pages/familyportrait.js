@@ -1,7 +1,7 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
-import CarouselFamily from "../components/CarouselFamily";
+// import CarouselFamily from "../components/CarouselFamily";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import NavbarFixed from "../components/NavbarFixed"
@@ -19,7 +19,7 @@ const FamilyPortaitHome = () => {
           <Section>
             <NavbarFixed />
 
-            <CarouselFamily />
+            {/* <CarouselFamily /> */}
             <Footer />
           </Section>
         </section>

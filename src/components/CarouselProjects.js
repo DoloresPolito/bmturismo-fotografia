@@ -6,26 +6,26 @@ import styled from "styled-components";
 import leftArrowImage from "../../public/assets/icons/back.png";
 import rightArrowImage from "../../public/assets/icons/foward.png";
 
-import projects0big from "../../public/assets/pictures/sectionscarousel/proyectos 10x6/0.jpg";
-import projects1big from "../../public/assets/pictures/sectionscarousel/proyectos 10x6/1.jpg";
-import projects2big from "../../public/assets/pictures/sectionscarousel/proyectos 10x6/2.jpg";
-import projects3big from "../../public/assets/pictures/sectionscarousel/proyectos 10x6/3.jpg";
-import projects4big from "../../public/assets/pictures/sectionscarousel/proyectos 10x6/4.jpg";
-import projects5big from "../../public/assets/pictures/sectionscarousel/proyectos 10x6/5.jpg";
-import projects6big from "../../public/assets/pictures/sectionscarousel/proyectos 10x6/6.jpg";
-import projects7big from "../../public/assets/pictures/sectionscarousel/proyectos 10x6/7.jpg";
-import projects8big from "../../public/assets/pictures/sectionscarousel/proyectos 10x6/8.jpg";
+import projects0big from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x6/0.jpg";
+import projects1big from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x6/1.jpg";
+import projects2big from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x6/2.jpg";
+import projects3big from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x6/3.jpg";
+import projects4big from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x6/4.jpg";
+// import projects5big from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x6/5.jpg";
+// import projects6big from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x6/6.jpg";
+// import projects7big from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x6/7.jpg";
+// import projects8big from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x6/8.jpg";
 
 
-import projects0small from "../../public/assets/pictures/sectionscarousel/proyectos 10x11/0.jpg";
-import projects1small from "../../public/assets/pictures/sectionscarousel/proyectos 10x11/1.jpg";
-import projects2small from "../../public/assets/pictures/sectionscarousel/proyectos 10x11/2.jpg";
-import projects3small from "../../public/assets/pictures/sectionscarousel/proyectos 10x11/3.jpg";
-import projects4small from "../../public/assets/pictures/sectionscarousel/proyectos 10x11/4.jpg";
-// import projects5small from "../../public/assets/pictures/sectionscarousel/proyectos 10x11/5.jpg";
-import projects6small from "../../public/assets/pictures/sectionscarousel/proyectos 10x11/6.jpg";
-import projects7small from "../../public/assets/pictures/sectionscarousel/proyectos 10x11/7.jpg";
-import projects8small from "../../public/assets/pictures/sectionscarousel/proyectos 10x11/8.jpg";
+import projects0small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/0.jpg";
+import projects1small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/1.jpg";
+import projects2small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/2.jpg";
+import projects3small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/3.jpg";
+import projects4small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/4.jpg";
+// import projects5small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/5.jpg";
+// import projects6small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/6.jpg";
+// import projects7small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/7.jpg";
+// import projects8small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/8.jpg";
 
 
 const CarouselProjects = () => {
@@ -120,7 +120,7 @@ const CarouselProjects = () => {
         <Div>
           <Image src={width > 1000 ? projects4big : projects4small} alt="1" />
         </Div>
-        <Div>
+        {/* <Div>
           <Image src={width > 1000 ? projects5big : projects4small} alt="1" />
         </Div>
         <Div>
@@ -131,7 +131,7 @@ const CarouselProjects = () => {
         </Div>
         <Div>
           <Image src={width > 1000 ? projects8big : projects8small} alt="1" />
-        </Div>
+        </Div> */}
 
       </Carousel>
 
@@ -151,7 +151,7 @@ const CarouselProjects = () => {
         <div onClick={() => handleThumbnailClick(4)}>
           <Image src={projects4big} alt="Miniatura 5" />
         </div>
-        <div onClick={() => handleThumbnailClick(5)}>
+        {/* <div onClick={() => handleThumbnailClick(5)}>
           <Image src={projects5big} alt="Miniatura 5" />
         </div>
         <div onClick={() => handleThumbnailClick(6)}>
@@ -162,7 +162,7 @@ const CarouselProjects = () => {
         </div>
         <div onClick={() => handleThumbnailClick(8)}>
           <Image src={projects8big} alt="Miniatura 5" />
-        </div>
+        </div> */}
  
       </SmallImagesContainer>
     </CarouselSection>
