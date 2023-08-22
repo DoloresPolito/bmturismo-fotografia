@@ -39,7 +39,7 @@ const Projects = () => {
               <h6>{translate("text2")}</h6>
               <h6>{translate("text3")}</h6>
             </div>
-            <h4>{translate("subtitle")}</h4>
+            <h4>{translate("text4")}</h4>
 
             <Button props="/projects" />
           </TextContent>
@@ -61,8 +61,7 @@ const Projects = () => {
                  <Image src={image2} alt="2"/>
               </div>
               <p>
-                “tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-                ut laoreet”
+              {translate("text5")}
               </p>
             </Column2>
           </ImageContent>

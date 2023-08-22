@@ -41,7 +41,7 @@ const AboutContainer = styled.div`
   width: 95%;
   display: flex;
   /* justify-content: center; */
-  margin-top: 80px;
+  margin-top: 60px;
   margin-bottom: 80px;
 `;
 
@@ -51,7 +51,7 @@ const AboutText = styled.p`
   font-weight: 400;
   max-width: 1000px;
   /* text-align: center; */
-  color: #c29a00;
+  color: #2B2B2B;
   line-height: 30px;
 `;
 export default About;

@@ -1,10 +1,10 @@
-import Navbar from "../components/Navbar";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
 import Carousel from "../components/Carousel";
 import styled from "styled-components";
 import Footer from "../components/Footer";
+import NavbarFixed from "../components/NavbarFixed"
 const TurismHome = () => {
   const { t: translate } = useTranslation("turism");
   return (
@@ -17,7 +17,7 @@ const TurismHome = () => {
       >
         <section id="turism">
           <Section>
-            <Navbar />
+            <NavbarFixed />
 
             <Carousel />
             <Footer />

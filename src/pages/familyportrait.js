@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Carousel from "../components/Carousel";
 import styled from "styled-components";
 import Footer from "../components/Footer";
+import NavbarFixed from "../components/NavbarFixed"
 const FamilyPortaitHome = () => {
   const { t: translate } = useTranslation("familyportrait");
   return (
@@ -17,7 +18,7 @@ const FamilyPortaitHome = () => {
       >
         <section id="familyportrait">
           <Section>
-            <Navbar />
+            <NavbarFixed />
 
             <Carousel />
             <Footer />

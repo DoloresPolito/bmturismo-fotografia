@@ -93,6 +93,7 @@ const Navbar = () => {
                   duration={800}
                 >
                   <NavbarText
+              
                     className={activeSection === "turism" ? "active" : ""}
                   >
                     {translate("one")}
@@ -214,6 +215,15 @@ const Navbar = () => {
                     className={activeSection === "projects" ? "active" : ""}
                   >
                     {translate("five")}
+                  </NavbarText>
+                </Link>
+
+                <Link href="/#about">
+                  {" "}
+                  <NavbarText
+                    className={activeSection === "about" ? "active" : ""}
+                  >
+                    {translate("six")}
                   </NavbarText>
                 </Link>
               </>

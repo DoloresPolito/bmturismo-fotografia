@@ -1,10 +1,10 @@
-import Navbar from "../components/Navbar";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
 import Carousel from "../components/Carousel";
 import styled from "styled-components";
 import Footer from "../components/Footer";
+import NavbarFixed from "../components/NavbarFixed"
 const Photography = () => {
   const { t: translate } = useTranslation("photography");
 
@@ -18,7 +18,7 @@ const Photography = () => {
       >
         <section id="photography">
           <Section>
-            <Navbar />
+            <NavbarFixed />
 
             <Carousel />
             <Footer />

@@ -124,6 +124,7 @@ const Div = styled.div`
   /* height: 500px;
   width: 60%; */
   margin: 0 auto;
+  margin-top: 180px;
 
   height: auto;
   width: 80%;

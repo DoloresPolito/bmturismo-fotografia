@@ -10,13 +10,13 @@ const Footer = () => {
         <FooterContainer>
           <FooterContent>
             <a
-              href="https://www.instagram.com/belenmiguensfoto/"
+              href="https://www.instagram.com/tour.and.photo/"
               target="_blank"
               rel="noreferrer"
             >
               <Item>
                 <Image src={instagram} alt="instagram" />
-                <p>@Belenmiguensfoto</p>
+                <p>@tour.and.photo</p>
               </Item>
             </a>
             <a

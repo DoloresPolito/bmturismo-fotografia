@@ -60,8 +60,7 @@ const Photography = () => {
                   <Image src={image2} alt="2" />
                   </div>
                   <p>
-                    “tuer adipiscing elit, sed diam nonummy nibh euismod
-                    tincidunt ut laoreet”
+                  {translate("text3")}
                   </p>
                 </Column2>
               </>

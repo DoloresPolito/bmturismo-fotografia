@@ -99,7 +99,6 @@ const Menu = ({ open, setOpen }) => {
             </NavLink>
           </ScrollLink>
 
-         
           <ScrollLink
             to="projects"
             spy={true}
@@ -112,53 +111,66 @@ const Menu = ({ open, setOpen }) => {
               {translate("five")}
             </NavLink>
           </ScrollLink>
+
+          <ScrollLink
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-150}
+            duration={800}
+          >
+            <NavLink className={activeSection === "contact" ? "active" : ""}>
+              {translate("six")}
+            </NavLink>
+          </ScrollLink>
         </>
       ) : (
         <>
-         <Link href="/#turism">
-                  {" "}
-                  <NavLink
-                    className={activeSection === "turism" ? "active" : ""}
-                  >
-                    {translate("one")}
-                  </NavLink>
-                </Link>
-                <Link href="/#photography">
-                  {" "}
-                  <NavLink
-                    className={activeSection === "photography" ? "active" : ""}
-                  >
-                    {translate("four")}
-                  </NavLink>
-                </Link>
-                <Link href="/#proffesionalportrait">
-                  {" "}
-                  <NavLink
-                    className={
-                      activeSection === "professionalportrait" ? "active" : ""
-                    }
-                  >
-                    {translate("two")}
-                  </NavLink>
-                </Link>
-                <Link href="/#familyportrait">
-                  {" "}
-                  <NavLink
-                    className={
-                      activeSection === "familyportrait" ? "active" : ""
-                    }
-                  >
-                    {translate("three")}
-                  </NavLink>
-                </Link>
-                <Link href="/#projects">
-                  {" "}
-                  <NavLink
-                    className={activeSection === "projects" ? "active" : ""}
-                  >
-                    {translate("five")}
-                  </NavLink>
-                </Link>
+          <Link href="/#turism">
+            {" "}
+            <NavLink className={activeSection === "turism" ? "active" : ""}>
+              {translate("one")}
+            </NavLink>
+          </Link>
+          <Link href="/#photography">
+            {" "}
+            <NavLink
+              className={activeSection === "photography" ? "active" : ""}
+            >
+              {translate("four")}
+            </NavLink>
+          </Link>
+          <Link href="/#proffesionalportrait">
+            {" "}
+            <NavLink
+              className={
+                activeSection === "professionalportrait" ? "active" : ""
+              }
+            >
+              {translate("two")}
+            </NavLink>
+          </Link>
+          <Link href="/#familyportrait">
+            {" "}
+            <NavLink
+              className={activeSection === "familyportrait" ? "active" : ""}
+            >
+              {translate("three")}
+            </NavLink>
+          </Link>
+          <Link href="/#projects">
+            {" "}
+            <NavLink className={activeSection === "projects" ? "active" : ""}>
+              {translate("five")}
+            </NavLink>
+          </Link>
+
+          <Link href="/#about">
+            {" "}
+            <NavLink className={activeSection === "about" ? "active" : ""}>
+              {translate("six")}
+            </NavLink>
+          </Link>
         </>
       )}
     </StyledMenu>
