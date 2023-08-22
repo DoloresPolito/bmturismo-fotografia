@@ -118,6 +118,7 @@ const Menu = ({ open, setOpen }) => {
             smooth={true}
             offset={-150}
             duration={800}
+            onClick={() => handleClose()}
           >
             <NavLink className={activeSection === "contact" ? "active" : ""}>
               {translate("six")}

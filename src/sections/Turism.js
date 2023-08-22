@@ -101,6 +101,8 @@ const TitleText = styled.h2`
   color: #2b2b2b;
   text-transform: uppercase;
   width: 250px;
+  font-family: 'Montserrat', sans-serif;
+font-weight: 600;
 `;
 
 const Content = styled.div`
@@ -163,6 +165,7 @@ const Column2 = styled.div`
     text-align: justify;
     max-width: 330px;
 
+
     /* line-height: 18px; */
   }
 `;
@@ -183,6 +186,8 @@ const TextContent = styled.div`
     font-weight: 600;
     max-width: 240px;
     margin-top: 0px;
+    font-family: 'Montserrat', sans-serif;
+font-weight: 600;
   }
 
   h6 {
@@ -194,6 +199,9 @@ const TextContent = styled.div`
     line-height: 18px;
     font-weight: 400;
     margin: 0 0 18px 0;
+    font-family: 'Montserrat', sans-serif;
+font-weight: 400;
+
   }
 `;
 

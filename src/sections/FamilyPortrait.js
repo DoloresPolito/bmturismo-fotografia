@@ -137,6 +137,8 @@ const TextContent = styled.div`
     font-weight: 600;
     max-width: 240px;
     margin-top: 0px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
   }
 
   h6 {
@@ -145,6 +147,8 @@ const TextContent = styled.div`
     font-weight: 400;
     line-height: 18px;
     margin-top: 0px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
   }
 `;
 

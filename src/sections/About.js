@@ -48,11 +48,13 @@ const AboutContainer = styled.div`
 
 const AboutText = styled.p`
   font-family: "Inter", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   max-width: 1000px;
   /* text-align: center; */
   color: #2B2B2B;
-  line-height: 30px;
+  line-height: 25px;
+  font-family: "Montserrat", sans-serif;
+    font-weight: 400;
 `;
 export default About;

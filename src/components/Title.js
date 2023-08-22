@@ -32,6 +32,8 @@ const TitleText = styled.h2`
   color: #2b2b2b;
   text-transform: uppercase;
 margin-bottom: 3px;
+font-family: 'Montserrat', sans-serif;
+font-weight: 600;
 `;
 
 export default Title;

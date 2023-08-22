@@ -57,16 +57,17 @@ const Photography = () => {
                 </Column1>
                 <Column2>
                   <div>
-                  <Image src={image2} alt="2" />
+                    <Image src={image2} alt="2" />
                   </div>
-                  <p>
-                  {translate("text3")}
-                  </p>
+                  <p>{translate("text3")}</p>
                 </Column2>
               </>
             ) : (
               <>
-                <Column1>      <Image src={image1} alt="1" /></Column1>
+                <Column1>
+                  {" "}
+                  <Image src={image1} alt="1" />
+                </Column1>
               </>
             )}
           </ImageContent>
@@ -142,9 +143,9 @@ const Column2 = styled.div`
     height: 256px;
     width: 341px;
     background-color: lightgray;
-    img{
+    img {
       height: 256px;
-    width: 341px;
+      width: 341px;
     }
   }
 
@@ -181,16 +182,20 @@ const TextContent = styled.div`
     font-weight: 600;
     max-width: 240px;
     margin-top: 0px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
   }
 
   h6 {
-    font-family: "Inter", sans-serif;
+    /* font-family: "Inter", sans-serif; */
     font-size: 14px;
     font-weight: 400;
     text-align: justify;
     margin-top: 0px;
     line-height: 18px;
     margin: 0 0 18px 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
     @media screen and (max-width: 1000px) {
       max-width: 100%;
     }
