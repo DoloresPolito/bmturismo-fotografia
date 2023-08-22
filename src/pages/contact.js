@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import NavbarFixed from "../components/NavbarFixed";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { motion } from "framer-motion";
 const ContactHome = () => {
@@ -9,7 +9,7 @@ const ContactHome = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-    <Navbar />
+    <NavbarFixed />
     </motion.div>
     </>)
 }
