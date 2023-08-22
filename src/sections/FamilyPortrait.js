@@ -32,7 +32,7 @@ const FamilyPortrait = () => {
 
   return (
     <>
-      <FamilyPortraitSection id="familyportrait">
+      <FamilyPortraitSection >
         <Title props={translate("title")} />
 
         <Content>

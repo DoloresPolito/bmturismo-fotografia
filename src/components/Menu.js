@@ -4,7 +4,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
-const Menu = ({ open, setOpen }) => {
+const Menu = ({ open, setOpen, active }) => {
   const { t: translate } = useTranslation("navbar");
 
   const [activeSection, setActiveSection] = useState("");
@@ -36,6 +36,8 @@ const Menu = ({ open, setOpen }) => {
     }
   }, [open]);
 
+
+
   return (
     <StyledMenu open={open} aria-label="menu">
       {activeSection === "" ? (
@@ -48,7 +50,7 @@ const Menu = ({ open, setOpen }) => {
             duration={800}
             onClick={() => handleClose()}
           >
-            <NavLink className={activeSection === "turism" ? "active" : ""}>
+            <NavLink className={active === "turism" ? "active" : ""}>
               {translate("one")}
             </NavLink>
           </ScrollLink>
@@ -60,9 +62,7 @@ const Menu = ({ open, setOpen }) => {
             duration={800}
             onClick={() => handleClose()}
           >
-            <NavLink
-              className={activeSection === "photography" ? "active" : ""}
-            >
+            <NavLink className={active === "photography" ? "active" : ""}>
               {translate("four")}
             </NavLink>
           </ScrollLink>
@@ -75,9 +75,7 @@ const Menu = ({ open, setOpen }) => {
             onClick={() => handleClose()}
           >
             <NavLink
-              className={
-                activeSection === "professionalportrait" ? "active" : ""
-              }
+              className={active === "professionalportrait" ? "active" : ""}
             >
               {translate("two")}
             </NavLink>
@@ -92,9 +90,7 @@ const Menu = ({ open, setOpen }) => {
             onClick={() => handleClose()}
           >
             {" "}
-            <NavLink
-              className={activeSection === "familyportrait" ? "active" : ""}
-            >
+            <NavLink className={active === "familyportrait" ? "active" : ""}>
               {translate("three")}
             </NavLink>
           </ScrollLink>
@@ -107,7 +103,7 @@ const Menu = ({ open, setOpen }) => {
             duration={800}
             onClick={() => handleClose()}
           >
-            <NavLink className={activeSection === "projects" ? "active" : ""}>
+            <NavLink className={active === "projects" ? "active" : ""}>
               {translate("five")}
             </NavLink>
           </ScrollLink>
@@ -120,7 +116,7 @@ const Menu = ({ open, setOpen }) => {
             duration={800}
             onClick={() => handleClose()}
           >
-            <NavLink className={activeSection === "contact" ? "active" : ""}>
+            <NavLink className={active === "contact" ? "active" : ""}>
               {translate("six")}
             </NavLink>
           </ScrollLink>
@@ -206,10 +202,13 @@ const NavLink = styled.p`
   font-size: 14px;
   font-weight: 400;
   color: #2b2b2b;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
 
   &.active {
-    font-weight: 600;
+    font-weight: 800;
+  }
+  &:target {
+    font-weight: 800;
   }
 `;
 

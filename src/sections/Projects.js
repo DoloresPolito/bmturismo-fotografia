@@ -8,7 +8,7 @@ import Image from "next/image";
 
 import image1 from "../../public/assets/pictures/indexpage/projects/Sustentabilidad - Inicial I.jpg";
 import image2 from "../../public/assets/pictures/indexpage/projects/Sustentabilidad - Inicial II.jpg";
-
+import "../../src/styles.css"
 
 const Projects = () => {
   const { t: translate } = useTranslation("projects");
@@ -29,7 +29,7 @@ const Projects = () => {
 
   return (
     <>
-      <ProjectsSection id="projects">
+      <ProjectsSection>
         <Title props={translate("title")} />
 
         <Content>
@@ -78,6 +78,8 @@ const ProjectsSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+
 
 
   @media screen and (max-width: 1000px) {

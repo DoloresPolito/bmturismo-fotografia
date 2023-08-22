@@ -5,6 +5,8 @@ import CarouselTourism from "../components/CarouselTourism";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import NavbarFixed from "../components/NavbarFixed"
+
+
 const TurismHome = () => {
   const { t: translate } = useTranslation("turism");
   return (
@@ -17,7 +19,7 @@ const TurismHome = () => {
       >
         <section id="turism">
           <Section>
-            <NavbarFixed />
+            <NavbarFixed props="turism"/>
 
             <CarouselTourism />
             <Footer />

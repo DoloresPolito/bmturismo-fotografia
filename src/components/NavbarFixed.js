@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -7,7 +7,7 @@ import Menu from "./Menu";
 import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = ({ props }) => {
   const router = useRouter();
   const { locale, locales, push } = useRouter();
   const { t: translate } = useTranslation("navbar");
@@ -20,6 +20,7 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
 
   const [activeSection, setActiveSection] = useState("");
+  const [activeIndexSection, setActiveIndexSection] = useState("");
 
   useEffect(() => {
     const currentPagePath = window.location.pathname;
@@ -41,201 +42,198 @@ const Navbar = () => {
     };
   }, []);
 
+
   const medium = 1200;
 
   return (
     <>
-    <TopSection>
-      <LangSection>
-        <LangContainer>
-          {" "}
-          <Link href="/">
-            <TitleDiv>
-              <NavbarTitle>Belén Miguens</NavbarTitle>
+      <TopSection>
+        <LangSection>
+          <LangContainer>
+            {" "}
+            <Link href="/">
+              <TitleDiv>
+                <NavbarTitle>Belén Miguens</NavbarTitle>
 
-              <NavbarSubtitle> {translate("cero")}</NavbarSubtitle>
-            </TitleDiv>
-          </Link>
-          {pathname === "/" ? (
+                <NavbarSubtitle> {translate("cero")}</NavbarSubtitle>
+              </TitleDiv>
+            </Link>
+            {/* {pathname === "/" ? ( */}
+            {/* <>
+              {width > 630 ? ( */}
             <>
-              {width > 630 ? (
+              <Flags>
+                <div onClick={handleClick(locales[0])}>
+                  <LanguageText>ESPAÑOL </LanguageText>
+                </div>
+                <p>-</p>
+                <div onClick={handleClick(locales[1])}>
+                  <LanguageText>ENGLISH</LanguageText>
+                </div>
+              </Flags>
+            </>
+            {/* ) : (
+                <></>
+              )}
+            </> */}
+            {/* ) : (
+            <></>
+          )} */}
+          </LangContainer>
+        </LangSection>
+
+        <NavbarSection>
+          {width >= medium ? (
+            <>
+              {activeSection === "" ? (
                 <>
-                  <Flags>
-                    <div onClick={handleClick(locales[0])}>
-                      <LanguageText>ESPAÑOL</LanguageText>
-                    </div>
-                    <p>-</p>
-                    <div onClick={handleClick(locales[1])}>
-                      <LanguageText>ENGLISH</LanguageText>
-                    </div>
-                  </Flags>
+                  <ScrollLink
+                    to="turism"
+                    spy={true}
+                    smooth={true}
+                    offset={-150}
+                    duration={800}
+                  >
+                    <NavbarText className={props === "turism" ? "active" : ""}>
+                      {translate("one")}
+                    </NavbarText>
+                  </ScrollLink>
+
+                  <ScrollLink
+                    to="photography"
+                    spy={true}
+                    smooth={true}
+                    offset={-150}
+                    duration={800}
+                  >
+                    <NavbarText
+                      className={props === "photography" ? "active" : ""}
+                    >
+                      {translate("four")}
+                    </NavbarText>
+                  </ScrollLink>
+                  <ScrollLink
+                    to="professionalportrait"
+                    spy={true}
+                    smooth={true}
+                    offset={-150}
+                    duration={800}
+                  >
+                    <NavbarText
+                      className={
+                        props === "professionalportrait" ? "active" : ""
+                      }
+                    >
+                      {translate("two")}
+                    </NavbarText>
+                  </ScrollLink>
+                  <ScrollLink
+                    to="familyportrait"
+                    spy={true}
+                    smooth={true}
+                    offset={-150}
+                    duration={800}
+                  >
+                    <NavbarText
+                      className={props === "familyportrait" ? "active" : ""}
+                    >
+                      {translate("three")}
+                    </NavbarText>
+                  </ScrollLink>
+
+                  <ScrollLink
+                    to="projects"
+                    spy={true}
+                    smooth={true}
+                    offset={-150}
+                    duration={800}
+                  >
+                    <NavbarText
+                      className={props === "projects" ? "active" : ""}
+                    >
+                      {translate("five")}
+                    </NavbarText>
+                  </ScrollLink>
+
+                  <ScrollLink
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={-150}
+                    duration={800}
+                  >
+                    <NavbarText className={props === "about" ? "active" : ""}>
+                      {translate("six")}
+                    </NavbarText>
+                  </ScrollLink>
                 </>
               ) : (
-                <></>
+                <>
+                  <Link href="/#turism">
+                    {" "}
+                    <NavbarText
+                      className={activeSection === "turism" ? "active" : ""}
+                    >
+                      {translate("one")}
+                    </NavbarText>
+                  </Link>
+                  <Link href="/#photography">
+                    {" "}
+                    <NavbarText
+                      className={
+                        activeSection === "photography" ? "active" : ""
+                      }
+                    >
+                      {translate("four")}
+                    </NavbarText>
+                  </Link>
+                  <Link href="/#proffesionalportrait">
+                    {" "}
+                    <NavbarText
+                      className={
+                        activeSection === "professionalportrait" ? "active" : ""
+                      }
+                    >
+                      {translate("two")}
+                    </NavbarText>
+                  </Link>
+                  <Link href="/#familyportrait">
+                    {" "}
+                    <NavbarText
+                      className={
+                        activeSection === "familyportrait" ? "active" : ""
+                      }
+                    >
+                      {translate("three")}
+                    </NavbarText>
+                  </Link>
+                  <Link href="/#projects">
+                    {" "}
+                    <NavbarText
+                      className={activeSection === "projects" ? "active" : ""}
+                    >
+                      {translate("five")}
+                    </NavbarText>
+                  </Link>
+
+                  <Link href="/#about">
+                    {" "}
+                    <NavbarText
+                      className={activeSection === "about" ? "active" : ""}
+                    >
+                      {translate("six")}
+                    </NavbarText>
+                  </Link>
+                </>
               )}
             </>
           ) : (
-            <></>
+            <>
+              <Hamburger toggled={isOpen} toggle={setOpen} />
+              <Menu open={isOpen} setOpen={setOpen} active={props}/>
+            </>
           )}
-        </LangContainer>
-      </LangSection>
-
-      <NavbarSection>
-        {width >= medium ? (
-          <>
-            {activeSection === "" ? (
-              <>
-                <ScrollLink
-                  to="turism"
-                  spy={true}
-                  smooth={true}
-                  offset={-150}
-                  duration={800}
-                >
-                  <NavbarText
-              
-                    className={activeSection === "turism" ? "active" : ""}
-                  >
-                    {translate("one")}
-                  </NavbarText>
-                </ScrollLink>
-                <ScrollLink
-                  to="photography"
-                  spy={true}
-                  smooth={true}
-                  offset={-150}
-                  duration={800}
-                >
-                  <NavbarText
-                    className={activeSection === "photography" ? "active" : ""}
-                  >
-                    {translate("four")}
-                  </NavbarText>
-                </ScrollLink>
-                <ScrollLink
-                  to="professionalportrait"
-                  spy={true}
-                  smooth={true}
-                  offset={-150}
-                  duration={800}
-                >
-                  <NavbarText
-                    className={
-                      activeSection === "professionalportrait" ? "active" : ""
-                    }
-                  >
-                    {translate("two")}
-                  </NavbarText>
-                </ScrollLink>
-                <ScrollLink
-                  to="familyportrait"
-                  spy={true}
-                  smooth={true}
-                  offset={-150}
-                  duration={800}
-                >
-                  <NavbarText
-                    className={
-                      activeSection === "familyportrait" ? "active" : ""
-                    }
-                  >
-                    {translate("three")}
-                  </NavbarText>
-                </ScrollLink>
-
-                <ScrollLink
-                  to="projects"
-                  spy={true}
-                  smooth={true}
-                  offset={-150}
-                  duration={800}
-                >
-                  <NavbarText
-                    className={activeSection === "projects" ? "active" : ""}
-                  >
-                    {translate("five")}
-                  </NavbarText>
-                </ScrollLink>
-
-                <ScrollLink
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={-150}
-                  duration={800}
-                >
-                  <NavbarText
-                    className={activeSection === "contact" ? "active" : ""}
-                  >
-                    {translate("six")}
-                  </NavbarText>
-                </ScrollLink>
-              </>
-            ) : (
-              <>
-                <Link href="/#turism">
-                  {" "}
-                  <NavbarText
-                    className={activeSection === "turism" ? "active" : ""}
-                  >
-                    {translate("one")}
-                  </NavbarText>
-                </Link>
-                <Link href="/#photography">
-                  {" "}
-                  <NavbarText
-                    className={activeSection === "photography" ? "active" : ""}
-                  >
-                    {translate("four")}
-                  </NavbarText>
-                </Link>
-                <Link href="/#proffesionalportrait">
-                  {" "}
-                  <NavbarText
-                    className={
-                      activeSection === "professionalportrait" ? "active" : ""
-                    }
-                  >
-                    {translate("two")}
-                  </NavbarText>
-                </Link>
-                <Link href="/#familyportrait">
-                  {" "}
-                  <NavbarText
-                    className={
-                      activeSection === "familyportrait" ? "active" : ""
-                    }
-                  >
-                    {translate("three")}
-                  </NavbarText>
-                </Link>
-                <Link href="/#projects">
-                  {" "}
-                  <NavbarText
-                    className={activeSection === "projects" ? "active" : ""}
-                  >
-                    {translate("five")}
-                  </NavbarText>
-                </Link>
-
-                <Link href="/#about">
-                  {" "}
-                  <NavbarText
-                    className={activeSection === "about" ? "active" : ""}
-                  >
-                    {translate("six")}
-                  </NavbarText>
-                </Link>
-              </>
-            )}
-          </>
-        ) : (
-          <>
-            <Hamburger toggled={isOpen} toggle={setOpen} />
-            <Menu open={isOpen} setOpen={setOpen} />
-          </>
-        )}
-      </NavbarSection>
+        </NavbarSection>
       </TopSection>
     </>
   );
@@ -243,17 +241,15 @@ const Navbar = () => {
 
 export default Navbar;
 
-
 const TopSection = styled.div`
-display: flex;
-flex-direction: column;
-height: auto;
-width: 100%;
-position: fixed;
-top:0;
-z-index: 1000;
-
-`
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+`;
 const NavbarSection = styled.div`
   width: 100%;
   height: 50px;
@@ -289,10 +285,12 @@ const NavbarText = styled.p`
   font-weight: 400;
   color: #2b2b2b;
   cursor: pointer;
-  font-family: 'PT Sans', sans-serif;
-
+  font-family: "PT Sans", sans-serif;
 
   &.active {
+    font-weight: 800;
+  }
+  &:target {
     font-weight: 800;
   }
 `;
@@ -331,7 +329,7 @@ const NavbarTitle = styled.h1`
   font-weight: 300;
   /* margin-left: 40px; */
   font-size: 22px;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
 `;
 
 const NavbarSubtitle = styled.h2`
@@ -339,7 +337,7 @@ const NavbarSubtitle = styled.h2`
   font-weight: 700;
   font-size: 32px;
   text-transform: uppercase;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
   letter-spacing: 2px;
 
   @media screen and (max-width: 600px) {
@@ -363,7 +361,7 @@ const LanguageText = styled.h3`
   font-weight: 500;
   font-size: 17px;
   text-transform: uppercase;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
 
   @media screen and (max-width: 1000px) {
     font-size: 13px;

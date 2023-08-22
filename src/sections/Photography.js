@@ -29,26 +29,12 @@ const Photography = () => {
 
   return (
     <>
-      <PhotographySection id="photography">
+      <PhotographySection >
         <Title props={translate("title")} />
 
         <Content>
           <ImageContent>
-            {/* {width > 740 ? (
-              <>
-                <Column1></Column1>
-              </>
-            ) : (
-              <></>
-            )}
 
-            <Column2>
-              <div></div>
-              <p>
-                “tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-                ut laoreet”
-              </p>
-            </Column2> */}
 
             {width > 1000 ? (
               <>

@@ -3,15 +3,20 @@ import Title from "../components/Title";
 import { useTranslation } from "next-i18next";
 import Button from "../components/Button";
 
+import Image from "next/image";
+import image1 from "../../public/assets/pictures/indexpage/portrait/Retrato profesional - Inicial.jpg";
+
 const ProfessionalPortrait = () => {
   const { t: translate } = useTranslation("professionalportrait");
 
   return (
     <>
-      <ProfessionalPortraitSection id="professionalportrait">
+      <ProfessionalPortraitSection>
         <Title props={translate("title")} />
         <Content>
-          <ImageContent></ImageContent>
+          <ImageContent>
+            <Image src={image1} alt="1" />
+          </ImageContent>
           <TextContent>
             <h6>{translate("text1")}</h6>
             <h4> {translate("subtitle")}</h4>
@@ -53,16 +58,20 @@ const Content = styled.div`
 `;
 
 const ImageContent = styled.div`
-  flex: 50%;
+  /* flex: 50%; */
   background-color: lightgray;
+  height: 375px;
+  width: 620px;
   @media screen and (max-width: 1000px) {
     flex: 0%;
     margin-top: 40px;
     margin-bottom: 40px;
-    background-color: red;
   }
 
-
+  img {
+    height: 375px;
+    width: 620px;
+  }
 `;
 const TextContent = styled.div`
   flex: 50%;
@@ -74,6 +83,7 @@ const TextContent = styled.div`
     flex: 0%;
     margin-top: 40px;
     margin-bottom: 40px;
+    margin-left: 0px;
   }
 
   h4 {
