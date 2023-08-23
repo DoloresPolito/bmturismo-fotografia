@@ -8,11 +8,18 @@ import Image from "next/image";
 
 import image1 from "../../public/assets/pictures/indexpage/projects/Sustentabilidad - Inicial I.jpg";
 import image2 from "../../public/assets/pictures/indexpage/projects/Sustentabilidad - Inicial II.jpg";
-import "../../src/styles.css"
+
+
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Projects = () => {
   const { t: translate } = useTranslation("projects");
   const [width, setWidth] = useState(null);
+
+  const animation = useAnimation();
+
+  const { ref, inView } = useInView({ threshold: 0.3 });
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,19 +34,44 @@ const Projects = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (inView) {
+
+
+      animation.start({
+        opacity: 1,
+        transition: {
+          duration: 0.75,
+          ease: "easeIn",
+        },
+      });
+
+     
+    }
+
+    if (!inView) {
+
+      animation.start({
+        opacity: 0,
+      });
+
+
+    }
+  }, [inView]);
+
   return (
     <>
-      <ProjectsSection>
+      <ProjectsSection ref={ref}>
         <Title props={translate("title")} />
 
         <Content>
           <TextContent>
             <div>
-              <h6>{translate("text1")}</h6>
-              <h6>{translate("text2")}</h6>
-              <h6>{translate("text3")}</h6>
+              <motion.h6 animate={animation}>{translate("text1")}</motion.h6>
+              <motion.h6 animate={animation}>{translate("text2")}</motion.h6>
+              <motion.h6 animate={animation}>{translate("text3")}</motion.h6>
             </div>
-            <h4>{translate("text4")}</h4>
+            <motion.h4 animate={animation}>{translate("text4")}</motion.h4>
 
             <Button props="/projects" />
           </TextContent>

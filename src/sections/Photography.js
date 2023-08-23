@@ -8,10 +8,16 @@ import Image from "next/image";
 import image1 from "../../public/assets/pictures/indexpage/photography/Clases - Inicial I.jpg";
 import image2 from "../../public/assets/pictures/indexpage/photography/Clases - Inicial II.jpg";
 
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 const Photography = () => {
   const { t: translate } = useTranslation("photography");
 
   const [width, setWidth] = useState(null);
+  const animation = useAnimation();
+
+  const { ref, inView } = useInView({ threshold: 0.3 });
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,9 +33,34 @@ const Photography = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (inView) {
+
+
+      animation.start({
+        opacity: 1,
+        transition: {
+          duration: 0.75,
+          ease: "easeIn",
+        },
+      });
+
+     
+    }
+
+    if (!inView) {
+
+      animation.start({
+        opacity: 0,
+      });
+
+
+    }
+  }, [inView]);
+
   return (
     <>
-      <PhotographySection>
+      <PhotographySection ref={ref}>
         <Title props={translate("title")} />
 
         <Content>
@@ -59,11 +90,11 @@ const Photography = () => {
           </ImageContent>
           <TextContent>
             <div>
-              <h6>{translate("text1")}</h6>
-              <h6>{translate("text2")}</h6>
+              <motion.h6 animate={animation}>{translate("text1")}</motion.h6>
+              <motion.h6 animate={animation}>{translate("text2")}</motion.h6>
             </div>
 
-            <h4> {translate("subtitle")}</h4>
+            <motion.h4 animate={animation}> {translate("subtitle")}</motion.h4>
             <Button props="photography" />
           </TextContent>
         </Content>

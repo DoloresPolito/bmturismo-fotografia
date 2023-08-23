@@ -11,9 +11,17 @@ import image2 from "../../public/assets/pictures/indexpage/portrait/Retrato fami
 import image3 from "../../public/assets/pictures/indexpage/portrait/Retrato Familiar.jpg";
 import imagemobile from "../../public/assets/pictures/mobileindex/Retrato familiar - Inicial II- CEL.jpg";
 
+
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 const FamilyPortrait = () => {
   const { t: translate } = useTranslation("familyportrait");
   const [width, setWidth] = useState(null);
+
+  const animation = useAnimation();
+
+  const { ref, inView } = useInView({ threshold: 0.3 });
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,17 +37,42 @@ const FamilyPortrait = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (inView) {
+
+
+      animation.start({
+        opacity: 1,
+        transition: {
+          duration: 0.75,
+          ease: "easeIn",
+        },
+      });
+
+     
+    }
+
+    if (!inView) {
+
+      animation.start({
+        opacity: 0,
+      });
+
+
+    }
+  }, [inView]);
+
   const medium = 1200;
 
   return (
     <>
-      <FamilyPortraitSection>
+      <FamilyPortraitSection ref={ref}>
         <Title props={translate("title")} />
 
         <Content>
           <TextContent>
-            <h6>{translate("text")}</h6>
-            <h4>{translate("subtitle")}</h4>
+            <motion.h6 animate={animation}>{translate("text")}</motion.h6>
+            <motion.h4 animate={animation}>{translate("subtitle")}</motion.h4>
             <Button props="familyportrait" />
           </TextContent>
 

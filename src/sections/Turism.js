@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 import Button from "../components/Button";
 import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import image1 from "../../public/assets/pictures/indexpage/turism/Turismo Inicial I.jpg";
 import image2 from "../../public/assets/pictures/indexpage/turism/Turismo Inicial II.jpg";
@@ -12,6 +14,10 @@ import imagemobile from "../../public/assets/pictures/mobileindex/Turismo Inicia
 const Turism = () => {
   const { t: translate } = useTranslation("turism");
   const [width, setWidth] = useState(null);
+
+  const animation2 = useAnimation();
+
+  const { ref, inView } = useInView({ threshold: 0.3 });
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,9 +32,34 @@ const Turism = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (inView) {
+
+
+      animation2.start({
+        opacity: 1,
+        transition: {
+          duration: 0.75,
+          ease: "easeIn",
+        },
+      });
+
+     
+    }
+
+    if (!inView) {
+
+      animation2.start({
+        opacity: 0,
+      });
+
+
+    }
+  }, [inView]);
+
   return (
     <>
-      <TurismSection>
+      <TurismSection ref={ref}>
         <TitleSection>
           <TitleContainer>
             <TitleText>{translate("title")}</TitleText>
@@ -38,11 +69,11 @@ const Turism = () => {
         <Content>
           <TextContent>
             <div>
-              <h6>{translate("text1")}</h6>
-              <h6>{translate("text2")}</h6>
+              <motion.h6 animate={animation2}>{translate("text1")}</motion.h6>
+              <motion.h6 animate={animation2}>{translate("text2")}</motion.h6>
             </div>
 
-            <h4> {translate("subtitle")}</h4>
+            <motion.h4 animate={animation2}> {translate("subtitle")}</motion.h4>
             <Button props="turism" />
           </TextContent>
           <ImageContent>

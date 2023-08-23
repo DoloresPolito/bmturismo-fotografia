@@ -1,21 +1,55 @@
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 import Title from "../components/Title";
 import Image from "next/image";
 
 import img1big from "../../public/assets/pictures/indexcarousel/10x4/1.jpg";
-import img1medium from "../../public/assets/pictures/indexcarousel/10x7/1.jpg";
+// import img1medium from "../../public/assets/pictures/indexcarousel/10x7/1.jpg";
+
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 
 const About = () => {
   const { t: translate } = useTranslation("about");
 
+  const animation = useAnimation();
+
+  const { ref, inView } = useInView({ threshold: 0.3 });
+
+  useEffect(() => {
+    if (inView) {
+
+
+      animation.start({
+        opacity: 1,
+        transition: {
+          duration: 1.5,
+          ease: "easeIn",
+        },
+      });
+
+     
+    }
+
+    if (!inView) {
+
+      animation.start({
+        opacity: 0,
+      });
+
+
+    }
+  }, [inView]);
+
   return (
     <>
-      <AboutSection id="about">
+      <AboutSection id="about" ref={ref}>
         <Image src={img1big} alt="1" />
         <Title props="BELÉN MIGUENS" />
         <AboutContainer>
-          <AboutText>{translate("text")}</AboutText>
+          <AboutText animate={animation}>{translate("text")}</AboutText>
         </AboutContainer>
       </AboutSection>
     </>
@@ -52,7 +86,7 @@ const AboutContainer = styled.div`
   margin-bottom: 80px;
 `;
 
-const AboutText = styled.p`
+const AboutText = styled(motion.p)`
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;

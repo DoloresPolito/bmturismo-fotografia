@@ -9,12 +9,18 @@ import image1 from "../../public/assets/pictures/indexpage/portrait/Retrato prof
 
 import imagemobile from "../../public/assets/pictures/mobileindex/Retrato profesional - Inicial - CEL.jpg";
 
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 
 const ProfessionalPortrait = () => {
   const { t: translate } = useTranslation("professionalportrait");
 
   const [width, setWidth] = useState(null);
+
+  const animation = useAnimation();
+
+  const { ref, inView } = useInView({ threshold: 0.3 });
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,9 +36,34 @@ const ProfessionalPortrait = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (inView) {
+
+
+      animation.start({
+        opacity: 1,
+        transition: {
+          duration: 0.75,
+          ease: "easeIn",
+        },
+      });
+
+     
+    }
+
+    if (!inView) {
+
+      animation.start({
+        opacity: 0,
+      });
+
+
+    }
+  }, [inView]);
+
   return (
     <>
-      <ProfessionalPortraitSection>
+      <ProfessionalPortraitSection ref={ref}>
         <Title props={translate("title")} />
         <Content>
           <ImageContent>
@@ -44,8 +75,8 @@ const ProfessionalPortrait = () => {
          
           </ImageContent>
           <TextContent>
-            <h6>{translate("text1")}</h6>
-            <h4> {translate("subtitle")}</h4>
+            <motion.h6 animate={animation}>{translate("text1")}</motion.h6>
+            <motion.h4 animate={animation}> {translate("subtitle")}</motion.h4>
             <Button props="/professionalportrait" />
           </TextContent>
         </Content>
