@@ -6,25 +6,25 @@ import styled from "styled-components";
 import leftArrowImage from "../../public/assets/icons/back.png";
 import rightArrowImage from "../../public/assets/icons/foward.png";
 
-import fotografia0big from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x6/0.jpg";
-import fotografia1big from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x6/1.jpg";
-import fotografia2big from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x6/2.jpg";
-import fotografia3big from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x6/3.jpg";
-import fotografia4big from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x6/4.jpg";
-import fotografia5big from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x6/5.jpg";
-import fotografia6big from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x6/6.jpg";
-import fotografia7big from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x6/7.jpg";
+import professional0big from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x6/0.jpg";
+import professional1big from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x6/1.jpg";
+import professional2big from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x6/2.jpg";
+import professional3big from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x6/3.jpg";
+import professional4big from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x6/4.jpg";
+import professional5big from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x6/5.jpg";
+import professional6big from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x6/6.jpg";
 
-import fotografia0small from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x11/0.jpg";
-import fotografia1small from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x11/1.jpg";
-import fotografia2small from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x11/2.jpg";
-import fotografia3small from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x11/3.jpg";
-import fotografia4small from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x11/4.jpg";
-import fotografia5small from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x11/5.jpg";
-import fotografia6small from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x11/6.jpg";
-import fotografia7small from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x11/7.jpg";
 
-const CarouselPhotography = () => {
+import professional0small from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x11/0.jpg";
+import professional1small from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x11/1.jpg";
+import professional2small from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x11/2.jpg";
+import professional3small from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x11/3.jpg";
+import professional4small from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x11/4.jpg";
+import professional5small from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x11/5.jpg";
+import professional6small from "../../public/assets/pictures/sectionscarousel/compress/retrato profesional 10x11/6.jpg";
+
+
+const CarouselProfessional= () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0); // Initialize with the default index
 
   const handleThumbnailClick = (index) => {
@@ -102,56 +102,52 @@ const CarouselPhotography = () => {
         }
       >
         <Div>
-          <Image src={width > 1000 ? fotografia0big : fotografia0small} alt="1" />
+          <Image src={width > 1000 ? professional0big : professional0small} alt="1" />
         </Div>
         <Div>
-          <Image src={width > 1000 ? fotografia1big : fotografia1small} alt="1" />
+          <Image src={width > 1000 ? professional1big : professional1small} alt="1" />
         </Div>
         <Div>
-          <Image src={width > 1000 ? fotografia2big : fotografia2small} alt="1" />
+          <Image src={width > 1000 ? professional2big : professional2small} alt="1" />
         </Div>
         <Div>
-          <Image src={width > 1000 ? fotografia3big : fotografia3small} alt="1" />
+          <Image src={width > 1000 ? professional3big : professional3small} alt="1" />
         </Div>
         <Div>
-          <Image src={width > 1000 ? fotografia4big : fotografia4small} alt="1" />
+          <Image src={width > 1000 ? professional4big : professional4small} alt="1" />
         </Div>
         <Div>
-          <Image src={width > 1000 ? fotografia5big : fotografia5small} alt="1" />
+          <Image src={width > 1000 ? professional5big : professional5small} alt="1" />
         </Div>
         <Div>
-          <Image src={width > 1000 ? fotografia6big : fotografia6small} alt="1" />
+          <Image src={width > 1000 ? professional6big : professional6small} alt="1" />
         </Div>
-        <Div>
-          <Image src={width > 1000 ? fotografia7big : fotografia7small} alt="1" />
-        </Div>
+       
       </Carousel>
 
       <SmallImagesContainer>
         <div onClick={() => handleThumbnailClick(0)}>
-          <Image src={fotografia0big} alt="Miniatura 1" />
+          <Image src={professional0big} alt="Miniatura 1" />
         </div>
         <div onClick={() => handleThumbnailClick(1)}>
-          <Image src={fotografia1big} alt="Miniatura 2" />
+          <Image src={professional1big} alt="Miniatura 2" />
         </div>
         <div onClick={() => handleThumbnailClick(2)}>
-          <Image src={fotografia2big} alt="Miniatura 3" />
+          <Image src={professional2big} alt="Miniatura 3" />
         </div>
         <div onClick={() => handleThumbnailClick(3)}>
-          <Image src={fotografia3big} alt="Miniatura 4" />
+          <Image src={professional3big} alt="Miniatura 4" />
         </div>
         <div onClick={() => handleThumbnailClick(4)}>
-          <Image src={fotografia4big} alt="Miniatura 5" />
+          <Image src={professional4big} alt="Miniatura 5" />
         </div>
         <div onClick={() => handleThumbnailClick(5)}>
-          <Image src={fotografia5big} alt="Miniatura 5" />
+          <Image src={professional5big} alt="Miniatura 5" />
         </div>
         <div onClick={() => handleThumbnailClick(6)}>
-          <Image src={fotografia6big} alt="Miniatura 5" />
+          <Image src={professional6big} alt="Miniatura 5" />
         </div>
-        <div onClick={() => handleThumbnailClick(7)}>
-          <Image src={fotografia7big} alt="Miniatura 5" />
-        </div>
+       
       </SmallImagesContainer>
     </CarouselSection>
   );
@@ -198,4 +194,4 @@ const SmallImagesContainer = styled.div`
     height: 70px;
   }
 `;
-export default CarouselPhotography;
+export default CarouselProfessional;

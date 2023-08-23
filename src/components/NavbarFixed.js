@@ -185,7 +185,7 @@ const Navbar = ({ props }) => {
                       {translate("four")}
                     </NavbarText>
                   </Link>
-                  <Link href="/#proffesionalportrait">
+                  <Link href="/#professionalportrait">
                     {" "}
                     <NavbarText
                       className={

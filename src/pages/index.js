@@ -11,6 +11,18 @@ import BigCarousel from "../components/BigCarousel";
 import NavbarFixed from "../components/NavbarFixed";
 import About from "../sections/About";
 
+
+const scrollToSection = (sectionId) => {
+  const section = document.querySelector(sectionId);
+  if (section) {
+    // Ajusta la posición de desplazamiento 150px arriba
+    const yOffset = -150;
+    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+};
+
+
 const Home = () => {
 
 
@@ -51,6 +63,21 @@ const Home = () => {
     return () => {
       observer.disconnect();
     };
+  }, []);
+
+
+  useEffect(() => {
+    // Escucha el evento de clic en los enlaces de la Navbar
+    const navbarLinks = document.querySelectorAll('.navbar a');
+
+    console.log("navbar links del useeffect", navbarLinks)
+    navbarLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetSection = event.currentTarget.getAttribute('href');
+        scrollToSection(targetSection);
+      });
+    });
   }, []);
   
   

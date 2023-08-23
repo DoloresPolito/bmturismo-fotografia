@@ -137,7 +137,7 @@ const Menu = ({ open, setOpen, active }) => {
               {translate("four")}
             </NavLink>
           </Link>
-          <Link href="/#proffesionalportrait">
+          <Link href="/#professionalportrait">
             {" "}
             <NavLink
               className={
