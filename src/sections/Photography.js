@@ -60,9 +60,12 @@ const Photography = () => {
 
   return (
     <>
+   
+
+  
       <PhotographySection ref={ref}>
         <Title props={translate("title")} />
-
+     
         <Content>
           <ImageContent>
             {width > 1000 ? (
@@ -99,6 +102,7 @@ const Photography = () => {
           </TextContent>
         </Content>
       </PhotographySection>
+    
     </>
   );
 };

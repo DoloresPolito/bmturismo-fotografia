@@ -188,9 +188,7 @@ export const StyledMenu = styled.nav`
   right: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-  @media screen and (max-width: 600px) {
-    top: 240px;
-  }
+
 `;
 
 const NavLink = styled.p`

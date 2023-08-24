@@ -20,7 +20,6 @@ const Navbar = ({ props }) => {
   const [isOpen, setOpen] = useState(false);
 
   const [activeSection, setActiveSection] = useState("");
-  const [activeLanguage, setActiveLanguage] = useState("");
 
   useEffect(() => {
     const currentPagePath = window.location.pathname;
@@ -42,7 +41,10 @@ const Navbar = ({ props }) => {
     };
   }, []);
 
+
   const medium = 1200;
+
+
 
   return (
     <>
@@ -166,63 +168,70 @@ const Navbar = ({ props }) => {
                   </ScrollLink>
                 </>
               ) : (
-                <>
-                  <Link href="/#turism">
-                    {" "}
-                    <NavbarText
-                      className={activeSection === "turism" ? "active" : ""}
-                    >
-                      {translate("one")}
-                    </NavbarText>
-                  </Link>
-                  <Link href="/#photography">
-                    {" "}
-                    <NavbarText
-                      className={
-                        activeSection === "photography" ? "active" : ""
-                      }
-                    >
-                      {translate("four")}
-                    </NavbarText>
-                  </Link>
-                  <Link href="/#professionalportrait">
-                    {" "}
-                    <NavbarText
-                      className={
-                        activeSection === "professionalportrait" ? "active" : ""
-                      }
-                    >
-                      {translate("two")}
-                    </NavbarText>
-                  </Link>
-                  <Link href="/#familyportrait">
-                    {" "}
-                    <NavbarText
-                      className={
-                        activeSection === "familyportrait" ? "active" : ""
-                      }
-                    >
-                      {translate("three")}
-                    </NavbarText>
-                  </Link>
-                  <Link href="/#projects">
-                    {" "}
-                    <NavbarText
-                      className={activeSection === "projects" ? "active" : ""}
-                    >
-                      {translate("five")}
-                    </NavbarText>
-                  </Link>
+         
+                    <>
+                      <Link href="/#turism">
+                        {" "}
+                        <NavbarText
+                          className={activeSection === "turism" ? "active" : ""}
+                        >
+                          {translate("one")}
+                        </NavbarText>
+                      </Link>
+                      <Link href="/#photography">
+                        {" "}
+                        <NavbarText
+                          className={
+                            activeSection === "photography" ? "active" : ""
+                          }
+                        >
+                          {translate("four")}
+                        </NavbarText>
+                      </Link>
+                      <Link href="/#professionalportrait">
+                        {" "}
+                        <NavbarText
+                          className={
+                            activeSection === "professionalportrait"
+                              ? "active"
+                              : ""
+                          }
+                        >
+                          {translate("two")}
+                        </NavbarText>
+                      </Link>
+                      <Link href="/#familyportrait">
+                        {" "}
+                        <NavbarText
+                          className={
+                            activeSection === "familyportrait" ? "active" : ""
+                          }
+                        >
+                          {translate("three")}
+                        </NavbarText>
+                      </Link>
+                      <Link href="/#projects">
+                        {" "}
+                        <NavbarText
+                          className={
+                            activeSection === "projects" ? "active" : ""
+                          }
+                        >
+                          {translate("five")}
+                        </NavbarText>
+                      </Link>
 
-                  <Link href="/#about">
-                    {" "}
-                    <NavbarText
-                      className={activeSection === "about" ? "active" : ""}
-                    >
-                      {translate("six")}
-                    </NavbarText>
-                  </Link>
-                </>
+                      <Link href="/#about">
+                        {" "}
+                        <NavbarText
+                          className={activeSection === "about" ? "active" : ""}
+                        >
+                          {translate("six")}
+                        </NavbarText>
+                      </Link>
+                    </>
+          
+          
               )}
             </>
           ) : (
@@ -304,15 +313,19 @@ const LangSection = styled.div`
   align-items: center;
   /* position:fixed; */
 
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
     height: 190px;
-  }
+  } */
 `;
 
 const LangContainer = styled.div`
   width: 95%;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 630px) {
+    flex-direction: column;
+  }
 `;
 
 const TitleDiv = styled.div`
@@ -328,6 +341,9 @@ const NavbarTitle = styled.h1`
   /* margin-left: 40px; */
   font-size: 22px;
   font-family: "PT Sans", sans-serif;
+  @media screen and (max-width: 575px) {
+    font-size: 20px;
+  }
 `;
 
 const NavbarSubtitle = styled.h2`
@@ -338,9 +354,20 @@ const NavbarSubtitle = styled.h2`
   font-family: "PT Sans", sans-serif;
   letter-spacing: 2px;
 
-  @media screen and (max-width: 600px) {
-    max-width: 200px;
-    line-height: 40px;
+  @media screen and (max-width: 575px) {
+    font-size: 28px;
+  }
+
+  @media screen and (max-width: 515px) {
+    font-size: 26px;
+  }
+
+  @media screen and (max-width: 380px) {
+    letter-spacing: 1.5px;
+  }
+  @media screen and (max-width: 362px) {
+    letter-spacing: 1px;
+    font-size: 24px;
   }
 `;
 
@@ -349,6 +376,11 @@ const Flags = styled.div`
   gap: 10px;
   justify-self: center;
   align-self: center;
+
+  @media screen and (max-width: 630px) {
+    justify-self: flex-start;
+    align-self: flex-start;
+  }
   div {
     cursor: pointer;
   }
@@ -364,4 +396,12 @@ const LanguageText = styled.h3`
   @media screen and (max-width: 1000px) {
     font-size: 13px;
   }
+
+  @media screen and (max-width: 575px) {
+    font-size: 12px;
+  }
+
+  /* @media screen and (max-width: 515px) {
+    font-size: 10px;
+  } */
 `;

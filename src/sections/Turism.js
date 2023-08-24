@@ -111,11 +111,12 @@ const TurismSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* height: auto; */
 
   @media screen and (max-width: 1000px) {
     height: auto;
     width: 90%;
-    margin: 40px auto;
+    margin: 0px auto;
   }
 `;
 

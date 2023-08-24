@@ -10,20 +10,15 @@ import Projects from "../sections/Projects";
 import BigCarousel from "../components/BigCarousel";
 import NavbarFixed from "../components/NavbarFixed";
 import About from "../sections/About";
+import { useRouter } from 'next/router';
+import { Link as ScrollLink, animateScroll } from 'react-scroll';
+import styled from "styled-components"
 
-
-const scrollToSection = (sectionId) => {
-  const section = document.querySelector(sectionId);
-  if (section) {
-    // Ajusta la posición de desplazamiento 150px arriba
-    const yOffset = -150;
-    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
-};
 
 
 const Home = () => {
+
+  const [change, handleChange] = useState(false)
 
 
   const [currentSection, setCurrentSection] = useState(null);
@@ -66,21 +61,28 @@ const Home = () => {
   }, []);
 
 
-  useEffect(() => {
-    // Escucha el evento de clic en los enlaces de la Navbar
-    const navbarLinks = document.querySelectorAll('.navbar a');
 
-    console.log("navbar links del useeffect", navbarLinks)
-    navbarLinks.forEach((link) => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const targetSection = event.currentTarget.getAttribute('href');
-        scrollToSection(targetSection);
+
+
+  useEffect(() => {
+    // Ajusta la altura del desplazamiento en píxeles
+    const hash = window.location.hash;
+    const scrollOffset = -150;
+
+    const targetElement = document.querySelector(hash);
+    
+    if (targetElement) {
+      handleChange(true)
+      const topPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: topPosition + scrollOffset,
+        behavior: 'smooth'
       });
-    });
-  }, []);
-  
-  
+    }
+  }, [change]);
+
+
+
 
   return (
     <>
@@ -91,6 +93,7 @@ const Home = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <NavbarFixed props={currentSection} />
+ 
         <section ref={sectionRefs.carousel} id="carousel">
           <BigCarousel />
         </section>
@@ -119,10 +122,12 @@ const Home = () => {
         </div>
 
         <Footer />
+ 
       </motion.div>
     </>
   );
 };
+
 
 export async function getStaticProps({ locale }) {
   return {
