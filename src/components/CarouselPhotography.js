@@ -24,6 +24,8 @@ import fotografia5small from "../../public/assets/pictures/sectionscarousel/comp
 import fotografia6small from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x11/6.jpg";
 import fotografia7small from "../../public/assets/pictures/sectionscarousel/compress/fotografia 10x11/7.jpg";
 
+import { RotatingLines } from "react-loader-spinner";
+
 const CarouselPhotography = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0); // Initialize with the default index
 
@@ -32,6 +34,16 @@ const CarouselPhotography = () => {
   };
 
   const [width, setWidth] = useState(null);
+
+  const [mostrarPrimerContenido, setMostrarPrimerContenido] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setMostrarPrimerContenido(false);
+    }, 1200);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,8 +59,21 @@ const CarouselPhotography = () => {
   }, []);
 
   return (
+
+    <>
     <CarouselSection>
-      <Carousel
+
+    {mostrarPrimerContenido ? (
+       <RotatingLines
+       strokeColor="#C29A00"
+       strokeWidth="3"
+       animationDuration="0.75"
+       width="70"
+       visible={true}
+     />
+        ) : (<>
+        
+        <Carousel
         selectedItem={selectedImageIndex}
         onChange={(index) => setSelectedImageIndex(index)}
         showThumbs={false}
@@ -153,7 +178,11 @@ const CarouselPhotography = () => {
           <Image src={fotografia7big} alt="Miniatura 5" />
         </div>
       </SmallImagesContainer>
+        
+        </>)}
+     
     </CarouselSection>
+    </>
   );
 };
 
@@ -162,7 +191,11 @@ const CarouselSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  min-height: 140vh;
+
+  @media screen and (max-width: 1000px) {
+    min-height: 150vh;
+  }
 
   @media screen and (max-width: 600px) {
     button {
@@ -191,6 +224,8 @@ const SmallImagesContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+  margin-top: 30px;
+  margin-bottom: 40px;
   img {
     padding: 10px;
     cursor: pointer;

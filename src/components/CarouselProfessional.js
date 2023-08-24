@@ -124,18 +124,6 @@ const CarouselProfessional = () => {
             >
               <Div>
                 <Image
-                  src={width > 1000 ? professional0big : professional0small}
-                  alt="1"
-                />
-              </Div>
-              <Div>
-                <Image
-                  src={width > 1000 ? professional1big : professional1small}
-                  alt="1"
-                />
-              </Div>
-              <Div>
-                <Image
                   src={width > 1000 ? professional2big : professional2small}
                   alt="1"
                 />
@@ -143,6 +131,18 @@ const CarouselProfessional = () => {
               <Div>
                 <Image
                   src={width > 1000 ? professional3big : professional3small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? professional0big : professional0small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? professional1big : professional1small}
                   alt="1"
                 />
               </Div>
@@ -168,16 +168,16 @@ const CarouselProfessional = () => {
 
             <SmallImagesContainer>
               <div onClick={() => handleThumbnailClick(0)}>
-                <Image src={professional0big} alt="Miniatura 1" />
+                <Image src={professional2big} alt="Miniatura 1" />
               </div>
               <div onClick={() => handleThumbnailClick(1)}>
-                <Image src={professional1big} alt="Miniatura 2" />
+                <Image src={professional3big} alt="Miniatura 2" />
               </div>
               <div onClick={() => handleThumbnailClick(2)}>
-                <Image src={professional2big} alt="Miniatura 3" />
+                <Image src={professional0big} alt="Miniatura 3" />
               </div>
               <div onClick={() => handleThumbnailClick(3)}>
-                <Image src={professional3big} alt="Miniatura 4" />
+                <Image src={professional1big} alt="Miniatura 4" />
               </div>
               <div onClick={() => handleThumbnailClick(4)}>
                 <Image src={professional4big} alt="Miniatura 5" />
@@ -201,7 +201,11 @@ const CarouselSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 130vh;
+  min-height: 140vh;
+
+@media screen and (max-width: 1000px) {
+  min-height: 150vh;
+}
 
   @media screen and (max-width: 600px) {
     button {
@@ -230,6 +234,8 @@ const SmallImagesContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+  margin-top: 30px;
+  margin-bottom: 40px;
   img {
     padding: 10px;
     cursor: pointer;
