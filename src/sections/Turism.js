@@ -106,12 +106,13 @@ const Turism = () => {
 
 const TurismSection = styled.div`
   width: 100%;
-  height: 80vh;
+  /* height: 80vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: auto; */
+  height: auto;
+  margin-bottom: 50px;
 
   @media screen and (max-width: 1000px) {
     height: auto;

@@ -118,12 +118,13 @@ const FamilyPortrait = () => {
 
 const FamilyPortraitSection = styled.div`
   width: 100%;
-  height: 80vh;
+  /* height: 80vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  height: auto;
 
   @media screen and (max-width: 1000px) {
     height: auto;

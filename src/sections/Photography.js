@@ -35,8 +35,6 @@ const Photography = () => {
 
   useEffect(() => {
     if (inView) {
-
-
       animation.start({
         opacity: 1,
         transition: {
@@ -44,31 +42,23 @@ const Photography = () => {
           ease: "easeIn",
         },
       });
-
-     
     }
 
     if (!inView) {
-
       animation.start({
         opacity: 0,
       });
-
-
     }
   }, [inView]);
 
   return (
     <>
-   
-
-  
       <PhotographySection ref={ref}>
         <Title props={translate("title")} />
-     
+
         <Content>
           <ImageContent>
-            {width > 1000 ? (
+            {width > 1100 ? (
               <>
                 <Column1>
                   <Image src={image1} alt="1" />
@@ -102,18 +92,19 @@ const Photography = () => {
           </TextContent>
         </Content>
       </PhotographySection>
-    
     </>
   );
 };
 
 const PhotographySection = styled.div`
   width: 100%;
-  height: 80vh;
+  /* height: 80vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: auto;
+  margin-bottom: 50px;
 
   @media screen and (max-width: 1000px) {
     width: 90%;
@@ -127,7 +118,7 @@ const Content = styled.div`
   height: 393px;
   display: flex;
   margin-top: 40px;
-  @media screen and (max-width: 740px) {
+  @media screen and (max-width: 960px) {
     flex-direction: column-reverse;
     height: auto;
   }
@@ -164,27 +155,27 @@ const Column2 = styled.div`
     padding-left: 0px !important;
   }
 
-
-
   div {
     height: 256px;
     width: 341px;
     background-color: lightgray;
     @media screen and (max-width: 740px) {
-    padding-left: 0px !important;
-  }
+      padding-left: 0px !important;
+    }
 
     @media screen and (max-width: 740px) {
       height: 256px;
-    width: 300px;
-}
+      width: 300px;
+      padding-left: 0px !important;
+    }
     img {
       height: 256px;
       width: 341px;
+      
       @media screen and (max-width: 740px) {
-      height: 256px;
-    width: 300px;
-}
+        height: 256px;
+        width: 300px;
+      }
     }
   }
 
@@ -210,7 +201,7 @@ const TextContent = styled.div`
     height: auto;
   }
 
-  @media screen and (max-width: 740px) {
+  @media screen and (max-width: 960px) {
     margin-left: 0px;
     height: auto;
   }
