@@ -367,7 +367,12 @@ const NavbarSubtitle = styled.h2`
   }
   @media screen and (max-width: 362px) {
     letter-spacing: 1px;
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  @media screen and (max-width: 330px) {
+    letter-spacing: 0.5px;
+    font-size: 20px;
   }
 `;
 
