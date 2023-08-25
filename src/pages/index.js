@@ -59,7 +59,7 @@ const Home = () => {
   useEffect(() => {
     // Ajusta la altura del desplazamiento en píxeles
     const hash = window.location.hash;
-    const scrollOffset = -150;
+    const scrollOffset = -180;
     if (hash) {
       const targetElement = document.querySelector(hash);
 

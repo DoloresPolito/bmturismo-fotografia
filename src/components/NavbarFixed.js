@@ -91,7 +91,7 @@ const Navbar = ({ props }) => {
                     to="turism"
                     spy={true}
                     smooth={true}
-                    offset={-150}
+                    offset={-160}
                     duration={800}
                   >
                     <NavbarText className={props === "turism" ? "active" : ""}>
@@ -103,7 +103,7 @@ const Navbar = ({ props }) => {
                     to="photography"
                     spy={true}
                     smooth={true}
-                    offset={-150}
+                    offset={-170}
                     duration={800}
                   >
                     <NavbarText
@@ -116,7 +116,7 @@ const Navbar = ({ props }) => {
                     to="professionalportrait"
                     spy={true}
                     smooth={true}
-                    offset={-150}
+                    offset={-170}
                     duration={800}
                   >
                     <NavbarText
@@ -131,7 +131,7 @@ const Navbar = ({ props }) => {
                     to="familyportrait"
                     spy={true}
                     smooth={true}
-                    offset={-150}
+                    offset={-170}
                     duration={800}
                   >
                     <NavbarText
@@ -145,7 +145,7 @@ const Navbar = ({ props }) => {
                     to="projects"
                     spy={true}
                     smooth={true}
-                    offset={-150}
+                    offset={-170}
                     duration={800}
                   >
                     <NavbarText
@@ -159,7 +159,7 @@ const Navbar = ({ props }) => {
                     to="about"
                     spy={true}
                     smooth={true}
-                    offset={-150}
+                    offset={-170}
                     duration={800}
                   >
                     <NavbarText className={props === "about" ? "active" : ""}>
