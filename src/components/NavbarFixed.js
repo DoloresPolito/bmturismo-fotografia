@@ -41,10 +41,7 @@ const Navbar = ({ props }) => {
     };
   }, []);
 
-
   const medium = 1200;
-
-
 
   return (
     <>
@@ -62,20 +59,15 @@ const Navbar = ({ props }) => {
             <>
               <Flags>
                 <div onClick={handleClick(locales[0])}>
-                  <LanguageText>ESPAÑOL </LanguageText>
+                  <LanguageText active={locale === locales[0]}>
+                    {translate("spanish")}
+                  </LanguageText>
                 </div>
-                <p
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    margin: "0 5px",
-                  }}
-                >
-                  /
-                </p>
+                <Divider>/</Divider>
                 <div onClick={handleClick(locales[1])}>
-                  <LanguageText>ENGLISH</LanguageText>
+                  <LanguageText active={locale === locales[1]}>
+                    {translate("english")}
+                  </LanguageText>
                 </div>
               </Flags>
             </>
@@ -168,70 +160,63 @@ const Navbar = ({ props }) => {
                   </ScrollLink>
                 </>
               ) : (
-         
-                    <>
-                      <Link href="/#turism">
-                        {" "}
-                        <NavbarText
-                          className={activeSection === "turism" ? "active" : ""}
-                        >
-                          {translate("one")}
-                        </NavbarText>
-                      </Link>
-                      <Link href="/#photography">
-                        {" "}
-                        <NavbarText
-                          className={
-                            activeSection === "photography" ? "active" : ""
-                          }
-                        >
-                          {translate("four")}
-                        </NavbarText>
-                      </Link>
-                      <Link href="/#professionalportrait">
-                        {" "}
-                        <NavbarText
-                          className={
-                            activeSection === "professionalportrait"
-                              ? "active"
-                              : ""
-                          }
-                        >
-                          {translate("two")}
-                        </NavbarText>
-                      </Link>
-                      <Link href="/#familyportrait">
-                        {" "}
-                        <NavbarText
-                          className={
-                            activeSection === "familyportrait" ? "active" : ""
-                          }
-                        >
-                          {translate("three")}
-                        </NavbarText>
-                      </Link>
-                      <Link href="/#projects">
-                        {" "}
-                        <NavbarText
-                          className={
-                            activeSection === "projects" ? "active" : ""
-                          }
-                        >
-                          {translate("five")}
-                        </NavbarText>
-                      </Link>
+                <>
+                  <Link href="/#turism">
+                    {" "}
+                    <NavbarText
+                      className={activeSection === "turism" ? "active" : ""}
+                    >
+                      {translate("one")}
+                    </NavbarText>
+                  </Link>
+                  <Link href="/#photography">
+                    {" "}
+                    <NavbarText
+                      className={
+                        activeSection === "photography" ? "active" : ""
+                      }
+                    >
+                      {translate("four")}
+                    </NavbarText>
+                  </Link>
+                  <Link href="/#professionalportrait">
+                    {" "}
+                    <NavbarText
+                      className={
+                        activeSection === "professionalportrait" ? "active" : ""
+                      }
+                    >
+                      {translate("two")}
+                    </NavbarText>
+                  </Link>
+                  <Link href="/#familyportrait">
+                    {" "}
+                    <NavbarText
+                      className={
+                        activeSection === "familyportrait" ? "active" : ""
+                      }
+                    >
+                      {translate("three")}
+                    </NavbarText>
+                  </Link>
+                  <Link href="/#projects">
+                    {" "}
+                    <NavbarText
+                      className={activeSection === "projects" ? "active" : ""}
+                    >
+                      {translate("five")}
+                    </NavbarText>
+                  </Link>
 
-                      <Link href="/#about">
-                        {" "}
-                        <NavbarText
-                          className={activeSection === "about" ? "active" : ""}
-                        >
-                          {translate("six")}
-                        </NavbarText>
-                      </Link>
-                    </>
-          
-          
+                  <Link href="/#about">
+                    {" "}
+                    <NavbarText
+                      className={activeSection === "about" ? "active" : ""}
+                    >
+                      {translate("six")}
+                    </NavbarText>
+                  </Link>
+                </>
               )}
             </>
           ) : (
@@ -394,10 +379,12 @@ const Flags = styled.div`
 
 const LanguageText = styled.h3`
   font-family: "Inter", sans-serif;
-  font-weight: 500;
+  /* font-weight: 500; */
   font-size: 17px;
   text-transform: uppercase;
   font-family: "PT Sans", sans-serif;
+  font-weight: ${(props) => (props.active ? "bold" : "normal")};
+  cursor: pointer;
 
   @media screen and (max-width: 1000px) {
     font-size: 13px;
@@ -411,3 +398,22 @@ const LanguageText = styled.h3`
     font-size: 10px;
   } */
 `;
+
+const Divider = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  font-family: "PT Sans", sans-serif;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 575px) {
+    font-size: 12px;
+  }
+`;
+
+
