@@ -89,8 +89,8 @@ const Wrapper = styled.div`
 const Logo = styled.div`
 
   img {
-    height: 100px;
-    width: 100px;
+    height: 130px;
+    width: 130px;
   }
 
   @media only screen and (max-width: 800px) {
