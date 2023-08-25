@@ -352,7 +352,7 @@ const NavbarSubtitle = styled.h2`
   font-size: 32px;
   text-transform: uppercase;
   font-family: "PT Sans", sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 
   @media screen and (max-width: 575px) {
     font-size: 28px;
