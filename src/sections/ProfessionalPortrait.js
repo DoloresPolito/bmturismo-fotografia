@@ -12,7 +12,6 @@ import imagemobile from "../../public/assets/pictures/mobileindex/Retrato profes
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-
 const ProfessionalPortrait = () => {
   const { t: translate } = useTranslation("professionalportrait");
 
@@ -38,8 +37,6 @@ const ProfessionalPortrait = () => {
 
   useEffect(() => {
     if (inView) {
-
-
       animation.start({
         opacity: 1,
         transition: {
@@ -47,17 +44,12 @@ const ProfessionalPortrait = () => {
           ease: "easeIn",
         },
       });
-
-     
     }
 
     if (!inView) {
-
       animation.start({
         opacity: 0,
       });
-
-
     }
   }, [inView]);
 
@@ -67,12 +59,15 @@ const ProfessionalPortrait = () => {
         <Title props={translate("title")} />
         <Content>
           <ImageContent>
-          {width > 740 ? (<>
-            <Image src={image1} alt="1" />
-          </>) : (<>
-            <Image src={imagemobile} alt="1" />
-          </>)}
-         
+            {width > 740 ? (
+              <>
+                <Image src={image1} alt="1" />
+              </>
+            ) : (
+              <>
+                <Image src={imagemobile} alt="1" />
+              </>
+            )}
           </ImageContent>
           <TextContent>
             <motion.h6 animate={animation}>{translate("text1")}</motion.h6>
@@ -94,7 +89,6 @@ const ProfessionalPortraitSection = styled.div`
   align-items: center;
   margin-bottom: 50px;
   height: auto;
-
 
   @media screen and (max-width: 1000px) {
     width: 90%;
@@ -132,10 +126,8 @@ const ImageContent = styled.div`
 
   @media screen and (max-width: 740px) {
     height: 250px;
-  width: 300px;
+    width: 300px;
   }
-
-  
 
   img {
     height: 375px;
@@ -143,8 +135,7 @@ const ImageContent = styled.div`
 
     @media screen and (max-width: 740px) {
       height: 250px;
-  width: 300px;
-    
+      width: 300px;
     }
   }
 `;

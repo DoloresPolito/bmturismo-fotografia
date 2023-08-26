@@ -54,7 +54,7 @@ const Navbar = ({ props }) => {
                 <NavbarTitle>Belén Miguens</NavbarTitle>
 
                 <NavbarSubtitle> {translate("cero")}</NavbarSubtitle>
-              </TitleDiv>``
+              </TitleDiv>
             </Link>
             <>
               <Flags>

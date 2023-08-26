@@ -85,6 +85,7 @@ const CarouselFamily = () => {
         infiniteLoop={true}
         slideNumber={true}
         autoPlay={true}
+      
         renderArrowPrev={
           (onClickHandler, hasPrev, label) => (
             // hasPrev && (
@@ -207,11 +208,12 @@ const CarouselSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 140vh;
+  /* min-height: 140vh; */
+  height: auto;
 
-  @media screen and (max-width: 1000px) {
+  /* @media screen and (max-width: 1000px) {
     min-height: 150vh;
-  }
+  } */
 
   @media screen and (max-width: 600px) {
     button {
@@ -221,7 +223,7 @@ const CarouselSection = styled.div`
 `;
 const Div = styled.div`
   margin: 0 auto;
-  margin-top: 180px;
+  margin-top: 200px;
   height: auto;
   width: 60%;
 

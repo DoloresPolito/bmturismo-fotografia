@@ -13,7 +13,7 @@ const Footer = () => {
         <FooterContainer>
           <Wrapper>
             <Logo>
-              <Image src={logo} />
+              <Image src={logo} alt="logo"/>
             </Logo>
             <FooterContent>
               <a
