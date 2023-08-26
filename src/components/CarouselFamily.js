@@ -207,13 +207,10 @@ const CarouselSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  /* min-height: 140vh; */
+  align-items: center; 
   height: auto;
   min-height: 100vh;
-  /* @media screen and (max-width: 1000px) {
-    min-height: 150vh;
-  } */
+
 
   @media screen and (max-width: 600px) {
     button {
@@ -232,7 +229,7 @@ const Div = styled.div`
     width: 100%;
   }
   @media screen and (max-width: 600px) {
-    margin-top: 250px;
+    margin-top: 230px;
     width: 90%;
   }
 `;

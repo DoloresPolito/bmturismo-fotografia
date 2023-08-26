@@ -56,13 +56,17 @@ const CarouselTourism = () => {
     <>
       <CarouselSection>
         {mostrarPrimerContenido ? (
-          <RotatingLines
-            strokeColor="#C29A00"
-            strokeWidth="3"
-            animationDuration="0.75"
-            width="70"
-            visible={true}
-          />
+          <>
+            <RingContainer>
+              <RotatingLines
+                strokeColor="#C29A00"
+                strokeWidth="3"
+                animationDuration="0.75"
+                width="70"
+                visible={true}
+              />
+            </RingContainer>
+          </>
         ) : (
           <>
             <Carousel
@@ -176,11 +180,8 @@ const CarouselSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 140vh;
-
-  @media screen and (max-width: 1000px) {
-    min-height: 150vh;
-  }
+  height: auto;
+  min-height: 100vh;
 
   @media screen and (max-width: 600px) {
     button {
@@ -190,7 +191,7 @@ const CarouselSection = styled.div`
 `;
 const Div = styled.div`
   margin: 0 auto;
-  margin-top: 180px;
+  margin-top: 200px;
   height: auto;
   width: 60%;
 
@@ -199,7 +200,7 @@ const Div = styled.div`
     width: 100%;
   }
   @media screen and (max-width: 600px) {
-    margin-top: 250px;
+    margin-top: 230px;
     width: 90%;
   }
 `;
@@ -217,5 +218,13 @@ const SmallImagesContainer = styled.div`
     width: auto;
     height: 70px;
   }
+`;
+
+const RingContainer = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export default CarouselTourism;

@@ -16,7 +16,6 @@ import projects4big from "../../public/assets/pictures/sectionscarousel/compress
 // import projects7big from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x6/7.jpg";
 // import projects8big from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x6/8.jpg";
 
-
 import projects0small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/0.jpg";
 import projects1small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/1.jpg";
 import projects2small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/2.jpg";
@@ -28,7 +27,6 @@ import projects4small from "../../public/assets/pictures/sectionscarousel/compre
 // import projects8small from "../../public/assets/pictures/sectionscarousel/compress/proyectos 10x11/8.jpg";
 
 import { RotatingLines } from "react-loader-spinner";
-
 
 const CarouselProjects = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0); // Initialize with the default index
@@ -63,91 +61,106 @@ const CarouselProjects = () => {
   }, []);
 
   return (
-
     <>
-    
- 
-    <CarouselSection>
-
-    {mostrarPrimerContenido ? (
-       <RotatingLines
-       strokeColor="#C29A00"
-       strokeWidth="3"
-       animationDuration="0.75"
-       width="70"
-       visible={true}
-     />
-        ) : (<>
-        
-        <Carousel
-        selectedItem={selectedImageIndex}
-        onChange={(index) => setSelectedImageIndex(index)}
-        showThumbs={false}
-        showStatus={false}
-        infiniteLoop={true}
-        slideNumber={true}
-        autoPlay={true}
-        renderArrowPrev={
-          (onClickHandler, hasPrev, label) => (
-            // hasPrev && (
-            <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
-              style={{
-                position: "absolute",
-                zIndex: 2,
-                left: 15,
-                top: "60%",
-                transform: "translateY(-50%)",
-                background: "transparent",
-                border: "none",
-              }}
+      <CarouselSection>
+        {mostrarPrimerContenido ? (
+          <>
+            <RingContainer>
+              <RotatingLines
+                strokeColor="#C29A00"
+                strokeWidth="3"
+                animationDuration="0.75"
+                width="70"
+                visible={true}
+              />
+            </RingContainer>
+          </>
+        ) : (
+          <>
+            <Carousel
+              selectedItem={selectedImageIndex}
+              onChange={(index) => setSelectedImageIndex(index)}
+              showThumbs={false}
+              showStatus={false}
+              infiniteLoop={true}
+              slideNumber={true}
+              autoPlay={true}
+              renderArrowPrev={
+                (onClickHandler, hasPrev, label) => (
+                  // hasPrev && (
+                  <button
+                    type="button"
+                    onClick={onClickHandler}
+                    title={label}
+                    style={{
+                      position: "absolute",
+                      zIndex: 2,
+                      left: 15,
+                      top: "60%",
+                      transform: "translateY(-50%)",
+                      background: "transparent",
+                      border: "none",
+                    }}
+                  >
+                    <Image src={leftArrowImage} alt="Flecha Izquierda" />
+                  </button>
+                )
+                // )
+              }
+              renderArrowNext={
+                (onClickHandler, hasNext, label) => (
+                  // hasNext && (
+                  <button
+                    type="button"
+                    onClick={onClickHandler}
+                    title={label}
+                    style={{
+                      position: "absolute",
+                      zIndex: 2,
+                      right: 15,
+                      top: "60%",
+                      transform: "translateY(-50%)",
+                      background: "transparent",
+                      border: "none",
+                    }}
+                  >
+                    <Image src={rightArrowImage} alt="Flecha Derecha" />
+                  </button>
+                )
+                // )
+              }
             >
-              <Image src={leftArrowImage} alt="Flecha Izquierda" />
-            </button>
-          )
-          // )
-        }
-        renderArrowNext={
-          (onClickHandler, hasNext, label) => (
-            // hasNext && (
-            <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
-              style={{
-                position: "absolute",
-                zIndex: 2,
-                right: 15,
-                top: "60%",
-                transform: "translateY(-50%)",
-                background: "transparent",
-                border: "none",
-              }}
-            >
-              <Image src={rightArrowImage} alt="Flecha Derecha" />
-            </button>
-          )
-          // )
-        }
-      >
-        <Div>
-          <Image src={width > 1000 ? projects0big : projects0small} alt="1" />
-        </Div>
-        <Div>
-          <Image src={width > 1000 ? projects1big : projects1small} alt="1" />
-        </Div>
-        <Div>
-          <Image src={width > 1000 ? projects2big : projects2small} alt="1" />
-        </Div>
-        <Div>
-          <Image src={width > 1000 ? projects3big : projects3small} alt="1" />
-        </Div>
-        <Div>
-          <Image src={width > 1000 ? projects4big : projects4small} alt="1" />
-        </Div>
-        {/* <Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? projects0big : projects0small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? projects1big : projects1small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? projects2big : projects2small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? projects3big : projects3small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? projects4big : projects4small}
+                  alt="1"
+                />
+              </Div>
+              {/* <Div>
           <Image src={width > 1000 ? projects5big : projects4small} alt="1" />
         </Div>
         <Div>
@@ -159,26 +172,25 @@ const CarouselProjects = () => {
         <Div>
           <Image src={width > 1000 ? projects8big : projects8small} alt="1" />
         </Div> */}
+            </Carousel>
 
-      </Carousel>
-
-      <SmallImagesContainer>
-        <div onClick={() => handleThumbnailClick(0)}>
-          <Image src={projects0big} alt="Miniatura 1" />
-        </div>
-        <div onClick={() => handleThumbnailClick(1)}>
-          <Image src={projects1big} alt="Miniatura 2" />
-        </div>
-        <div onClick={() => handleThumbnailClick(2)}>
-          <Image src={projects2big} alt="Miniatura 3" />
-        </div>
-        <div onClick={() => handleThumbnailClick(3)}>
-          <Image src={projects3big} alt="Miniatura 4" />
-        </div>
-        <div onClick={() => handleThumbnailClick(4)}>
-          <Image src={projects4big} alt="Miniatura 5" />
-        </div>
-        {/* <div onClick={() => handleThumbnailClick(5)}>
+            <SmallImagesContainer>
+              <div onClick={() => handleThumbnailClick(0)}>
+                <Image src={projects0big} alt="Miniatura 1" />
+              </div>
+              <div onClick={() => handleThumbnailClick(1)}>
+                <Image src={projects1big} alt="Miniatura 2" />
+              </div>
+              <div onClick={() => handleThumbnailClick(2)}>
+                <Image src={projects2big} alt="Miniatura 3" />
+              </div>
+              <div onClick={() => handleThumbnailClick(3)}>
+                <Image src={projects3big} alt="Miniatura 4" />
+              </div>
+              <div onClick={() => handleThumbnailClick(4)}>
+                <Image src={projects4big} alt="Miniatura 5" />
+              </div>
+              {/* <div onClick={() => handleThumbnailClick(5)}>
           <Image src={projects5big} alt="Miniatura 5" />
         </div>
         <div onClick={() => handleThumbnailClick(6)}>
@@ -190,12 +202,10 @@ const CarouselProjects = () => {
         <div onClick={() => handleThumbnailClick(8)}>
           <Image src={projects8big} alt="Miniatura 5" />
         </div> */}
- 
-      </SmallImagesContainer>
-        
-        </>)}
-     
-    </CarouselSection>
+            </SmallImagesContainer>
+          </>
+        )}
+      </CarouselSection>
     </>
   );
 };
@@ -205,11 +215,8 @@ const CarouselSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 140vh;
-
-@media screen and (max-width: 1000px) {
-  min-height: 150vh;
-}
+  height: auto;
+  min-height: 100vh;
 
   @media screen and (max-width: 600px) {
     button {
@@ -219,7 +226,7 @@ const CarouselSection = styled.div`
 `;
 const Div = styled.div`
   margin: 0 auto;
-  margin-top: 180px;
+  margin-top: 200px;
   height: auto;
   width: 60%;
 
@@ -228,7 +235,7 @@ const Div = styled.div`
     width: 100%;
   }
   @media screen and (max-width: 600px) {
-    margin-top: 250px;
+    margin-top: 230px;
     width: 90%;
   }
 `;
@@ -246,5 +253,13 @@ const SmallImagesContainer = styled.div`
     width: auto;
     height: 70px;
   }
+`;
+
+const RingContainer = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export default CarouselProjects;

@@ -59,129 +59,154 @@ const CarouselPhotography = () => {
   }, []);
 
   return (
-
     <>
-    <CarouselSection>
-
-    {mostrarPrimerContenido ? (
-       <RotatingLines
-       strokeColor="#C29A00"
-       strokeWidth="3"
-       animationDuration="0.75"
-       width="70"
-       visible={true}
-     />
-        ) : (<>
-        
-        <Carousel
-        selectedItem={selectedImageIndex}
-        onChange={(index) => setSelectedImageIndex(index)}
-        showThumbs={false}
-        showStatus={false}
-        infiniteLoop={true}
-        slideNumber={true}
-        autoPlay={true}
-        renderArrowPrev={
-          (onClickHandler, hasPrev, label) => (
-            // hasPrev && (
-            <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
-              style={{
-                position: "absolute",
-                zIndex: 2,
-                left: 15,
-                top: "60%",
-                transform: "translateY(-50%)",
-                background: "transparent",
-                border: "none",
-              }}
+      <CarouselSection>
+        {mostrarPrimerContenido ? (
+          <>
+            <RingContainer>
+              <RotatingLines
+                strokeColor="#C29A00"
+                strokeWidth="3"
+                animationDuration="0.75"
+                width="70"
+                visible={true}
+              />
+            </RingContainer>
+          </>
+        ) : (
+          <>
+            <Carousel
+              selectedItem={selectedImageIndex}
+              onChange={(index) => setSelectedImageIndex(index)}
+              showThumbs={false}
+              showStatus={false}
+              infiniteLoop={true}
+              slideNumber={true}
+              autoPlay={true}
+              renderArrowPrev={
+                (onClickHandler, hasPrev, label) => (
+                  // hasPrev && (
+                  <button
+                    type="button"
+                    onClick={onClickHandler}
+                    title={label}
+                    style={{
+                      position: "absolute",
+                      zIndex: 2,
+                      left: 15,
+                      top: "60%",
+                      transform: "translateY(-50%)",
+                      background: "transparent",
+                      border: "none",
+                    }}
+                  >
+                    <Image src={leftArrowImage} alt="Flecha Izquierda" />
+                  </button>
+                )
+                // )
+              }
+              renderArrowNext={
+                (onClickHandler, hasNext, label) => (
+                  // hasNext && (
+                  <button
+                    type="button"
+                    onClick={onClickHandler}
+                    title={label}
+                    style={{
+                      position: "absolute",
+                      zIndex: 2,
+                      right: 15,
+                      top: "60%",
+                      transform: "translateY(-50%)",
+                      background: "transparent",
+                      border: "none",
+                    }}
+                  >
+                    <Image src={rightArrowImage} alt="Flecha Derecha" />
+                  </button>
+                )
+                // )
+              }
             >
-              <Image src={leftArrowImage} alt="Flecha Izquierda" />
-            </button>
-          )
-          // )
-        }
-        renderArrowNext={
-          (onClickHandler, hasNext, label) => (
-            // hasNext && (
-            <button
-              type="button"
-              onClick={onClickHandler}
-              title={label}
-              style={{
-                position: "absolute",
-                zIndex: 2,
-                right: 15,
-                top: "60%",
-                transform: "translateY(-50%)",
-                background: "transparent",
-                border: "none",
-              }}
-            >
-              <Image src={rightArrowImage} alt="Flecha Derecha" />
-            </button>
-          )
-          // )
-        }
-      >
-        <Div>
-          <Image src={width > 1000 ? fotografia0big : fotografia0small} alt="1" />
-        </Div>
-        <Div>
-          <Image src={width > 1000 ? fotografia1big : fotografia1small} alt="1" />
-        </Div>
-        <Div>
-          <Image src={width > 1000 ? fotografia2big : fotografia2small} alt="1" />
-        </Div>
-        <Div>
-          <Image src={width > 1000 ? fotografia3big : fotografia3small} alt="1" />
-        </Div>
-        <Div>
-          <Image src={width > 1000 ? fotografia4big : fotografia4small} alt="1" />
-        </Div>
-        <Div>
-          <Image src={width > 1000 ? fotografia5big : fotografia5small} alt="1" />
-        </Div>
-        <Div>
-          <Image src={width > 1000 ? fotografia6big : fotografia6small} alt="1" />
-        </Div>
-        <Div>
-          <Image src={width > 1000 ? fotografia7big : fotografia7small} alt="1" />
-        </Div>
-      </Carousel>
+              <Div>
+                <Image
+                  src={width > 1000 ? fotografia0big : fotografia0small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? fotografia1big : fotografia1small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? fotografia2big : fotografia2small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? fotografia3big : fotografia3small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? fotografia4big : fotografia4small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? fotografia5big : fotografia5small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? fotografia6big : fotografia6small}
+                  alt="1"
+                />
+              </Div>
+              <Div>
+                <Image
+                  src={width > 1000 ? fotografia7big : fotografia7small}
+                  alt="1"
+                />
+              </Div>
+            </Carousel>
 
-      <SmallImagesContainer>
-        <div onClick={() => handleThumbnailClick(0)}>
-          <Image src={fotografia0big} alt="Miniatura 1" />
-        </div>
-        <div onClick={() => handleThumbnailClick(1)}>
-          <Image src={fotografia1big} alt="Miniatura 2" />
-        </div>
-        <div onClick={() => handleThumbnailClick(2)}>
-          <Image src={fotografia2big} alt="Miniatura 3" />
-        </div>
-        <div onClick={() => handleThumbnailClick(3)}>
-          <Image src={fotografia3big} alt="Miniatura 4" />
-        </div>
-        <div onClick={() => handleThumbnailClick(4)}>
-          <Image src={fotografia4big} alt="Miniatura 5" />
-        </div>
-        <div onClick={() => handleThumbnailClick(5)}>
-          <Image src={fotografia5big} alt="Miniatura 5" />
-        </div>
-        <div onClick={() => handleThumbnailClick(6)}>
-          <Image src={fotografia6big} alt="Miniatura 5" />
-        </div>
-        <div onClick={() => handleThumbnailClick(7)}>
-          <Image src={fotografia7big} alt="Miniatura 5" />
-        </div>
-      </SmallImagesContainer>
-        
-        </>)}
-     
-    </CarouselSection>
+            <SmallImagesContainer>
+              <div onClick={() => handleThumbnailClick(0)}>
+                <Image src={fotografia0big} alt="Miniatura 1" />
+              </div>
+              <div onClick={() => handleThumbnailClick(1)}>
+                <Image src={fotografia1big} alt="Miniatura 2" />
+              </div>
+              <div onClick={() => handleThumbnailClick(2)}>
+                <Image src={fotografia2big} alt="Miniatura 3" />
+              </div>
+              <div onClick={() => handleThumbnailClick(3)}>
+                <Image src={fotografia3big} alt="Miniatura 4" />
+              </div>
+              <div onClick={() => handleThumbnailClick(4)}>
+                <Image src={fotografia4big} alt="Miniatura 5" />
+              </div>
+              <div onClick={() => handleThumbnailClick(5)}>
+                <Image src={fotografia5big} alt="Miniatura 5" />
+              </div>
+              <div onClick={() => handleThumbnailClick(6)}>
+                <Image src={fotografia6big} alt="Miniatura 5" />
+              </div>
+              <div onClick={() => handleThumbnailClick(7)}>
+                <Image src={fotografia7big} alt="Miniatura 5" />
+              </div>
+            </SmallImagesContainer>
+          </>
+        )}
+      </CarouselSection>
     </>
   );
 };
@@ -191,11 +216,9 @@ const CarouselSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 140vh;
+  height: auto;
+  min-height: 100vh;
 
-  @media screen and (max-width: 1000px) {
-    min-height: 150vh;
-  }
 
   @media screen and (max-width: 600px) {
     button {
@@ -205,7 +228,7 @@ const CarouselSection = styled.div`
 `;
 const Div = styled.div`
   margin: 0 auto;
-  margin-top: 180px;
+  margin-top: 200px;
   height: auto;
   width: 60%;
 
@@ -214,7 +237,7 @@ const Div = styled.div`
     width: 100%;
   }
   @media screen and (max-width: 600px) {
-    margin-top: 250px;
+    margin-top: 230px;
     width: 90%;
   }
 `;
@@ -233,4 +256,13 @@ const SmallImagesContainer = styled.div`
     height: 70px;
   }
 `;
+
+const RingContainer = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export default CarouselPhotography;
