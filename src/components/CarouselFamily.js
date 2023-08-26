@@ -210,7 +210,7 @@ const CarouselSection = styled.div`
   align-items: center;
   /* min-height: 140vh; */
   height: auto;
-
+  min-height: 100vh;
   /* @media screen and (max-width: 1000px) {
     min-height: 150vh;
   } */
