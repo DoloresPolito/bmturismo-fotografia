@@ -381,7 +381,7 @@ const LanguageText = styled.h3`
   font-family: "Inter", sans-serif;
   /* font-weight: 500; */
   font-size: 17px;
-  text-transform: uppercase;
+
   font-family: "PT Sans", sans-serif;
   font-weight: ${(props) => (props.active ? "bold" : "normal")};
   cursor: pointer;
