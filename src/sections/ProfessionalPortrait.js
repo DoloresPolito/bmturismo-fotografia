@@ -131,7 +131,7 @@ const ImageContent = styled.div`
   }
 
   @media screen and (max-width: 740px) {
-    height: 350px;
+    height: 250px;
   width: 300px;
   }
 
@@ -142,7 +142,7 @@ const ImageContent = styled.div`
     width: 620px;
 
     @media screen and (max-width: 740px) {
-      height: 350px;
+      height: 250px;
   width: 300px;
     
     }
