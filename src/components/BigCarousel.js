@@ -8,7 +8,7 @@ import img1big from "../../public/assets/pictures/indexcarousel/10x4/1.jpg";
 import img2big from "../../public/assets/pictures/indexcarousel/10x4/2.jpg";
 // import img3big from "../../public/assets/pictures/indexcarousel/10x4/3.jpg"
 import img4big from "../../public/assets/pictures/indexcarousel/10x4/4.jpg";
-import img5big from "../../public/assets/pictures/indexcarousel/10x4/5.jpg";
+// import img5big from "../../public/assets/pictures/indexcarousel/10x4/5.jpg";
 import img6big from "../../public/assets/pictures/indexcarousel/10x4/6.jpg";
 import img7big from "../../public/assets/pictures/indexcarousel/10x4/7.jpg";
 import img8big from "../../public/assets/pictures/indexcarousel/10x4/8.jpg";
@@ -19,7 +19,7 @@ import img1medium from "../../public/assets/pictures/indexcarousel/10x7/1.jpg";
 import img2medium from "../../public/assets/pictures/indexcarousel/10x7/2.jpg";
 // import img3medium from "../../public/assets/pictures/indexcarousel/10x7/3.jpg"
 import img4medium from "../../public/assets/pictures/indexcarousel/10x7/4.jpg";
-import img5medium from "../../public/assets/pictures/indexcarousel/10x7/5.jpg";
+// import img5medium from "../../public/assets/pictures/indexcarousel/10x7/5.jpg";
 import img6medium from "../../public/assets/pictures/indexcarousel/10x7/6.jpg";
 import img7medium from "../../public/assets/pictures/indexcarousel/10x7/7.jpg";
 import img8medium from "../../public/assets/pictures/indexcarousel/10x7/8.jpg";
@@ -30,7 +30,7 @@ import img1small from "../../public/assets/pictures/indexcarousel/10x11/1.jpg";
 import img2small from "../../public/assets/pictures/indexcarousel/10x11/2.jpg";
 // import img3small from "../../public/assets/pictures/indexcarousel/10x11/3.jpg"
 import img4small from "../../public/assets/pictures/indexcarousel/10x11/4.jpg";
-import img5small from "../../public/assets/pictures/indexcarousel/10x11/5.jpg";
+// import img5small from "../../public/assets/pictures/indexcarousel/10x11/5.jpg";
 import img6small from "../../public/assets/pictures/indexcarousel/10x11/6.jpg";
 import img7small from "../../public/assets/pictures/indexcarousel/10x11/7.jpg";
 import img8small from "../../public/assets/pictures/indexcarousel/10x11/8.jpg";
@@ -140,14 +140,14 @@ const BigCarousel = () => {
               alt="1"
             />
           </Div>
-          <Div>
+          {/* <Div>
             <Image
               src={
                 width > 1000 ? img5big : width > 600 ? img5medium : img5small
               }
               alt="1"
             />
-          </Div>
+          </Div> */}
           <Div>
             <Image
               src={
