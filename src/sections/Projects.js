@@ -9,7 +9,6 @@ import Image from "next/image";
 import image1 from "../../public/assets/pictures/indexpage/projects/Sustentabilidad - Inicial I.jpg";
 import image2 from "../../public/assets/pictures/indexpage/projects/Sustentabilidad - Inicial II.jpg";
 
-
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -36,8 +35,6 @@ const Projects = () => {
 
   useEffect(() => {
     if (inView) {
-
-
       animation.start({
         opacity: 1,
         transition: {
@@ -45,17 +42,12 @@ const Projects = () => {
           ease: "easeIn",
         },
       });
-
-     
     }
 
     if (!inView) {
-
       animation.start({
         opacity: 0,
       });
-
-
     }
   }, [inView]);
 
@@ -81,21 +73,22 @@ const Projects = () => {
               <>
                 {" "}
                 <Column1>
-                <Image src={image1} alt="1"/>
+                  <Image src={image1} alt="1" />
                 </Column1>
+                <Column2>
+                  <div>
+                    <Image src={image2} alt="2" />
+                  </div>
+                  <p>{translate("text5")}</p>
+                </Column2>
               </>
             ) : (
-              <></>
+              <>
+               <Column1>
+                  <Image src={image1} alt="1" />
+                </Column1>
+              </>
             )}
-
-            <Column2>
-              <div>   
-                 <Image src={image2} alt="2"/>
-              </div>
-              <p>
-              {translate("text5")}
-              </p>
-            </Column2>
           </ImageContent>
         </Content>
       </ProjectsSection>
@@ -113,15 +106,11 @@ const ProjectsSection = styled.div`
   height: auto;
   margin-bottom: 50px;
 
-
-
   @media screen and (max-width: 1000px) {
     height: auto;
     width: 90%;
     margin: 50px auto;
-
   }
-
 `;
 
 const Content = styled.div`
@@ -142,17 +131,24 @@ const ImageContent = styled.div`
   background-color: white;
   display: flex;
   flex-direction: row;
-
-
 `;
 
 const Column1 = styled.div`
   background-color: lightgray;
   height: 360px;
   width: 284px;
-  img{
+  img {
     height: 360px;
-  width: 284px;
+    width: 284px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    margin-left: 30px;
+  }
+
+  @media screen and (max-width: 740px) {
+    margin-left: 0px;
+    margin-bottom: 30px;
   }
 `;
 
@@ -170,10 +166,10 @@ const Column2 = styled.div`
     height: 284px;
     width: 284px;
     background-color: lightgray;
-    img{
+    img {
       height: 284px;
-    width: 284px;
-  }
+      width: 284px;
+    }
   }
 
   p {
@@ -192,7 +188,6 @@ const TextContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-right: 40px;
-
 
   h4 {
     font-family: "Inter", sans-serif;
@@ -215,7 +210,6 @@ const TextContent = styled.div`
     margin: 0 0 18px 0;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-
   }
 `;
 
