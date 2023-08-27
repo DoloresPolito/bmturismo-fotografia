@@ -1,33 +1,41 @@
 import React, { useState, useEffect } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
-import image3 from "../../public/assets/pictures/indexcarousel/10x11.jpg";
+// import image3 from "../../public/assets/pictures/indexcarousel/10x11.jpg";
 
-import img1big from "../../public/assets/pictures/indexcarousel/10x4/1.jpg"
-import img2big from "../../public/assets/pictures/indexcarousel/10x4/2.jpg"
-import img3big from "../../public/assets/pictures/indexcarousel/10x4/3.jpg"
-import img4big from "../../public/assets/pictures/indexcarousel/10x4/4.jpg"
-// import img5big from "../../public/assets/pictures/indexcarousel/10x4/5.jpg"
-import img6big from "../../public/assets/pictures/indexcarousel/10x4/6.jpg"
-import img7big from "../../public/assets/pictures/indexcarousel/10x4/7.jpg"
-import img8big from "../../public/assets/pictures/indexcarousel/10x4/8.jpg"
+import img1big from "../../public/assets/pictures/indexcarousel/10x4/1.jpg";
+import img2big from "../../public/assets/pictures/indexcarousel/10x4/2.jpg";
+// import img3big from "../../public/assets/pictures/indexcarousel/10x4/3.jpg"
+import img4big from "../../public/assets/pictures/indexcarousel/10x4/4.jpg";
+import img5big from "../../public/assets/pictures/indexcarousel/10x4/5.jpg";
+import img6big from "../../public/assets/pictures/indexcarousel/10x4/6.jpg";
+import img7big from "../../public/assets/pictures/indexcarousel/10x4/7.jpg";
+import img8big from "../../public/assets/pictures/indexcarousel/10x4/8.jpg";
+import img9big from "../../public/assets/pictures/indexcarousel/10x4/9.jpg";
+import img10big from "../../public/assets/pictures/indexcarousel/10x4/10.jpg";
 
-import img1medium from "../../public/assets/pictures/indexcarousel/10x7/1.jpg"
-import img2medium from "../../public/assets/pictures/indexcarousel/10x7/2.jpg"
-import img3medium from "../../public/assets/pictures/indexcarousel/10x7/3.jpg"
-import img4medium from "../../public/assets/pictures/indexcarousel/10x7/4.jpg"
-import img5medium from "../../public/assets/pictures/indexcarousel/10x7/5.jpg"
-import img6medium from "../../public/assets/pictures/indexcarousel/10x7/6.jpg"
-import img7medium from "../../public/assets/pictures/indexcarousel/10x7/7.jpg"
+import img1medium from "../../public/assets/pictures/indexcarousel/10x7/1.jpg";
+import img2medium from "../../public/assets/pictures/indexcarousel/10x7/2.jpg";
+// import img3medium from "../../public/assets/pictures/indexcarousel/10x7/3.jpg"
+import img4medium from "../../public/assets/pictures/indexcarousel/10x7/4.jpg";
+import img5medium from "../../public/assets/pictures/indexcarousel/10x7/5.jpg";
+import img6medium from "../../public/assets/pictures/indexcarousel/10x7/6.jpg";
+import img7medium from "../../public/assets/pictures/indexcarousel/10x7/7.jpg";
+import img8medium from "../../public/assets/pictures/indexcarousel/10x7/8.jpg";
+import img9medium from "../../public/assets/pictures/indexcarousel/10x7/9.jpg";
+import img10medium from "../../public/assets/pictures/indexcarousel/10x7/10.jpg";
 
-import img1small from "../../public/assets/pictures/indexcarousel/10x11/1.jpg"
-import img2small from "../../public/assets/pictures/indexcarousel/10x11/2.jpg"
-import img3small from "../../public/assets/pictures/indexcarousel/10x11/3.jpg"
-import img4small from "../../public/assets/pictures/indexcarousel/10x11/4.jpg"
-import img5small from "../../public/assets/pictures/indexcarousel/10x11/5.jpg"
-import img6small from "../../public/assets/pictures/indexcarousel/10x11/6.jpg"
-import img7small from "../../public/assets/pictures/indexcarousel/10x11/7.jpg"
+import img1small from "../../public/assets/pictures/indexcarousel/10x11/1.jpg";
+import img2small from "../../public/assets/pictures/indexcarousel/10x11/2.jpg";
+// import img3small from "../../public/assets/pictures/indexcarousel/10x11/3.jpg"
+import img4small from "../../public/assets/pictures/indexcarousel/10x11/4.jpg";
+import img5small from "../../public/assets/pictures/indexcarousel/10x11/5.jpg";
+import img6small from "../../public/assets/pictures/indexcarousel/10x11/6.jpg";
+import img7small from "../../public/assets/pictures/indexcarousel/10x11/7.jpg";
+import img8small from "../../public/assets/pictures/indexcarousel/10x11/8.jpg";
+import img9small from "../../public/assets/pictures/indexcarousel/10x11/9.jpg";
+import img10small from "../../public/assets/pictures/indexcarousel/10x11/10.jpg";
 
 import Image from "next/image";
 import styled from "styled-components";
@@ -35,29 +43,26 @@ import leftArrowImage from "../../public/assets/icons/back.png";
 import rightArrowImage from "../../public/assets/icons/foward.png";
 
 const BigCarousel = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const handleThumbnailClick = (index) => {
+    setSelectedImageIndex(index);
+  };
 
-    const handleThumbnailClick = (index) => {
-      setSelectedImageIndex(index);
+  const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
     };
+    handleResize();
 
-    const [width, setWidth] = useState(null);
+    window.addEventListener("resize", handleResize);
 
-  
-    useEffect(() => {
-  
-      const handleResize = () => {
-        setWidth(window.innerWidth);
-      };
-      handleResize();
-  
-      window.addEventListener("resize", handleResize);
-  
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
       <CarouselSection>
@@ -109,25 +114,79 @@ const BigCarousel = () => {
           // }
         >
           <Div>
-            <Image src={width > 1000 ? img1big : width > 600 ? img1medium : img1small} alt="1" />
+            <Image
+              src={
+                width > 1000 ? img1big : width > 600 ? img1medium : img1small
+              }
+              alt="1"
+            />
           </Div>
           <Div>
-          <Image src={width > 1000 ? img2big : width > 600 ? img2medium : img2small} alt="1" />
+            <Image
+              src={
+                width > 1000 ? img2big : width > 600 ? img2medium : img2small
+              }
+              alt="1"
+            />
           </Div>
-          <Div>
+          {/* <Div>
           <Image src={width > 1000 ? img3big : width > 600 ? img3medium : img3small} alt="1" />
+          </Div> */}
+          <Div>
+            <Image
+              src={
+                width > 1000 ? img4big : width > 600 ? img4medium : img4small
+              }
+              alt="1"
+            />
           </Div>
           <Div>
-          <Image src={width > 1000 ? img4big : width > 600 ? img4medium : img4small} alt="1" />
+            <Image
+              src={
+                width > 1000 ? img5big : width > 600 ? img5medium : img5small
+              }
+              alt="1"
+            />
           </Div>
           <Div>
-          <Image src={width > 1000 ? img8big : width > 600 ? img5medium : img5small} alt="1" />
+            <Image
+              src={
+                width > 1000 ? img6big : width > 600 ? img6medium : img6small
+              }
+              alt="1"
+            />
           </Div>
           <Div>
-          <Image src={width > 1000 ? img6big : width > 600 ? img6medium : img6small} alt="1" />
+            <Image
+              src={
+                width > 1000 ? img7big : width > 600 ? img7medium : img7small
+              }
+              alt="1"
+            />
           </Div>
           <Div>
-          <Image src={width > 1000 ? img7big : width > 600 ? img7medium : img7small} alt="1" />
+            <Image
+              src={
+                width > 1000 ? img8big : width > 600 ? img8medium : img8small
+              }
+              alt="1"
+            />
+          </Div>
+           <Div>
+            <Image
+              src={
+                width > 1000 ? img9big : width > 600 ? img9medium : img9small
+              }
+              alt="1"
+            />
+          </Div>
+          <Div>
+            <Image
+              src={
+                width > 1000 ? img10big : width > 600 ? img10medium : img10small
+              }
+              alt="1"
+            />
           </Div>
         </Carousel>
       </CarouselSection>
@@ -141,7 +200,7 @@ const CarouselSection = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 70px;
-  margin-top:182px;
+  margin-top: 182px;
   //182  240
 `;
 const Div = styled.div`
