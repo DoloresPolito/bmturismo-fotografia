@@ -8,6 +8,7 @@ import Image from "next/image";
 import image1 from "../../public/assets/pictures/indexpage/portrait/Retrato profesional - Inicial.jpg";
 
 import imagemobile from "../../public/assets/pictures/mobileindex/Retrato profesional - Inicial - CEL.jpg";
+import olicuadrada from "../../public/assets/pictures/mobileindex/oli-cuadrada.JPG";
 
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -65,7 +66,7 @@ const ProfessionalPortrait = () => {
               </>
             ) : (
               <>
-                <Image src={imagemobile} alt="1" />
+                <Image src={olicuadrada} alt="1" />
               </>
             )}
           </ImageContent>
@@ -125,7 +126,7 @@ const ImageContent = styled.div`
   }
 
   @media screen and (max-width: 740px) {
-    height: 250px;
+    height: 300px;
     width: 300px;
   }
 
@@ -134,7 +135,7 @@ const ImageContent = styled.div`
     width: 620px;
 
     @media screen and (max-width: 740px) {
-      height: 250px;
+      height: 300px;
       width: 300px;
     }
   }
