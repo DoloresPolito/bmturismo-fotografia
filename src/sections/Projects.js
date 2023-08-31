@@ -11,6 +11,8 @@ import image2 from "../../public/assets/pictures/indexpage/projects/Sustentabili
 
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
+import link from "../../public/assets/icons/link.png";
 
 const Projects = () => {
   const { t: translate } = useTranslation("projects");
@@ -60,8 +62,28 @@ const Projects = () => {
           <TextContent>
             <div>
               <motion.h6 animate={animation}>{translate("text1")}</motion.h6>
-              <motion.h6 animate={animation}>{translate("text2")}</motion.h6>
-              <motion.h6 animate={animation}>{translate("text3")}</motion.h6>
+
+              <Link
+                href="https://www.instagram.com/artesanosdelibera/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LinkDiv>
+                  <motion.h5 animate={animation}>Artesanos del Iberá</motion.h5>
+                  <Image src={link} alt="link" />
+                </LinkDiv>
+              </Link>
+
+              <Link
+                href="https://www.instagram.com/lanur.swiss/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LinkDiv>
+                  <motion.h5 animate={animation}>Lanur Swiss</motion.h5>
+                  <Image src={link} alt="link" />
+                </LinkDiv>
+              </Link>
             </div>
             <motion.h4 animate={animation}>{translate("text4")}</motion.h4>
 
@@ -84,7 +106,7 @@ const Projects = () => {
               </>
             ) : (
               <>
-               <Column1>
+                <Column1>
                   <Image src={image1} alt="1" />
                 </Column1>
               </>
@@ -210,6 +232,32 @@ const TextContent = styled.div`
     margin: 0 0 18px 0;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
+  }
+
+  h5 {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: justify;
+    margin-top: 0px;
+    line-height: 18px;
+    max-width: 600px;
+    margin: 0 0 18px 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    text-decoration: underline;
+  }
+`;
+
+const LinkDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  img {
+    height: 15px;
+    width: 15px;
+    padding-left: 5px;
+    padding-top: 2px;
   }
 `;
 
