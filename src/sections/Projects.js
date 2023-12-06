@@ -126,6 +126,9 @@ const ProjectsSection = styled.div`
   justify-content: center;
   align-items: center;
   height: auto;
+
+  max-width:1600px;
+  margin:0 auto;
   margin-bottom: 50px;
 
   @media screen and (max-width: 1000px) {

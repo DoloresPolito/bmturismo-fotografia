@@ -98,13 +98,17 @@ const Photography = () => {
 
 const PhotographySection = styled.div`
   width: 100%;
-  /* height: 80vh; */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: auto;
+  max-width:1600px;
+  margin:0 auto;
   margin-bottom: 50px;
+  /* background-color:red; */
+  /* height: 80vh; */
 
   @media screen and (max-width: 1000px) {
     width: 90%;

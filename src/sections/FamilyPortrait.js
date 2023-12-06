@@ -123,8 +123,11 @@ const FamilyPortraitSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+
   height: auto;
+  max-width:1600px;
+  margin:0 auto;
+  margin-bottom: 50px;
 
   @media screen and (max-width: 1000px) {
     height: auto;

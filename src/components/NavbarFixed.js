@@ -79,6 +79,7 @@ const Navbar = ({ props }) => {
             <>
               {activeSection === "" ? (
                 <>
+                        <NavbarContainer>
                   <ScrollLink
                     to="turism"
                     spy={true}
@@ -158,9 +159,11 @@ const Navbar = ({ props }) => {
                       {translate("six")}
                     </NavbarText>
                   </ScrollLink>
+                  </NavbarContainer>
                 </>
               ) : (
                 <>
+                    <NavbarContainer>
                   <Link href="/#turism">
                     {" "}
                     <NavbarText
@@ -216,6 +219,7 @@ const Navbar = ({ props }) => {
                       {translate("six")}
                     </NavbarText>
                   </Link>
+                  </NavbarContainer>
                 </>
               )}
             </>
@@ -271,6 +275,17 @@ const NavbarSection = styled.div`
   }
 `;
 
+const NavbarContainer = styled.div`
+ width: 100%;
+  height: 50px;
+  background-color: #c29a00;
+  color: #2b2b2b;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width:1600px;
+`
+
 const NavbarText = styled.p`
   font-family: "Inter", sans-serif;
   font-size: 14px;
@@ -296,6 +311,7 @@ const LangSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   /* position:fixed; */
 
   /* @media screen and (max-width: 600px) {
@@ -307,6 +323,7 @@ const LangContainer = styled.div`
   width: 95%;
   display: flex;
   justify-content: space-between;
+  max-width:1600px;
 
   @media screen and (max-width: 630px) {
     flex-direction: column;
